@@ -1,2 +1,104 @@
-<h1>It works!?</h1>
+<!DOCTYPE html>
 
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+
+	<!-- Set the viewport width to device width for mobile -->
+	<meta name="viewport" content="width=device-width" />
+
+	<title>Home</title>
+
+	<!-- Included CSS Files -->
+	<link rel="stylesheet" href="/static/stylesheets/foundation.css">
+	<link rel="stylesheet" href="/static/stylesheets/app.css">
+
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" href="/static/stylesheets/ie.css">
+	<![endif]-->
+
+
+	<!-- IE Fix for HTML5 Tags -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+
+	<div class="container master">
+
+		<div class="row">
+			<div class="twelve columns">
+				<nav>
+					<ul>
+						
+						<li><a href="/" class="active" >Home</a></li>
+						
+						<li><a href="/showcase/" >Showcase</a></li>
+						
+						<li><a href="/contact/" >Contact Me</a></li>
+						
+					</ul>
+				</nav>
+				<h1 class="light-weight">Shuhao Wu</h1>
+				<hr />
+			</div>
+		</div>
+
+		
+
+<div class="row coolboxrow">
+	<div class="ten columns coolbox centered">
+		<h2>Welcome!</h2>
+		<p>My name is Shuhao Wu. I'm a current student in Lo-Ellen Park Secondary School and develop software in my spare time.</p>
+		<p>My primary language is Python. Although I'm familiar with a wide variety of programming languages.</p>
+		<p>I have a blog/project site at <a href="http://thekks.net">http://thekks.net</a>. This site is for me to write blog posts and host other projects that I have going on.</p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="four columns">
+		<h4>Python</h4>
+		<p>Python is a great programming language! There's nothing bad that I could say about the language, really.</p>
+		<p>This is my primary programming language as I'm most experienced in it. In fact, this website's generator is written in Python + Flask.</p>
+		<p>Also, another language that I've beginning to like very much is GNU Octave. Great modeling language, great substitute for matplotlib for prototyping.</p>
+		<p>Though, we all need to move to Python 3.x!</p>
+	</div>
+
+	<div class="four columns">
+		<h4>Open Source</h4>
+		<p>Open source is a great way to develop software. Most of my code that I've decided is not garbage enough is on <a href="http://github.com/ultimatebuster">Github</a>.</p>
+		<p>Someone's garbage is another's treasure. There are some stuff that I've developed when I needed to use it. However, then I discovered more interesting things and moved on!</p>
+		<p>Currently, my main open source effort is on <a href="http://github.com/ultimatebuster/riakkit">Riakkit</a>, an object mapper for Riak. You can find more of my projects in the <a href="/showcase/">showcase</a> page.</p>
+	</div>
+
+	<div class="four columns">
+		<h4>FRC</h4>
+		<p>FRC is the FIRST Robotics Competition. This competition is a high school level robot competition that has more than 45000 students building robots to accomplish a certain task.</p>
+		<p>I am currently involved with the program as the captain and lead programmer of <a href="http://loellenrobotics.com">Team 4069 (Lo-Ellen Robotics)</a>.</p>
+		<p>This year, we are working on a basketball shooter. My main goal is to get a reasonably accurate auto shooter programmed in Java.</p>
+	</div>
+
+	<hr />
+</div>
+
+
+
+
+		<footer>
+			<p>Copyright &copy; Shuhao 2012</p>
+		</footer>
+
+	</div>
+
+	<!-- Included JS Files -->
+	<script src="/static/javascripts/foundation.js"></script>
+	<script src="/static/javascripts/app.js"></script>
+
+</body>
+</html>
