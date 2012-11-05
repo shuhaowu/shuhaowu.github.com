@@ -1,4 +1,4 @@
-nav ul { float: right; position: relative; top: 20px; font-weight: bold; }
+nav ul { float: right; position: relative; top: 20px; font-weight: bold; list-style: none; }
 nav ul li { float: left; padding-top: 10px; margin-left: 20px; border-bottom: 1px dotted #DDD; }
 nav ul .active { color: #777; }
 .light-weight { font-weight: 300 !important; }

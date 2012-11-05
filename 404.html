@@ -11,11 +11,13 @@
 	<!-- Set the viewport width to device width for mobile -->
 	<meta name="viewport" content="width=device-width" />
 
-	<title>Showcase</title>
+	<title>Not Found</title>
 
 	<!-- Included CSS Files -->
 	<link rel="stylesheet" href="/static/stylesheets/foundation.css">
 	<link rel="stylesheet" href="/static/stylesheets/app.css">
+
+        <script src="javascripts/modernizr.foundation.js"></script>
 
 	<!--[if lt IE 9]>
 		<link rel="stylesheet" href="/static/stylesheets/ie.css">
@@ -37,9 +39,11 @@
 				<nav>
 					<ul>
 						
-						<li><a href="/" class="active" >Home</a></li>
+						<li><a href="/" >Home</a></li>
 						
 						<li><a href="/showcase/" >Showcase</a></li>
+						
+						<li><a href="/cv/" >CV</a></li>
 						
 						<li><a href="/contact/" >Contact Me</a></li>
 						
@@ -51,12 +55,17 @@
 		</div>
 
 		
+
+
 <div class="row">
 	<div class="twelve columns">
-		<h4>Not found!</h4>
-		<p>What you're requesting doesn't exist!</p>
+		
+    <h4>Not found</h4>
+<p>The page you're currently requesting does not exist.</p>
+    
 	</div>
 </div>
+
 
 
 		<footer>
@@ -65,9 +74,13 @@
 
 	</div>
 
-	<!-- Included JS Files -->
-	<script src="/static/javascripts/foundation.js"></script>
-	<script src="/static/javascripts/app.js"></script>
+  <!-- Included JS Files (Compressed) -->
+  <script src="/static/javascripts/jquery.js"></script>
+  <script src="/static/javascripts/foundation.min.js"></script>
+
+  <!-- Initialize JS Plugins -->
+  <script src="/static/javascripts/app.js"></script>
+
 
 	<script type="text/javascript">
 
