@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<rss version="2.0">
+
+<channel>
+  <title>Shuhao's Blog</title>
+  <link>http://shuhaowu.com/blog/</link>
+  <description>My random thoughts.</description>
+  
+  <item>
+    <title>Hello World!</title>
+    <author>Shuhao</author>
+    <link>http://shuhaowu.com/blog/helloworld.html</link>
+    <pubDate>Sun, 10 Mar 2013 12:50</pubDate>
+    <description>&lt;p&gt;What is this? A blog? :O&lt;/p&gt;
+&lt;p&gt;Instead of studying (4 hours before an exam that I&#39;m gonna &lt;em&gt;fail&lt;/em&gt;), I got this
+site to work with the new &lt;a href=&#34;https://github.com/shuhaowu/funnel&#34;&gt;funnel&lt;/a&gt; and
+got the blog working...&lt;/p&gt;</description>
+  </item>
+  
+</channel>
+
+</rss>
