@@ -1,0 +1,95 @@
+{% set navbar = [
+	("/", "home", "Home"),
+	("/showcase/", "showcase", "Showcase"),
+	("/cv/", "cv", "CV"),
+  ("/blog/", "blog", "Blog"),
+	("/contact/", "contact", "Contact Me")
+] -%}
+
+{% set name = name|default("home") -%}
+{% set title = title|default("Home") -%}
+
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+
+	<!-- Set the viewport width to device width for mobile -->
+	<meta name="viewport" content="width=device-width" />
+
+	<title>{{ title }} - Shuhao</title>
+
+	<!-- Included CSS Files -->
+	<link rel="stylesheet" href="/static/stylesheets/foundation.css">
+	<link rel="stylesheet" href="/static/stylesheets/app.css">
+
+        <script src="javascripts/modernizr.foundation.js"></script>
+
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" href="/static/stylesheets/ie.css">
+	<![endif]-->
+
+
+	<!-- IE Fix for HTML5 Tags -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+
+	<div class="container master">
+
+		<div class="row">
+			<div class="twelve columns">
+				<nav>
+					<ul>
+						{% for href, id, caption in navbar %}
+						<li><a href="{{ href }}" {% if id == name %}class="active"{% endif %}>{{ caption }}</a></li>
+						{% endfor %}
+					</ul>
+				</nav>
+				<h1 class="light-weight">Shuhao Wu</h1>
+				<hr />
+			</div>
+		</div>
+
+		{% block main %}
+		{% endblock %}
+
+		<footer>
+			<p>Shuhao 2013</p>
+		</footer>
+
+	</div>
+
+  <!-- Included JS Files (Compressed) -->
+  <script src="/static/javascripts/jquery.js"></script>
+  <script src="/static/javascripts/foundation.min.js"></script>
+
+  <!-- Initialize JS Plugins -->
+  <script src="/static/javascripts/app.js"></script>
+
+
+	<script type="text/javascript">
+
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-9814837-6']);
+	_gaq.push(['_setDomainName', '.shuhaowu.com']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+
+	</script>
+
+</body>
+</html>

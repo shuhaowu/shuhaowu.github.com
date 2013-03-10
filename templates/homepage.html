@@ -1,0 +1,35 @@
+{% extends "master.html" %}
+
+{% block main %}
+
+<div class="row coolboxrow">
+	<div class="ten columns coolbox centered">
+		{% autoescape off %}
+    {{ mainbox }}
+    {% endautoescape %}
+	</div>
+</div>
+
+<div class="row">
+	<div class="four columns">
+		{% autoescape off %}
+    {{ left }}
+    {% endautoescape %}
+	</div>
+
+	<div class="four columns">
+		{% autoescape off %}
+    {{ middle }}
+    {% endautoescape %}
+	</div>
+
+	<div class="four columns">
+		{% autoescape off %}
+    {{ right }}
+    {% endautoescape %}
+	</div>
+
+	<hr />
+</div>
+
+{% endblock %}

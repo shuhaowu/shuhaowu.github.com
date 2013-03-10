@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<rss version="2.0">
+
+<channel>
+  <title>Shuhao's Blog</title>
+  <link>http://shuhaowu.com/blog/</link>
+  <description>My random thoughts.</description>
+  {% for meta, html in all_posts[:20] %}
+  <item>
+    <title>{{ meta.title }}</title>
+    <author>{{ meta.author }}</author>
+    <link>http://shuhaowu.com/blog/{{ meta.postid }}.html</link>
+    <pubDate>{{ meta.date.strftime("%a, %d %b %Y %H:%M") }}</pubDate>
+    <description>{{ html }}</description>
+  </item>
+  {% endfor %}
+</channel>
+
+</rss>
