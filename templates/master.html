@@ -45,9 +45,17 @@
 
 	<div class="container master">
 
+		<div class="row show-for-small">
+			<ul class="button-group even five-up">
+				{% for href, id, caption in navbar %}
+				<li><a href="{{ href }}" class="button{% if id != name %} secondary{% endif %}">{{ caption }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+
 		<div class="row">
 			<div class="twelve columns">
-				<nav>
+				<nav class="hide-for-small">
 					<ul>
 						{% for href, id, caption in navbar %}
 						<li><a href="{{ href }}" {% if id == name %}class="active"{% endif %}>{{ caption }}</a></li>
