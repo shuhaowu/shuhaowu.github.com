@@ -66,12 +66,14 @@ title: CV
     * Project manager of Ardroid (autonomous rover) under the Carleton Robotics Club
     * Member of the Software and Computer Engineering Society of Carleton University
  * **Lo-Ellen Park Secondary School (High school diploma, 2008-2012)**
-    * <span class="has-tip tip-top" title="Scored 75/100">95th percentile</span> in Grade 12 Euclid Math Contest in Grade 11, 2011
-    * <span class="has-tip tip-top" title="Scored 82/100">92nd place</span> out of 13000 contestants in the Grade 12 Euclid Math Contest in Grade 12, 2012
-    * 2011 Canadian Computation Competition Junior Division <span class="has-tip tip-top" title="Scored 75/75">1st place</span> in Canada.
-    * 2012 Canadian Computation Competition Senior Division <span class="has-tip tip-top" title="Scored 57/75">89th place</span> in Canada
+    * <span class="has-tip" title="Scored 75/100">95th percentile</span> in Grade 12 Euclid Math Contest in Grade 11, 2011
+    * <span class="has-tip" title="Scored 82/100">92nd place</span> out of 13000 contestants in the Grade 12 Euclid Math Contest in Grade 12, 2012
+    * 2011 Canadian Computation Competition Junior Division <span class="has-tip" title="Scored 75/75">1st place</span> in Canada.
+    * 2012 Canadian Computation Competition Senior Division <span class="has-tip" title="Scored 57/75">89th place</span> in Canada
     * Lo-Ellen Robotics (FRC Team 4069): Team captain and Lead developer
+
  * [Machine learning at Coursera](http://ml-class.org) (2012)
  * [Introduction to AI at ai-class](http://ai-class.com) (2012)
  * [Applied Cryptography (CS387) at Udacity](http://www.udacity.com/overview/Course/cs387/CourseRev/apr2012) (2012)
  * [Artificial Intelligence (CS 373) at Udacity](http://www.udacity.com/overview/Course/cs373/CourseRev/apr2012) (2012)
+

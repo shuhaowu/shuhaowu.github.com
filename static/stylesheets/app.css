@@ -7,6 +7,7 @@ nav ul .active { color: #777; }
 .coolbox { margin-top:15px;  border: 1px solid #000; border-radius: 5px; padding: 20px 30px; background-color: #EEE; }
 .coolbox p { font-size: 16px; line-height: 1.3em; }
 footer { color: #BBB; text-align: center; font-size: 12px; margin-top: 20px;  }
+footer p { margin: 0px auto; padding: 222px auto; }
 dl { margin-bottom: 20px; }
 dt { font-weight: bold; margin: 6px 0; font-size: 1.3em; }
 dd { margin-left: 10px; }
