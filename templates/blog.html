@@ -11,7 +11,15 @@
       <div class="meta">
         <h1><a href="/blog/{{ meta.postid }}.html">{{ meta.title }}</a></h1>
         <hr />
-        <p class="metameta">Written by {{ meta.author }} on {{ meta.date.strftime("%Y-%m-%d %H:%M") }}</p>
+        <p class="metameta">
+        <script>
+        var idcomments_acct = 'b9dac90709b35ebb9ee6fda13a5512e4';
+        var idcomments_post_id = "{{ meta.postid }}";
+        var idcomments_post_url = "http://shuhaowu.com/blog/{{ meta.postid }}.html";
+        </script>
+        <script type="text/javascript" src="http://www.intensedebate.com/js/genericLinkWrapperV2.js"></script> |
+        Written by {{ meta.author }} on {{ meta.date.strftime("%Y-%m-%d %H:%M") }}
+        </p>
       </div>
 			<div class="content">
 				{% autoescape off %}

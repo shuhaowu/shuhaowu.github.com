@@ -27,3 +27,6 @@ dd { margin-left: 10px; }
 .pagectrl { float: right; font-size: 13px; color: #444; margin-bottom: 12px; }
 .pagectrl:after { clear: both; }
 .pagectrl a { font-weight: bold; }
+
+.idc-share { display: none !important; }
+#IDCommentsHeadLogin { display: none !important; }
