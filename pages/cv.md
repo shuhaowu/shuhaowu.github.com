@@ -40,16 +40,6 @@ title: CV
     <a href="https://github.com/FRCTeam4069">Github</a></li>
   </ul>
   </li>
-  <li id="ardroid">
-  <strong>Ardroid Project (Carleton Robotics)</strong>: Self navigating robot for indoors
-  <ul>
-    <li>Position: Project manager</li>
-    <li>Self navigating robot. Responsible for developing the software system on the robot and managing the team.</li>
-    <li>2012 - Current</li>
-    <li>Current Status: Prototyping with control interface</li>
-    <li><a href="http://carletonrobotics.com">Carleton Robotics</a></li>
-  </ul>
-  </li>
   <li id="pillar">
   <strong>Pillar Ceramics</strong>: Local business website
   <ul>
