@@ -7,6 +7,81 @@
   <description>My random thoughts.</description>
   
   <item>
+    <title>Reinventing the wheel: building funnel</title>
+    <author>Shuhao</author>
+    <link>http://shuhaowu.com/blog/building_funnel.html</link>
+    <pubDate>Sun, 17 Mar 2013 21:20</pubDate>
+    <description>&lt;p&gt;Hackers nowadays are all moving to static pages for their blogs/portfolios. 
+There are several advantages for this approach:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Ease of use: No need to edit in a crappy WYSIWYG editor that generates HTML. 
+    Edit directly in a text editor.&lt;/li&gt;
+&lt;li&gt;Ease of deployment: no need to deploy to a special stack, run a monitoring
+    service, a reverse proxy, LAMP, and all that nonsense. Just get anything
+    that can serve html pages and you&#39;re set. &lt;em&gt;Hell&lt;/em&gt;, Github even provides you 
+    with free hosting!&lt;/li&gt;
+&lt;li&gt;Ease of scaling: it is probably the case that no one reads your blog during
+    regular hours. However, when you write that one &lt;em&gt;brilliant&lt;/em&gt; article and HN
+    decides that they&#39;re going to knock on your doors, your server will probably
+    fall on its knees if you didn&#39;t scale properly. With a static html site, 
+    scaling becomes much easier, especially if you let Github do it for you.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;(There are probably other reasons, but this is not the point of this post.)&lt;/p&gt;
+&lt;p&gt;I started making a portfolio sometime ago. I remember using different
+technologies: PHP, Python, raw HTML, and so forth. I never knew about things
+like Jekyll and Pelican until &lt;em&gt;very&lt;/em&gt; recently. All I knew is that I have some
+stuff I wanna create and ship. So I did. I made things that&#39;s embarassing, 
+used terrible practises, and learned to hate technologies (*cough* php).
+So about a year ago (Feb 13th 2012), I took a little bit of time and 
+wrote &lt;a href=&#34;https://github.com/shuhaowu/Funnel/commit/b89c79a4891c30a9d474a647cee9ca25c09012ee&#34;&gt;Funnel&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It was about 80 lines of code and it didn&#39;t do anything other than reading some
+markdown files and json files in order to put up a static site. I then built a 
+my portfolio with the help of Funnel and was quite satisfied.&lt;/p&gt;
+&lt;p&gt;Over the year, I became increasingly dissatisfied with Funnel. I 
+want to give blogging a go again, but Funnel does not have the capability for
+that yet. I won&#39;t go back to self hosted solution or any sort of CMS as I really
+like how the github + static pages setup work. At this point, I have learned 
+about things like Jekyll and Pelican and started poking it around. &lt;/p&gt;
+&lt;p&gt;First I looked at Jekyll. It didn&#39;t really pertain to me. The whole relied on
+the Ruby stack. While I don&#39;t mind Ruby myself, I just don&#39;t have extra time
+at the moment to learn everything behind it. I wanted to work with something
+that I&#39;m already familiar in and can easily customize without jumping around in
+documentations. Also, while I first looked up Jekyll, It wasn&#39;t clear to me on
+how to author static pages using markdown and the package seemed to be geared towards 
+blogging, which is the opposite of what I want: something geared towards static
+pages but has blogging as a bonus.&lt;/p&gt;
+&lt;p&gt;Pelican came next. kernel.org is powered by it now
+so it seemed like a reasonable choice. While I read through the docs, the 
+first thing that jumped out at me is, again, how
+blog focused it is. The second heading of the documentation is &#34;Kickstart a 
+blog&#34;. The docs also wanted me to get a blogroll in my settings file (first of all, 
+why a blogroll. Secondly, why in my settings file! If I want one I can just 
+insert it into my blog template). It also wanted me to get a tags page and so forth.
+I understand that these are features that could be good to include, but why are
+the &lt;em&gt;required&lt;/em&gt;? Can&#39;t the generator just graciously fall back if tags.html is
+not found?&lt;/p&gt;
+&lt;p&gt;To top it all off, both Pelican and Jekyll seems bloated. Sure, it may offer a
+lot of features (and lack some that I want, as I never found out how to have 
+multiple sections in one page for both), but I fail to see the justification
+of having something so hefty. I thought that since programmers are the only ones
+using these static site generators (after all, they&#39;re not too friendly to use
+for normal folks), we would want something that we can hack around to our
+likings. &lt;/p&gt;
+&lt;p&gt;So at the end of the day I just rewrote Funnel to include blogs. It&#39;s
+definitely &lt;a href=&#34;https://github.com/shuhaowu/Funnel/blob/master/funnel&#34;&gt;not pretty&lt;/a&gt;.
+There are a lot of features that&#39;s lacking. It can also be bloated as it
+relies on a crap load of libraries (Flask, Frozen-Flask and their dependencies).
+However the important thing is that I can now do what I want to do with ease 
+and don&#39;t have to deal with things like &lt;code&gt;rake post title=&#34;My blawg post&#34;&lt;/code&gt;
+(real men (or women, or men identified with women... and so forth) don&#39;t use
+commands to generate a text file, they &lt;code&gt;touch&lt;/code&gt; it instead?) and tags.html.&lt;/p&gt;
+&lt;p&gt;On top of all of that, reinventing the wheel was actually quite fun. I rewrote 
+funnel and made it feature complete for me in one night, before a midterm. That
+kind of atmosphere is exciting and awesome in my view, even though it may promote 
+&lt;a href=&#34;http://chinpen.net/blog/2013/02/hackathons-are-bad-for-you/&#34;&gt;bad life style&lt;/a&gt;.&lt;/p&gt;</description>
+  </item>
+  
+  <item>
     <title>Hello World!</title>
     <author>Shuhao</author>
     <link>http://shuhaowu.com/blog/helloworld.html</link>
