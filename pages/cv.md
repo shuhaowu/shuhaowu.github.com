@@ -2,11 +2,12 @@ title: CV
 
 #### Skills and Abilities ####
 
- - Languages: Python, CoffeeScript, JavaScript, Java
+ - Languages: Python, CoffeeScript, JavaScript, Go, Java
  - Frameworks: Flask, Jinja2, Backbone.JS, Handlebar.JS, among others
- - Database: Riak, MongoDB, CouchDB, LevelDB, SQLite3, MySQL
+ - Database: Riak, LevelDB, Levelupdb (disclaimer: I'm the developer), MongoDB, CouchDB, SQLite3, MySQL
  - Systems: Ubuntu, Debian
  - Revision Control: git, svn
+
 
 #### Major Projects/Experience ####
 

@@ -41,6 +41,10 @@ code that I've written is also online on [Github](https://github.com/shuhaowu)
 
 Current efforts:
 
+ - [Levelupdb](https://github.com/shuhaowu/levelupdb) is a database server that
+   is built on leveldb and is a clone of Riak, except it is designed to run on
+   a single, low powered node (perfect for your side projects). The API is 
+   compatible with Riak so you can easily upgrade.
  - [Riakkit](https://github.com/shuhaowu/riakkit) is an object mapper for riak
    in python.
  - [Leveldbkit](https://github.com/shuhaowu/leveldbkit) is an object mapper for
@@ -49,6 +53,7 @@ Current efforts:
 === middle ===
 
 === right ===
+
 #### Side projects ####
 Side projects are awesome. I usually have a couple going on at the same time.
 Right now I'm in the process of creating an app that serves as an

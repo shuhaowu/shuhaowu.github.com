@@ -4,11 +4,14 @@ title: Showcase
 <dl>
 <dt>[Riakkit](https://github.com/shuhaowu/riakkit)</dt>
 <dd>Riakkit is an object mapper similar to MongoKit and CouchdbKit but for Riak. This is one of the most sophisticated of its kind for Riak and is currently being tested at an ongoing project.</dd>
+<dt>[Levelupdb](https://github.com/shuhaowu/levelupdb)</dt>
+<dd>A high performance single node key-value database designed for low end boxes. Riak API Clone. Written in Go</dd>
 <dt>[leveldbkit](https://github.com/shuhaowu/leveldbkit)</dd>
 <dd>Leveldbkit is a leveldb object mapper for Python. It includes a way to do secondary indexes.</dd>
 <dt>[Funnel](https://github.com/shuhaowu/Funnel)</dt>
 <dd>Funnel is a system to convert markdown into a static website. It also includes a way to add blog posts. This portfolio is created using this tool and deployed to github pages.</dd>
 </dl>
+
 
 #### In-active Projects <small>No longer with any development</small> ####
 <dl>
@@ -16,6 +19,8 @@ title: Showcase
 <dd>Developed for a [kaggle competition](https://www.kaggle.com/c/visualize-the-state-of-education-in-colorado).</dd>
 <dt>[Automatic Document Classification](http://rdc.thekks.net)</dt>
 <dd>The Stanford AI and ML class taught me a lot. So why not put the knowledge to use! I did this for a project for my math class in school as well. With more time, I will eventually implement more things. So this is semi-inactive. This site may be up and down as it is running from my room with a VPN to a rev proxy...</dd>
+<dt>[Go pong](https://github.com/shuhaowu/gopong)</dt>
+<dd>A learning project for Go. It replicates the pong game and adds some extra features. Video: [Youtube](https://www.youtube.com/watch?v=sWwlvhQ1SdU)</dd>
 <dt>[Sudbury Realtime Bus Tracker](http://bus.shuhaowu.com)</dt>
 <dd>After trying out Sudbury's "realtime" bus tracker, I hated it. So I hacked together a quick app that actually does realtime update, stop bookmarks, and so on.</dd>
 <dt>[plugin-based-core](https://github.com/shuhaowu/plugin-based-core)</dt>
@@ -29,6 +34,7 @@ headaches. After many weeks of head scratching, I finally gave up on the
 project and transfered my entire web development efforts into Python. This
 also briefly ran a local business website.</dd>
 </dl>
+
 
 
 #### Fun projects <small>Projects I made for fun, may not have any further development</small> ####
