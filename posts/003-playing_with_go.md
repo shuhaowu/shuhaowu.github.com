@@ -2,7 +2,7 @@ title: Playing with Go (as a Python developer)
 date: 2013-04-05 02:00
 
 It seems like I have gotten into the bad habit of coding and blogging before exams. 
-The first exam is in 12 days and I have barely started studying (actually, 
+My first exam is in 12 days and I have barely started studying (actually, 
 I barely *know* the content).
 
 That aside, I've taken the last few days to learn Go. I've heard a lot of good
