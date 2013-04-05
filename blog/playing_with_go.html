@@ -9,7 +9,7 @@
 	<!-- Set the viewport width to device width for mobile -->
 	<meta name="viewport" content="width=device-width" />
 
-	<title>Blog - Shuhao</title>
+	<title>Playing with Go (as a Python developer) - Shuhao</title>
 
 	<!-- Included CSS Files -->
 	<link rel="stylesheet" href="/static/stylesheets/foundation.css">
@@ -69,28 +69,17 @@
 		</div>
 
 		
-
 <div class="row">
-	<div class="nine columns">
-		
-    
+  <div class="twelve columns">
     <div class="panel post">
       <div class="meta">
         <h1><a href="/blog/playing_with_go.html">Playing with Go (as a Python developer)</a></h1>
         <hr />
-        <p class="metameta">
-        <script>
-        var idcomments_acct = 'b9dac90709b35ebb9ee6fda13a5512e4';
-        var idcomments_post_id = "playing_with_go";
-        var idcomments_post_url = "http://shuhaowu.com/blog/playing_with_go.html";
-        </script>
-        <script type="text/javascript" src="http://www.intensedebate.com/js/genericLinkWrapperV2.js"></script> |
-        Written by Shuhao on 2013-04-05 02:00
-        </p>
+        <p class="metameta">Written by Shuhao on 2013-04-05 02:00</p>
       </div>
-			<div class="content">
-				
-				<p>It seems like I have gotten into the bad habit of coding and blogging before exams. 
+      <div class="content">
+        
+        <p>It seems like I have gotten into the bad habit of coding and blogging before exams. 
 The first exam is in 12 days and I have barely started studying (actually, 
 I barely <em>know</em> the content).</p>
 <p>That aside, I've taken the last few days to learn Go. I've heard a lot of good
@@ -173,148 +162,19 @@ is a high performance, low footprint database server that is API-compatible with
 Riak. However, the server is targeting low end boxes (&lt;=512MB of RAM, VPSes 
 you get from LEB) and side projects that do not have a lot of users. </p>
 <p>In the mean while, however, I'm going to bed.</p>
-				
-			</div>
-    </div>
-	
-    <div class="panel post">
-      <div class="meta">
-        <h1><a href="/blog/building_funnel.html">Reinventing the wheel: building funnel</a></h1>
-        <hr />
-        <p class="metameta">
-        <script>
-        var idcomments_acct = 'b9dac90709b35ebb9ee6fda13a5512e4';
-        var idcomments_post_id = "building_funnel";
-        var idcomments_post_url = "http://shuhaowu.com/blog/building_funnel.html";
-        </script>
-        <script type="text/javascript" src="http://www.intensedebate.com/js/genericLinkWrapperV2.js"></script> |
-        Written by Shuhao on 2013-03-17 21:20
-        </p>
+        
       </div>
-			<div class="content">
-				
-				<p>Hackers nowadays are all moving to static pages for their blogs/portfolios. 
-There are several advantages for this approach:</p>
-<ol>
-<li>Ease of use: No need to edit in a crappy WYSIWYG editor that generates HTML. 
-    Edit directly in a text editor.</li>
-<li>Ease of deployment: no need to deploy to a special stack, run a monitoring
-    service, a reverse proxy, LAMP, and all that nonsense. Just get anything
-    that can serve html pages and you're set. <em>Hell</em>, Github even provides you 
-    with free hosting!</li>
-<li>Ease of scaling: it is probably the case that no one reads your blog during
-    regular hours. However, when you write that one <em>brilliant</em> article and HN
-    decides that they're going to knock on your doors, your server will probably
-    fall on its knees if you didn't scale properly. With a static html site, 
-    scaling becomes much easier, especially if you let Github do it for you.</li>
-</ol>
-<p>(There are probably other reasons, but this is not the point of this post.)</p>
-<p>I started making a portfolio sometime ago. I remember using different
-technologies: PHP, Python, raw HTML, and so forth. I never knew about things
-like Jekyll and Pelican until <em>very</em> recently. All I knew is that I have some
-stuff I wanna create and ship. So I did. I made things that's embarassing, 
-used terrible practises, and learned to hate technologies (*cough* php).
-So about a year ago (Feb 13th 2012), I took a little bit of time and 
-wrote <a href="https://github.com/shuhaowu/Funnel/commit/b89c79a4891c30a9d474a647cee9ca25c09012ee">Funnel</a>.</p>
-<p>It was about 80 lines of code and it didn't do anything other than reading some
-markdown files and json files in order to put up a static site. I then built a 
-my portfolio with the help of Funnel and was quite satisfied.</p>
-<p>Over the year, I became increasingly dissatisfied with Funnel. I 
-want to give blogging a go again, but Funnel does not have the capability for
-that yet. I won't go back to self hosted solution or any sort of CMS as I really
-like how the github + static pages setup work. At this point, I have learned 
-about things like Jekyll and Pelican and started poking it around. </p>
-<p>First I looked at Jekyll. It didn't really pertain to me. The whole relied on
-the Ruby stack. While I don't mind Ruby myself, I just don't have extra time
-at the moment to learn everything behind it. I wanted to work with something
-that I'm already familiar in and can easily customize without jumping around in
-documentations. Also, while I first looked up Jekyll, It wasn't clear to me on
-how to author static pages using markdown and the package seemed to be geared towards 
-blogging, which is the opposite of what I want: something geared towards static
-pages but has blogging as a bonus.</p>
-<p>Pelican came next. kernel.org is powered by it now
-so it seemed like a reasonable choice. While I read through the docs, the 
-first thing that jumped out at me is, again, how
-blog focused it is. The second heading of the documentation is "Kickstart a 
-blog". The docs also wanted me to get a blogroll in my settings file (first of all, 
-why a blogroll. Secondly, why in my settings file! If I want one I can just 
-insert it into my blog template). It also wanted me to get a tags page and so forth.
-I understand that these are features that could be good to include, but why are
-the <em>required</em>? Can't the generator just graciously fall back if tags.html is
-not found?</p>
-<p>To top it all off, both Pelican and Jekyll seems bloated. Sure, it may offer a
-lot of features (and lack some that I want, as I never found out how to have 
-multiple sections in one page for both), but I fail to see the justification
-of having something so hefty. I thought that since programmers are the only ones
-using these static site generators (after all, they're not too friendly to use
-for normal folks), we would want something that we can hack around to our
-likings. </p>
-<p>So at the end of the day I just rewrote Funnel to include blogs. It's
-definitely <a href="https://github.com/shuhaowu/Funnel/blob/master/funnel">not pretty</a>.
-There are a lot of features that's lacking. It can also be bloated as it
-relies on a crap load of libraries (Flask, Frozen-Flask and their dependencies).
-However the important thing is that I can now do what I want to do with ease 
-and don't have to deal with things like <code>rake post title="My blawg post"</code>
-(real men (or women, or men identified with women... and so forth) don't use
-commands to generate a text file, they <code>touch</code> it instead?) and tags.html.</p>
-<p>On top of all of that, reinventing the wheel was actually quite fun. I rewrote 
-funnel and made it feature complete for me in one night, before a midterm. That
-kind of atmosphere is exciting and awesome in my view, even though it may promote 
-<a href="http://chinpen.net/blog/2013/02/hackathons-are-bad-for-you/">bad life style</a>.</p>
-				
-			</div>
     </div>
-	
-    <div class="panel post">
-      <div class="meta">
-        <h1><a href="/blog/helloworld.html">Hello World!</a></h1>
-        <hr />
-        <p class="metameta">
-        <script>
-        var idcomments_acct = 'b9dac90709b35ebb9ee6fda13a5512e4';
-        var idcomments_post_id = "helloworld";
-        var idcomments_post_url = "http://shuhaowu.com/blog/helloworld.html";
-        </script>
-        <script type="text/javascript" src="http://www.intensedebate.com/js/genericLinkWrapperV2.js"></script> |
-        Written by Shuhao on 2013-03-10 12:50
-        </p>
-      </div>
-			<div class="content">
-				
-				<p>What is this? A blog? :O</p>
-<p>Instead of studying (4 hours before an exam that I'm gonna <em>fail</em>), I got this
-site to work with the new <a href="https://github.com/shuhaowu/funnel">funnel</a> and
-got the blog working...</p>
-				
-			</div>
-    </div>
-	
-		<div class="pagectrl">
-			
-      Page <a href="/blog/page/1.html">1</a> of 1
-      
-		</div>
-	
-	</div>
-  <div class="three columns">
-    <div class="panel">
-      <p>Welcome to my blog where I post random thoughts that I have.</p>
-			<p>Did I sell that well? If so, you can <a href="/blog/rss.xml">subscribe (RSS)</a>.</p>
-			<hr />
-			<h5>Latest posts</h5>
-			<ol>
-			
-				<li><a href="/blog/playing_with_go.html">Playing with Go (as a Python developer)</a></li>
-			
-				<li><a href="/blog/building_funnel.html">Reinventing the wheel: building funnel</a></li>
-			
-				<li><a href="/blog/helloworld.html">Hello World!</a></li>
-			
-			</ol>
-    </div>
+    <div class="pagectrl"><a href="/blog"><< Back to Blog</a></div>
+    <script>
+    var idcomments_acct = 'b9dac90709b35ebb9ee6fda13a5512e4';
+    var idcomments_post_id = "playing_with_go";
+    var idcomments_post_url = "http://shuhaowu.com/blog/playing_with_go.html";
+    </script>
+    <span id="IDCommentsPostTitle" style="display:none"></span>
+    <script type='text/javascript' src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
   </div>
 </div>
-
 
 
 		<footer>
