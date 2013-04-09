@@ -11,7 +11,9 @@
     <author>Shuhao</author>
     <link>http://shuhaowu.com/blog/playing_with_go.html</link>
     <pubDate>Fri, 05 Apr 2013 02:00</pubDate>
-    <description>&lt;p&gt;It seems like I have gotten into the bad habit of coding and blogging before exams.
+    <description>
+      
+      &lt;p&gt;It seems like I have gotten into the bad habit of coding and blogging before exams.
 My first exam is in 12 days and I have barely started studying (actually,
 I barely &lt;em&gt;know&lt;/em&gt; the content).&lt;/p&gt;
 &lt;p&gt;That aside, I&#39;ve taken the last few days to learn Go. I&#39;ve heard a lot of good
@@ -95,7 +97,9 @@ Riak. However, the server is targeting low end boxes (&amp;lt;=512MB of RAM, VPS
 you get from LEB) and side projects that do not have a lot of users.&lt;/p&gt;
 &lt;p&gt;In the mean while, however, I&#39;m going to bed.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edit&lt;/strong&gt;: The Go plugin for Komodo Edit just got autoindent. You also need to
-config gocode to be in Komodo&#39;s path in order for autocompletion to work.&lt;/p&gt;</description>
+config gocode to be in Komodo&#39;s path in order for autocompletion to work.&lt;/p&gt;
+      
+    </description>
   </item>
   
   <item>
@@ -103,7 +107,9 @@ config gocode to be in Komodo&#39;s path in order for autocompletion to work.&lt
     <author>Shuhao</author>
     <link>http://shuhaowu.com/blog/building_funnel.html</link>
     <pubDate>Sun, 17 Mar 2013 21:20</pubDate>
-    <description>&lt;p&gt;Hackers nowadays are all moving to static pages for their blogs/portfolios. 
+    <description>
+      
+      &lt;p&gt;Hackers nowadays are all moving to static pages for their blogs/portfolios. 
 There are several advantages for this approach:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Ease of use: No need to edit in a crappy WYSIWYG editor that generates HTML. 
@@ -170,7 +176,9 @@ commands to generate a text file, they &lt;code&gt;touch&lt;/code&gt; it instead
 &lt;p&gt;On top of all of that, reinventing the wheel was actually quite fun. I rewrote 
 funnel and made it feature complete for me in one night, before a midterm. That
 kind of atmosphere is exciting and awesome in my view, even though it may promote 
-&lt;a href=&#34;http://chinpen.net/blog/2013/02/hackathons-are-bad-for-you/&#34;&gt;bad life style&lt;/a&gt;.&lt;/p&gt;</description>
+&lt;a href=&#34;http://chinpen.net/blog/2013/02/hackathons-are-bad-for-you/&#34;&gt;bad life style&lt;/a&gt;.&lt;/p&gt;
+      
+    </description>
   </item>
   
   <item>
@@ -178,10 +186,14 @@ kind of atmosphere is exciting and awesome in my view, even though it may promot
     <author>Shuhao</author>
     <link>http://shuhaowu.com/blog/helloworld.html</link>
     <pubDate>Sun, 10 Mar 2013 12:50</pubDate>
-    <description>&lt;p&gt;What is this? A blog? :O&lt;/p&gt;
+    <description>
+      
+      &lt;p&gt;What is this? A blog? :O&lt;/p&gt;
 &lt;p&gt;Instead of studying (4 hours before an exam that I&#39;m gonna &lt;em&gt;fail&lt;/em&gt;), I got this
 site to work with the new &lt;a href=&#34;https://github.com/shuhaowu/funnel&#34;&gt;funnel&lt;/a&gt; and
-got the blog working...&lt;/p&gt;</description>
+got the blog working...&lt;/p&gt;
+      
+    </description>
   </item>
   
 </channel>
