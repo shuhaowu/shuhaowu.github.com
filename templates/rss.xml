@@ -11,7 +11,11 @@
     <author>{{ meta.author }}</author>
     <link>http://shuhaowu.com/blog/{{ meta.postid }}.html</link>
     <pubDate>{{ meta.date.strftime("%a, %d %b %Y %H:%M") }}</pubDate>
-    <description>{{ html }}</description>
+    <description>
+      {% autoescape true %}
+      {{ html }}
+      {% endautoescape %}
+    </description>
   </item>
   {% endfor %}
 </channel>
