@@ -13,6 +13,7 @@ dt { font-weight: bold; margin: 6px 0; font-size: 1.3em; }
 dd { margin-left: 10px; }
 
 code { background-color: #DDD; border: 1px solid #AAA; font-weight: normal; }
+pre code { display: block; padding: 1em; line-height: 1.25em; margin-top: 0.85em; margin-bottom: 0.85em; }
 
 .post h1 { font-size: 26px; }
 .post h2 { font-size: 24px; }
