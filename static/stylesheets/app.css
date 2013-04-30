@@ -26,6 +26,7 @@ pre code { display: block; padding: 1em; line-height: 1.25em; margin-top: 0.85em
 .post .meta a:hover { color: #777; }
 .post .meta h1 { margin: 10px 0 10px 0; }
 .post .meta hr { margin: 0 0 10px 0; }
+.post .readmore { text-align: right; font-weight: bold; }
 .post:last-of-type{ margin-bottom: 5px; }
 .pagectrl { float: right; font-size: 13px; color: #444; margin-bottom: 12px; }
 .pagectrl:after { clear: both; }

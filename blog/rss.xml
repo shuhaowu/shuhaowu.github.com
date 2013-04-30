@@ -23,6 +23,7 @@ with involves just some sort of KV store with a very simple way to index
 (Riak calls this secondary index) the data. Furthermore, I host my own apps and
 they are usually hosted on low end boxes with minimal amount of RAM and CPU, so
 I want everything to be as lightweight as possible. &lt;/p&gt;
+
 &lt;p&gt;Don&#39;t get me wrong, Riak solves most of my problems very well. It offers a KV
 store, a secondary index, and it persists to disk (sorry, redis fans). However,
 it is not lightweight. Riak is designed to scale to clusters of machines. It
@@ -113,6 +114,7 @@ Python.&lt;/p&gt;
 first before I jump into doing actual projects. Something like Pong
 or Tank would work well to introduce me to most of the major concepts of a
 language.&lt;/p&gt;
+
 &lt;p&gt;One of the first thing that jumped out at me while writing code in Go is that
 I did not feel like I was writing code with static typing. Most of the time, I
 was able to leverage the power of the &lt;code&gt;:=&lt;/code&gt; operator in Go, which is able to
@@ -215,6 +217,7 @@ There are several advantages for this approach:&lt;/p&gt;
     scaling becomes much easier, especially if you let Github do it for you.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;(There are probably other reasons, but this is not the point of this post.)&lt;/p&gt;
+
 &lt;p&gt;I started making a portfolio sometime ago. I remember using different
 technologies: PHP, Python, raw HTML, and so forth. I never knew about things
 like Jekyll and Pelican until &lt;em&gt;very&lt;/em&gt; recently. All I knew is that I have some

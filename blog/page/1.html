@@ -90,7 +90,7 @@
         </p>
       </div>
 			<div class="content">
-				<p>Time for another exam, so that means another blog post, right? Yeah, I thought
+        <p>Time for another exam, so that means another blog post, right? Yeah, I thought
 so too.</p>
 <p>For those of you that may follow me on <a href="https://github.com/shuhaowu">github</a> 
 (ha! yeah right), you probably know me as a long time Riak user. Personally,
@@ -100,75 +100,8 @@ with involves just some sort of KV store with a very simple way to index
 (Riak calls this secondary index) the data. Furthermore, I host my own apps and
 they are usually hosted on low end boxes with minimal amount of RAM and CPU, so
 I want everything to be as lightweight as possible. </p>
-<p>Don't get me wrong, Riak solves most of my problems very well. It offers a KV
-store, a secondary index, and it persists to disk (sorry, redis fans). However,
-it is not lightweight. Riak is designed to scale to clusters of machines. It
-is designed to perform better when you have more physical nodes. My side
-projects usually have little to no users, so Riak's scaling features are 
-unnecessary for me. </p>
-<p>In fact, I've performed some benchmarks:</p>
-<pre><code>Test performed on a Vagrant box with 512MB of RAM, single core Intel Core
-i5 2410M processor. Disk is SanDisk Extreme SSD 240GB. Riak version is
-1.3.1 2013-04-03 Debian x86_64. Operation system is Debian Wheezy.
 
-All tests done without indexes or links, document is 8000 randomly generated
-characters.
-
-All tests done using Riak Python Client
-
-Average Insertion Speed:
-  HTTP: 9 seconds / 1000 documents
-  PBC: 4.5 seconds / 1000 documents
-Average Fetch Speed:
-  HTTP: 6 seconds / 1000 documents
-  PBC: 3 seconds / 1000 documents
-Average Deletion Speed:
-  HTTP: 14 seconds / 1000 documents
-  PBC: 9.5 seconds / 1000 documents
-</code></pre>
-<p>These are pretty abysmal speeds, even if you are using the PBC interface.
-I for one tried to import the StackOverflow data dump into Riak at one point to do
-map reduce. Needless to say I gave up that attempt pretty quickly.</p>
-<p>It is fairly easy to see why I am getting poor performance with Riak by using
-it this way. For one, I do not have the optimal settings for my setup. I am also
-using Riak in a way that it is not designed for.</p>
-<p>At this point, I began searching for alternatives. Leveldb seemed to be quite a
-neat library, so I began writing an app with it (more on that later). I was 
-using a version of <a href="https://github.com/shuhaowu/riakkit">riakkit</a> 
-(that will be pushed out later, too) for my app and I ported my application to
-leveldb by simply writing <a href="https://github.com/shuhaowu/leveldbkit">leveldbkit</a>.</p>
-<p>So far so good. Leveldb handled in process concurrency really nicely. I was 
-able to implement a crude secondary index with leveldbkit. The only issue I 
-encountered was that I cannot use the auto reloader for my application server
-as it didn't properly cleanup the leveldb instance, which resulted in some lock
-errors. Manually reloading the application server was annoying, but nothing 
-insurmountable.</p>
-<p>At this point I got a little bit bored with Leveldb and how little it offers,
-I was also a little bit annoyed with the fact that only one process could access
-the database at a time. I was planning to write an app with two application 
-servers but share a common database.</p>
-<p>Then I went ahead and wrote <a href="https://github.com/shuhaowu/levelupdb">levelupdb</a>.
-Levelupdb is a database that clones the Riak API but it is designed for low end
-boxes. This means it needs to be pretty fast and relatively lightweight. I wrote
-it using Go and it is currently in a semi functional state (no riak links, no 
-map reduce). It does not (and will not) scale to multinodes (although you could
-have multiple processes connecting to the same database now as levelupdb acts
-essentially as a governor for the underlying leveldbs).</p>
-<p>When you clone an API, everything that is written for that API can be 
-automatically used for your thing as well. Since levelupdb cloned the Riak API 
-(with the exception of a map reduce interface at the moment, although I will
-look into the JS M/R integration soon), all existing clients for Riak should
-work with levelupdb as well (I use the python client to test). Applications built
-on those clients will work as well, as long as if they do not invoke something
-explicitly not included in levelupdb, such as the erlang map reduce. Similarly, 
-if you use levelupdb as your side projects' database and if your side project
-hits the front page of HN, you can easily spin up a couple virtual machines 
-and port your entire application over to Riak without changing a single line of 
-code while adding features such as fault tolerance, always available, and replication.</p>
-<p>Right now levelupdb is still in its infancy. Hopefully in the coming weeks I
-could make it feature complete (completely compatible with Riak) and optimize
-where necessary. At that point, I'll try to blog again (and hopefully without 
-exams this time!).</p>
+        <p class="readmore"><a href="/blog/levelupdb_intro.html">&gt;&gt; Read more</a></p>
 			</div>
     </div>
 	
@@ -187,7 +120,7 @@ exams this time!).</p>
         </p>
       </div>
 			<div class="content">
-				<p>It seems like I have gotten into the bad habit of coding and blogging before exams.
+        <p>It seems like I have gotten into the bad habit of coding and blogging before exams.
 My first exam is in 12 days and I have barely started studying (actually,
 I barely <em>know</em> the content).</p>
 <p>That aside, I've taken the last few days to learn Go. I've heard a lot of good
@@ -197,81 +130,8 @@ Python.</p>
 first before I jump into doing actual projects. Something like Pong
 or Tank would work well to introduce me to most of the major concepts of a
 language.</p>
-<p>One of the first thing that jumped out at me while writing code in Go is that
-I did not feel like I was writing code with static typing. Most of the time, I
-was able to leverage the power of the <code>:=</code> operator in Go, which is able to
-infer the type of the right hand side expression for you. You do have to specify
-the types of all function arguments and returns, but I already do that as
-documenting functions in Python usually involve variable types.</p>
-<p>I also enjoy all the restrictions that Go poses when compiling programs. I've
-seen people say that they don't like the fact that Go won't compile if there is
-an unused variable, or an unused import. I for one actually like this limitation
-as it allowed me to write cleaner code in general, free of left overs from a
-previous iteration of the code, or something like that.</p>
-<p>Another thing is that I love is how easy it is to use libraries, whether it be
-standard libraries or third party ones. Something like
-<code>import "github.com/jmhodges/levigo"</code> not only makes referencing the
-origin of a package easy, <code>go get -u</code> can actually grab all the
-dependencies automatically without having something like requirements.txt.
-On top of that, if you go into your <code>$GOPATH</code> and take a look, you'll see that
-all the libraries are in folders exactly as you have specified. This means no
-more messy Makefiles or the use of an IDE.</p>
-<p>Speaking of which, editor plugins are lacking for Go. If you use vim,
-emacs, or Sublime Text, you're in luck. Apparently there are awesome extensions
-that does what people want. However, if you're like me and use something that's not
-in the above three (even though I'm writing this blog post in vim), you might
-have some trouble getting support. I personally use Komodo Edit and its support
-for Go is <em>abysmal</em> (I use the plugin from <a href="https://github.com/trentm/komodo-go">here</a>).
-All I have is syntax highlighting (kinda). There is no autoindent on <code>{</code> and
-no inline function lookups. Syntax checking is flaky and only works occasionally.</p>
-<p>(For those that wants me to switch to vim, emacs, or Sublime: I don't get more
-productive with vim or emacs, especially when there is a lot of files, and I'm
-not paying for my editor.)</p>
-<p>Documentation is excellent. While its "docstring" format makes the inline
-documentations look exactly like regular comments, the generated documents are
-beautifully consistent. http://godoc.org is awesome as you can just append
-the url of most libraries and get all your documentation needs.
-If that's not possible, you could always fall back to <code>go doc</code>.
-There is no inconsistent styles (for things like pages) like in Python, and
-generating docs <em>just works</em> (in the sense that you don't need to, as <code>go doc</code>
-takes care of that for you).</p>
-<p>I like the idea of statically linking everything into a single binary. While
-this is not possible in all cases, it really simplifies deployment as you just
-need to push out one binary and be done with it.</p>
-<p>This is probably not everything I've encountered, but these are most of the
-stuff that stood out. After writing about ~1k LOC during
-times when I should be listening and taking note (yay engineering school~),
-I can definitely go on writing more (the reaction was different when
-I learned Java).</p>
-<p>Some stuff I miss as a Python developer: error handling, tuples,
-list comprehensions, ternary operator, default arguments, and real OOP.
-Regarding OOP: I'm not a big OOP fan myself, but sometimes it is handy. Right
-now initializing a struct is a nightmare as everyone seems to have their own
-conventions, such as <code>obj := NewObject()</code>,
-<code>obj := new(Object) obj.Init()</code>, <code>obj := &amp;Object{} obj.Initialize()</code>
-and so forth.</p>
-<p>In case we forgot, I made a game with Go. It's called Go Pong. This is actually
-a somewhat difficult task due to the lack of 2D libraries.
-You can't run it because I had to use
-a custom hack in order to make the game work. I don't have anywhere to host
-the linux amd64 binary as of the moment. There is, however, a video of the game
-in action:</p>
-<iframe width="640" height="360" src="https://www.youtube.com/embed/sWwlvhQ1SdU?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
 
-<p>The source code is at https://github.com/shuhaowu/gopong if anyone is interested.
-It makes use of a <code>SetRGBA</code> method. This method is a custom made one as <code>CopyRGBA</code>
-takes way too long and slows the FPS to something like 20 as oppose to being
-locked at 30.</p>
-<p>As a side note, the collision detection is horrible, as you can probably already
-tell.</p>
-<p>So what's next on the radar? I'm creating a nifty database (at least in my
-opinion) called <a href="https://github.com/shuhaowu/levelupdb">Levelupdb</a>. The goal
-is a high performance, low footprint database server that is API-compatible with
-Riak. However, the server is targeting low end boxes (&lt;=512MB of RAM, VPSes
-you get from LEB) and side projects that do not have a lot of users.</p>
-<p>In the mean while, however, I'm going to bed.</p>
-<p><strong>Edit</strong>: The Go plugin for Komodo Edit just got autoindent. You also need to
-config gocode to be in Komodo's path in order for autocompletion to work.</p>
+        <p class="readmore"><a href="/blog/playing_with_go.html">&gt;&gt; Read more</a></p>
 			</div>
     </div>
 	
@@ -290,7 +150,7 @@ config gocode to be in Komodo's path in order for autocompletion to work.</p>
         </p>
       </div>
 			<div class="content">
-				<p>Hackers nowadays are all moving to static pages for their blogs/portfolios. 
+        <p>Hackers nowadays are all moving to static pages for their blogs/portfolios. 
 There are several advantages for this approach:</p>
 <ol>
 <li>Ease of use: No need to edit in a crappy WYSIWYG editor that generates HTML. 
@@ -306,58 +166,8 @@ There are several advantages for this approach:</p>
     scaling becomes much easier, especially if you let Github do it for you.</li>
 </ol>
 <p>(There are probably other reasons, but this is not the point of this post.)</p>
-<p>I started making a portfolio sometime ago. I remember using different
-technologies: PHP, Python, raw HTML, and so forth. I never knew about things
-like Jekyll and Pelican until <em>very</em> recently. All I knew is that I have some
-stuff I wanna create and ship. So I did. I made things that's embarassing, 
-used terrible practises, and learned to hate technologies (*cough* php).
-So about a year ago (Feb 13th 2012), I took a little bit of time and 
-wrote <a href="https://github.com/shuhaowu/Funnel/commit/b89c79a4891c30a9d474a647cee9ca25c09012ee">Funnel</a>.</p>
-<p>It was about 80 lines of code and it didn't do anything other than reading some
-markdown files and json files in order to put up a static site. I then built a 
-my portfolio with the help of Funnel and was quite satisfied.</p>
-<p>Over the year, I became increasingly dissatisfied with Funnel. I 
-want to give blogging a go again, but Funnel does not have the capability for
-that yet. I won't go back to self hosted solution or any sort of CMS as I really
-like how the github + static pages setup work. At this point, I have learned 
-about things like Jekyll and Pelican and started poking it around. </p>
-<p>First I looked at Jekyll. It didn't really pertain to me. The whole relied on
-the Ruby stack. While I don't mind Ruby myself, I just don't have extra time
-at the moment to learn everything behind it. I wanted to work with something
-that I'm already familiar in and can easily customize without jumping around in
-documentations. Also, while I first looked up Jekyll, It wasn't clear to me on
-how to author static pages using markdown and the package seemed to be geared towards 
-blogging, which is the opposite of what I want: something geared towards static
-pages but has blogging as a bonus.</p>
-<p>Pelican came next. kernel.org is powered by it now
-so it seemed like a reasonable choice. While I read through the docs, the 
-first thing that jumped out at me is, again, how
-blog focused it is. The second heading of the documentation is "Kickstart a 
-blog". The docs also wanted me to get a blogroll in my settings file (first of all, 
-why a blogroll. Secondly, why in my settings file! If I want one I can just 
-insert it into my blog template). It also wanted me to get a tags page and so forth.
-I understand that these are features that could be good to include, but why are
-the <em>required</em>? Can't the generator just graciously fall back if tags.html is
-not found?</p>
-<p>To top it all off, both Pelican and Jekyll seems bloated. Sure, it may offer a
-lot of features (and lack some that I want, as I never found out how to have 
-multiple sections in one page for both), but I fail to see the justification
-of having something so hefty. I thought that since programmers are the only ones
-using these static site generators (after all, they're not too friendly to use
-for normal folks), we would want something that we can hack around to our
-likings. </p>
-<p>So at the end of the day I just rewrote Funnel to include blogs. It's
-definitely <a href="https://github.com/shuhaowu/Funnel/blob/master/funnel">not pretty</a>.
-There are a lot of features that's lacking. It can also be bloated as it
-relies on a crap load of libraries (Flask, Frozen-Flask and their dependencies).
-However the important thing is that I can now do what I want to do with ease 
-and don't have to deal with things like <code>rake post title="My blawg post"</code>
-(real men (or women, or men identified with women... and so forth) don't use
-commands to generate a text file, they <code>touch</code> it instead?) and tags.html.</p>
-<p>On top of all of that, reinventing the wheel was actually quite fun. I rewrote 
-funnel and made it feature complete for me in one night, before a midterm. That
-kind of atmosphere is exciting and awesome in my view, even though it may promote 
-<a href="http://chinpen.net/blog/2013/02/hackathons-are-bad-for-you/">bad life style</a>.</p>
+
+        <p class="readmore"><a href="/blog/building_funnel.html">&gt;&gt; Read more</a></p>
 			</div>
     </div>
 	
@@ -376,10 +186,11 @@ kind of atmosphere is exciting and awesome in my view, even though it may promot
         </p>
       </div>
 			<div class="content">
-				<p>What is this? A blog? :O</p>
+        <p>What is this? A blog? :O</p>
 <p>Instead of studying (4 hours before an exam that I'm gonna <em>fail</em>), I got this
 site to work with the new <a href="https://github.com/shuhaowu/funnel">funnel</a> and
 got the blog working...</p>
+        <p class="readmore"><a href="/blog/helloworld.html">&gt;&gt; Read more</a></p>
 			</div>
     </div>
 	
