@@ -22,7 +22,8 @@
         </p>
       </div>
 			<div class="content">
-				{{ html }}
+        {{ meta.exerpt }}
+        <p class="readmore"><a href="/blog/{{ meta.postid }}.html">&gt;&gt; Read more</a></p>
 			</div>
     </div>
 	{% endfor %}

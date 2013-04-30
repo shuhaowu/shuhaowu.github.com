@@ -18,6 +18,8 @@ There are several advantages for this approach:
 
 (There are probably other reasons, but this is not the point of this post.)
 
+--------------------------------------------------------------------------------
+
 I started making a portfolio sometime ago. I remember using different
 technologies: PHP, Python, raw HTML, and so forth. I never knew about things
 like Jekyll and Pelican until *very* recently. All I knew is that I have some

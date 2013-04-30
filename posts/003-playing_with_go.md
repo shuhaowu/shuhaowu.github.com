@@ -14,6 +14,8 @@ first before I jump into doing actual projects. Something like Pong
 or Tank would work well to introduce me to most of the major concepts of a
 language.
 
+--------------------------------------------------------------------------------
+
 One of the first thing that jumped out at me while writing code in Go is that
 I did not feel like I was writing code with static typing. Most of the time, I
 was able to leverage the power of the `:=` operator in Go, which is able to

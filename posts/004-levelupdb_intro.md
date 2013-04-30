@@ -13,6 +13,8 @@ with involves just some sort of KV store with a very simple way to index
 they are usually hosted on low end boxes with minimal amount of RAM and CPU, so
 I want everything to be as lightweight as possible. 
 
+--------------------------------------------------------------------------------
+
 Don't get me wrong, Riak solves most of my problems very well. It offers a KV
 store, a secondary index, and it persists to disk (sorry, redis fans). However,
 it is not lightweight. Riak is designed to scale to clusters of machines. It
