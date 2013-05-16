@@ -1,5 +1,7 @@
 title: CV
 
+*Want a PDF/nicer version of my resume? Send me an email at shuhao [at] shuhaowu [dot] com.*
+
 #### Skills and Abilities ####
 
  - Languages: Python, CoffeeScript, JavaScript, Go, Java
