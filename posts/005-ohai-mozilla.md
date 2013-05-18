@@ -1,6 +1,5 @@
 title: Ohai Mozilla!
-date: 2013-05-18 12:00
-published: no
+date: 2013-05-18 12:17
 
 Ohai Mozilla! As of about March this year, Mozilla decided that I was cool
 enough to join their awesome team in Mountain View, California as a summer
