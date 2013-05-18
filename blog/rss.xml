@@ -7,6 +7,32 @@
   <description>My random thoughts.</description>
   
   <item>
+    <title>Ohai Mozilla!</title>
+    <author>Shuhao</author>
+    <link>http://shuhaowu.com/blog/ohai-mozilla.html</link>
+    <pubDate>Sat, 18 May 2013 12:17</pubDate>
+    <description>
+      
+      &lt;p&gt;Ohai Mozilla! As of about March this year, Mozilla decided that I was cool
+enough to join their awesome team in Mountain View, California as a summer
+intern. I still can&#39;t really believe that this is happening, even as I sit in 
+an airport waiting for my flight to Chicago (and then San Jose).&lt;/p&gt;
+&lt;p&gt;I never actually seriously thought about working in the tech industry this
+summer until some of my friends suggested that I should apply for the hell of it.
+A special shout out to &lt;a href=&#34;http://ryanseys.com&#34;&gt;@ryanseys&lt;/a&gt; as he gave me the 
+idea of applying to Mozilla (who knew they hired, right?) (disclaimer: he is
+a Mozillian too!).&lt;/p&gt;
+&lt;p&gt;I will be interning with the web development team and I look forward to the next
+15 weeks! If anyone is in the Bay Area, feel free to &lt;a href=&#34;/contact&#34;&gt;give me a shout&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;img&#34;&gt;
+  &lt;img src=&#34;/static/blog/yow.jpg&#34; /&gt;
+  &lt;p&gt;Here&#39;s a random shot of the view at the Ottawa Airport&lt;/p&gt;
+&lt;/div&gt;
+      
+    </description>
+  </item>
+  
+  <item>
     <title>Riak, Leveldb, and the birth of Levelupdb</title>
     <author>Shuhao</author>
     <link>http://shuhaowu.com/blog/levelupdb_intro.html</link>
