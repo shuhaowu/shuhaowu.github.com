@@ -13,6 +13,13 @@ title: CV
 #### Major Projects/Experience ####
 
 <ul>
+  <li id="mozilla">
+    <strong>Mozilla</strong>: Developer on the SUMO team
+    <ul>
+      <li>Position: Web Dvelopment Intern</li>
+      <li>May 2013 - Present</li>
+    </ul>
+  </li>
   <li id="csgv">
     <strong>Colorado School Grade Visualizer</strong>: Data visualizer for Colorado School Grades/Colorado Department of Education
     <ul>
