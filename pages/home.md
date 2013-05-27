@@ -5,10 +5,10 @@ template: homepage.html
 Welcome!
 --------
 My name is Shuhao Wu. I'm an Aerospace Engineering student at Carleton
-University and develop software in my spare time.
+University. I'm also currently working at Mozilla as a web development intern.
 
 This website is setup to showcase all my things that I made over the years.
-Please feel free to look around for yourself! 
+Please feel free to look around for yourself!
 
 === mainbox ===
 
@@ -43,7 +43,7 @@ Current efforts:
 
  - [Levelupdb](https://github.com/shuhaowu/levelupdb) is a database server that
    is built on leveldb and is a clone of Riak, except it is designed to run on
-   a single, low powered node (perfect for your side projects). The API is 
+   a single, low powered node (perfect for your side projects). The API is
    compatible with Riak so you can easily upgrade.
  - [Riakkit](https://github.com/shuhaowu/riakkit) is an object mapper for riak
    in python.
