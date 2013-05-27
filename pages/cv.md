@@ -16,7 +16,8 @@ title: CV
   <li id="mozilla">
     <strong>Mozilla</strong>: Developer on the SUMO team
     <ul>
-      <li>Position: Web Dvelopment Intern</li>
+      <li>Position: Web Development Intern</li>
+      <li>Currently working on <a href="http://support.mozilla.org">SUMO</a> and an offline version of that for Firefox OS.</li>
       <li>May 2013 - Present</li>
     </ul>
   </li>
