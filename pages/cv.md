@@ -64,7 +64,7 @@ title: CV
 
 #### Education ####
  - **Carleton University (Bachelor of Engineering, Aerospace, 2012-2016)**
-     - Project manager of Ardroid (autonomous rover) under the Carleton Robotics Club
+     - Carleton Robotics Club
      - Member of the Software and Computer Engineering Society of Carleton University
  - **Lo-Ellen Park Secondary School (High school diploma, 2008-2012)**
      - <span class="has-tip" title="Scored 75/100">95th percentile</span> in Grade 12 Euclid Math Contest in Grade 11, 2011
