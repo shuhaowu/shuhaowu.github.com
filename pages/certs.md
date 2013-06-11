@@ -15,6 +15,6 @@ Privacy is a big deal. When systems such as [PRISM](http://en.wikipedia.org/wiki
 
 Since this website is completely unencrypted, it is feasible for an active attacker to alter the content of this page. Hence, I have published all of my certificates and their fingerprints on Github. Github is currently SSL-only and should be able to be trusted.
 
-[Link to Certificates](https://github.com/needs/to/boot/strap)
+<p class="certlink"><a href="https://github.com/shuhaowu/shuhaowu.github.com/tree/master/static/certs">Link to Certificates</a></p>
 
 It is recommended that you do **not** import my certificate authority unless it becomes necessary (such as when you connect to multiple services that I offer) and verify the fingerprints as needed.
