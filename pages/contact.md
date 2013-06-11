@@ -1,7 +1,5 @@
 title: Contact Me
 
-### Contact me ####
-
 Simplest way would be directly emailing me at shuhao [ at ] shuhaowu [ dot ] com.
 Someone squatted shuhao.com or else my email would have been simpler.
 
