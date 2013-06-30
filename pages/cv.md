@@ -19,7 +19,7 @@ title: CV
       <li>Position: Web Development Intern</li>
       <li>Currently working on <a href="http://support.mozilla.org">SUMO</a> and an offline version of that for Firefox OS.</li>
       <li>May 2013 - Present</li>
-      <li><a href="https://github.com/shuhaowu/osumo">Code</a></li>
+      <li><a href="https://github.com/mozilla/osumo">Code</a></li>
     </ul>
   </li>
   <li id="csgv">
