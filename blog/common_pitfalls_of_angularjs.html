@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
+	<meta charset="utf-8" />
+
+	<!-- Set the viewport width to device width for mobile -->
+	<meta name="viewport" content="width=device-width" />
+
+	<title>Common pitfalls of AngularJS - Shuhao</title>
+
+	<!-- Included CSS Files -->
+	<link rel="stylesheet" href="/static/stylesheets/foundation.css">
+	<link rel="stylesheet" href="/static/stylesheets/app.css">
+
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" href="/static/stylesheets/ie.css">
+	<![endif]-->
+
+
+	<!-- IE Fix for HTML5 Tags -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+
+	<div class="container master">
+
+		<div class="row show-for-small">
+			<ul class="nav-bar vertical">
+				
+				<li><a href="/">Home</a></li>
+				
+				<li><a href="/showcase/">Showcase</a></li>
+				
+				<li><a href="/cv/">CV</a></li>
+				
+				<li class="active"><a href="/blog/">Blog</a></li>
+				
+				<li><a href="/certs/">Certificates</a></li>
+				
+				<li><a href="/contact/">Contact Me</a></li>
+				
+			</ul>
+		</div>
+
+		<div class="row">
+			<div class="twelve columns">
+				<nav class="hide-for-small">
+					<ul>
+						
+						<li><a href="/" >Home</a></li>
+						
+						<li><a href="/showcase/" >Showcase</a></li>
+						
+						<li><a href="/cv/" >CV</a></li>
+						
+						<li><a href="/blog/" class="active">Blog</a></li>
+						
+						<li><a href="/certs/" >Certificates</a></li>
+						
+						<li><a href="/contact/" >Contact Me</a></li>
+						
+					</ul>
+				</nav>
+				<h1 class="light-weight">Shuhao Wu</h1>
+				<hr />
+			</div>
+		</div>
+
+		
+<div class="row">
+  <div class="twelve columns">
+    <div class="panel post">
+      <div class="meta">
+        <h1><a href="/blog/common_pitfalls_of_angularjs.html">Common pitfalls of AngularJS</a></h1>
+        <hr />
+        <p class="metameta">Written by Shuhao on 2013-07-05 22:52</p>
+      </div>
+      <div class="content">
+        <p><a href="http://angularjs.com">AngularJS</a> is pretty awesome. It provides a set of tools
+that allows for the creation of a product very very fast. At this point in
+time, I've worked on two projects with it (and this is not just a simple todo
+list app for demonstration. Rather, it has multiple components, views, and many
+different functionalities) and I have to say, this will be my frontend framework
+of choice for the foreseeable future. The biggest reason for this, for me, is
+that I do not have to write a tonne of DOM manipulation code and that saves a
+lot of time and headaches when developing a web app.</p>
+<p>As good as AngularJS might be, the documentation is lacking on many fronts.
+While the overall documentation should get you to approximately the right place,
+it often leaves beginners frustrated as a key concept is not clearly documented,
+if documented at all. I'm going to try to address this, based on hours of
+frustration here and there. I'm sure reading the manual will give you most of
+this as well, but this couldn't hurt. :)</p>
+
+<h2>#1: No module named 'myapp'</h2>
+<p>This is a problem that I've personally had and have seen some people on irc
+have problem with. Incidentally, this one is also somewhat
+<a href="https://www.google.com/search?q=angularjs+no+module">difficult to search</a>
+for as well. There are many possible reasons why this would happen. Here are
+some popular choices (I have made some of these mistakes):</p>
+<p><strong>Instead of having <code>ng-app="myapp"</code>, you just have <code>ng-app</code> or
+<code>ng-app="something else"</code>.</strong></p>
+<p>This causes a problem as angular expectes whatever that's fed to <code>ng-app</code>
+to be a module.</p>
+<p><strong>Solution</strong>: Put <code>ng-app="myapp"</code> at the appropriate location.</p>
+<hr />
+<p><strong>You only have <code>angular.module("myapp")</code> and never
+<code>angular.module("myapp", [dep1, dep2])</code></strong></p>
+<p>As far as I understand, the latter actually creates a new module, the
+former only finds an existing module. Of course Angular won't find the
+module if you never defined it!</p>
+<p><strong>Solution</strong>: Declare your module with <code>angular.module("myapp", [...])</code>.</p>
+<hr />
+<p><strong>You have the <code>angular.module("myapp", [dep1, dep2])</code> and
+<code>angular.module("myapp")</code> in the wrong order.</strong></p>
+<p>You must declare the module first before you can use it. While in most
+scenarios angular does not care about the order due to its dependency
+injection system, this is one case where the order matters!</p>
+<p><strong>Solution</strong>: Always declare your module before using it!</p>
+<p>Quick story: I had a build system that just included js files with random
+order. It was okay for my machine as for some reason the file that
+declared the module is always included first. However, when a friend of
+mine started to work on the project, he kept getting this error. We
+eventually discovered that the JS file was included in a different order
+on his machine and the file that declared the module was one of the last
+ones to load.</p>
+<h2>#2: Unknown provider ... or you can't find your controllers/services/whatever</h2>
+<p>There actually could be a lot of reasons why this happens, I probably won't
+list all of this. Here is the list that I've encountered:</p>
+<p><strong>You have multiple <code>angular.module("myapp", [])</code> statements.</strong></p>
+<p>So what happens here is each time you give the <code>module</code> function a second
+argument, you actually end up redeclaring (and therefore overwritting)
+your module. At this point, you lose all your controller, services, etc.</p>
+<p><strong>Solution</strong>: Make sure you declare your module only once at essentially
+the beginning of your JavaScript, right after AngularJS is loaded.
+Remember, declaring a module Angular means that you have two arguments to
+the function <code>.module</code>. For example, you can't spread out your
+dependencies over multiple <code>angular.module</code> statement like this:</p>
+<pre><code>angular.module("app", ["dep1", "dep2"]);
+angular.module("app", ["dep3", "dep4"]);
+</code></pre>
+<p>Instead, do this</p>
+<pre><code>angular.module("app", ["dep1", "dep2", "dep3", "dep4"]);
+</code></pre>
+<hr />
+<p><strong>You didn't actually inject your module into your main app module.</strong></p>
+<p>If you have multiple modules, they won't know about each other until you
+inject them all into your main app module (or whatever, you get the
+point, hopefully :P).</p>
+<p><strong>Solution</strong>: In your <code>angular.module("myapp", [dep1, dep2])</code>, make sure
+that list includes wherever your module lives.</p>
+<hr />
+<p><strong>You tried to inject <code>ngResource</code> or <code>ngCookies</code> when you wanted to service.</strong></p>
+<p>That's the module name, not the name of the actual service.</p>
+<p><strong>Solution</strong>: inject <code>ngResource</code> and <code>ngCookies</code> when declaring your
+modules. When you want to use it, inject <code>$resource</code> and <code>$cookies</code>.</p>
+<h2>#3: Getting the controller code to run</h2>
+<p>There are a lot of different issues that I've run into with this and seen
+others run into.</p>
+<p><strong>Your controller in the $routeProvider is telling you that it is undefined.</strong></p>
+<p>You're probably using the literal Controller name (so like,
+<code>$r...when({controller: MyController})</code>). You should be using the string
+literal. Angular can't find <code>MyController</code> as it is as it say, <code>undefined</code>.</p>
+<p><strong>Solution</strong>: Use a string literal so Angular can find the appropriate
+controller: <code>$....when({controller: "MyController"})</code></p>
+<hr />
+<p><strong>Your controller is not getting run and you're using partials</strong></p>
+<p>One problem I had is that the partial is actually empty. This means that there
+is nothing for the controller to bind to and therefore it will not run.</p>
+<p><strong>Solution</strong>: put a <code>&lt;div&gt;&lt;/div&gt;</code> in your partial.</p>
+<hr />
+<p><strong>Your controller is getting fired twice and you're using partials</strong></p>
+<p>AngularJS implicitly binds to your partial. If your partial has a root element
+that also has <code>ng-controller</code>, it will be initialized again. Something like
+this:</p>
+<p>JS file:</p>
+<pre><code>angular.controller("MyController", ...);
+$routeProvider.when("...", {
+  controller: "MyController",
+  templateUrl: "partial.html"
+});
+</code></pre>
+<p>Partial file</p>
+<pre><code>&lt;div ng-controller="MyController"&gt;&lt;/div&gt;
+</code></pre>
+<p><strong>Solution</strong>: remove the <code>ng-controller</code> from your html.</p>
+<h2>#4: Problem with view renderings and what not</h2>
+<p><strong>Your view is not updating, deferred is not resolving/rejecting, basically
+that kinda problem where Angular says it will do something but does not</strong></p>
+<p>This is a very broad problem. I always had trouble because I was doing
+something outside of the angular world (maybe an onsuccess handler from
+IndexedDB, <code>setTimeout</code>, or anything else not wrapped by Angular).</p>
+<p><strong>Solution</strong>: You need to read into <a href="http://docs.angularjs.org/api/ng.$rootScope.Scope">$apply</a>.
+This means that you need to wrap in your code in <code>$apply</code>. Don't overuse this
+as it is unnecessary and may cause other issues. Also: use <code>$timeout</code> instead
+of <code>setTimeout</code>.</p>
+<hr />
+<p><strong>$digest cycle already in progress</strong></p>
+<p>This means that you're trying to use <code>$apply</code> when Angular is already
+<code>$apply</code>ing. Usually a sign that your job (I assume you're calling something
+async but not via angular) is finishing too fast.</p>
+<p><strong>Solution</strong>: use <a href="https://github.com/mozilla/osumo/blob/master/static/js/develop/app.js#L112">$safeApply</a>.
+Some say you can use <code>$timeout(..., 0);</code>. I have not tried that personally.</p>
+<hr />
+<p><strong>Your view won't show up when first hit it</strong></p>
+<p>I'll leave you with a link: http://stackoverflow.com/questions/17309488/angularjs-initial-route-controller-not-loaded-subsequent-ones-are-fine</p>
+<p><strong>Solution</strong>: Don't use <code>$apply</code> in any initialization code. If you need that,
+use <code>$timeout(..., 0)</code> instead.</p>
+      </div>
+    </div>
+    <div class="pagectrl"><a href="/blog"><< Back to Blog</a></div>
+    <script>
+    var idcomments_acct = 'b9dac90709b35ebb9ee6fda13a5512e4';
+    var idcomments_post_id = "common_pitfalls_of_angularjs";
+    var idcomments_post_url = "http://shuhaowu.com/blog/common_pitfalls_of_angularjs.html";
+    </script>
+    <span id="IDCommentsPostTitle" style="display:none"></span>
+    <script type='text/javascript' src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+  </div>
+</div>
+
+
+		<footer>
+      <p>Shuhao 2013</p> <p>All content licensed under CC-BY-SA-NC 3.0</p>
+		</footer>
+
+  </div>
+	<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-9814837-6']);
+	_gaq.push(['_setDomainName', '.shuhaowu.com']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	</script>
+
+</body>
+</html>
