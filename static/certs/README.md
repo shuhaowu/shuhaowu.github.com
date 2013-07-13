@@ -25,3 +25,8 @@ fingerprints.
       desired, you can send me an email encrypted with this public key. Please
       note that email leaks metadata (all headers, including from, to, subject
       and so forth) and those data will **not** be private.
+ - shuhaowu.com.crt : Certificate for shuhaowu.com. Valid until June 16th 2013
+    - MD5 Fingerprint: 49 2C 1C 99 C1 FD 93 FD 94 CE B2 C6 8E F1 27 9F
+    - SHA1 Fingerprint: E3 B8 F3 E7 A1 42 1D 2E 68 D2 02 08 AF F8 06 45 8C CF E1 CB
+    - Note: This is signed by StartSSL and therefore should work on all major
+      browsers out of the box.
