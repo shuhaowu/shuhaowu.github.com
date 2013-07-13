@@ -37,7 +37,7 @@ software as it promotes so much innovation! (Maybe we should bring this to
 aerospace...)
 
 To give back to the open source community as I benefited a great deal from it,
-code that I've written is also online on [Github](https://github.com/shuhaowu)
+code that I've written is also online on [Github](https://github.com/shuhaowu).
 
 Current efforts:
 
@@ -56,10 +56,11 @@ Current efforts:
 
 #### Side projects ####
 Side projects are awesome. I usually have a couple going on at the same time.
-Right now I'm in the process of creating an app that serves as an
-extension to Google Calendar and hopefully that will be out soonish.
+Right now I'm working on a web app that's a rewrite of 
+[spm](https://github.com/shuhaowu/spm) and it should be released soon.
 
 Besides coding, I try to do some hardware hacks as well. Once I get some time,
 I'm going to sit down and model a couple of hardware modifications/additions
 to a music box set.
+
 === right ===
