@@ -36,6 +36,3 @@ pre code { display: block; padding: 1em; line-height: 1.25em; margin-top: 0.85em
 .pagectrl a { font-weight: bold; }
 .content .img { text-align: center; margin-bottom: 17px; }
 .content .img p { font-size: 12px; padding: 0; margin: 5px 0 0 0; }
-
-.idc-share { display: none !important; }
-#IDCommentsHeadLogin { display: none !important; }
