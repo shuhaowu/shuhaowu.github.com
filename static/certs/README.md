@@ -30,3 +30,5 @@ fingerprints.
     - SHA1 Fingerprint: E3 B8 F3 E7 A1 42 1D 2E 68 D2 02 08 AF F8 06 45 8C CF E1 CB
     - Note: This is signed by StartSSL and therefore should work on all major
       browsers out of the box.
+ - shuhaowu.asc: My GPG key. Also available on the Ubuntu key server.
+    - Fingerprint: D584 F6E5 3DCB 1453 FF4C E717 CE40 8530 F55A C3D0
