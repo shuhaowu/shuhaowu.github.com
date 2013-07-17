@@ -1,0 +1,50 @@
+{% extends "master.html" %}
+{% set name = "blog" %}
+{% set title = title|default("Blog") -%}
+{% block main %}
+
+<div class="row">
+	<div class="nine columns">
+		{% block postarea %}
+    {% for meta, html in posts %}
+    <div class="panel post">
+      <div class="meta">
+        <h1><a href="/blog/{{ meta.postid }}.html">{{ meta.title }}</a></h1>
+        <hr />
+        <p class="metameta">
+        Written by {{ meta.author }} on {{ meta.date.strftime("%Y-%m-%d %H:%M") }}
+        </p>
+      </div>
+			<div class="content">
+        {{ meta.exerpt }}
+        <p class="readmore"><a href="/blog/{{ meta.postid }}.html">&gt;&gt; Read more</a></p>
+			</div>
+    </div>
+	{% endfor %}
+		<div class="pagectrl">
+			{% if previous_page %}
+      <a href="/blog/page/{{ previous_page }}.html">Older Entries</a> |
+      {% endif %}
+      Page <a href="/blog/page/{{ current_page }}.html">{{ current_page }}</a> of {{ total_pages }}
+      {% if next_page %}
+      | <a href="/blog/page/{{ next_page }}.html">Newer Entries</a>
+      {% endif %}
+		</div>
+	{% endblock %}
+	</div>
+  <div class="three columns">
+    <div class="panel">
+      <p>Welcome to my blog where I post random thoughts that I have.</p>
+			<p>Did I sell that well? If so, you can <a href="/blog/rss.xml">subscribe (RSS)</a>.</p>
+			<hr />
+			<h5>Latest posts</h5>
+			<ol>
+			{% for meta, html in all_posts[:5] %}
+				<li><a href="/blog/{{ meta.postid }}.html">{{ meta.title }}</a></li>
+			{% endfor %}
+			</ol>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
