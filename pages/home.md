@@ -2,6 +2,7 @@ title: Home
 template: homepage.html
 
 === mainbox ===
+
 Welcome!
 --------
 My name is Shuhao Wu. I'm an Aerospace Engineering student at Carleton
@@ -31,6 +32,7 @@ Current interests:
 === middle ===
 
 #### Open Source ####
+
 Open source is awesome. There is nothing better than free (as in freedom)
 software as it promotes so much innovation! (Maybe we should bring this to
 aerospace...)
@@ -54,6 +56,5 @@ Besides coding, I try to do some hardware hacks as well. Once I get some time,
 I'm going to sit down and model a couple of hardware modifications/additions
 to a music box set.
 
-
-
 === right ===
+
