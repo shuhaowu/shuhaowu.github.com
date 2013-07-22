@@ -1,11 +1,11 @@
 title: It is your choice to help Eve
-published: no
+published: yes
 
 [Recent revelations][relevations] about [the NSA spying on everyone](wiki-
 prism) caused many people from the tech community to think about the state of
-the current information security. I have spent a considerable amount of time
-over the past month or so thinking and discussing about the matter and came up
-with some interesting revelations.
+the current information security. I have spent sometime over the past months
+discussing and thinking about this with many different people and I want to
+offer some of my thoughts on the subject.
 
 [relevations]: http://www.guardian.co.uk/world/2013/jun/06/us-tech-giants-nsa-data
 [wiki-prism]: http://en.wikipedia.org/wiki/PRISM_%28surveillance_program%29
@@ -13,8 +13,9 @@ with some interesting revelations.
 There are [already][r1] [many][r2] [reports][r3] telling us what the NSA is
 doing, so I will refrain from doing the same. There are also
 [plenty][r4] of [articles][r5] that describes the implications of PRISM. These
-are not what this post is about. Instead, I want to talk about the people
-aspect of surveillance.
+are not what this post is about. Instead, I want to focus on the people who
+are involved in this (which happens to be everyone) as ultimately this is what
+the whole thing is about.
 
 [r1]: http://www.washingtonpost.com/wp-srv/special/politics/prism-collection-documents/
 [r2]: http://www.guardian.co.uk/world/2013/jun/06/nsa-phone-records-verizon-court-order
@@ -28,26 +29,29 @@ Maybe you forget, or at least I don't really see it being mentioned in the
 reports of the subject matter, that the NSA is not really a single human being,
 but rather, a collection of human beings. Many of them are not aware that what
 they are doing is harmful to the society as a whole as they may not have the
-whole picture before this. There are probably a [handful][p1] of [people][p2]
-that know about the extent of the Thought Police, but they are human beings
-too, subject to everything that are subject to us in terms of being human.
-However, we can assume that the vast majority of those working for the NSA are
-"good" and probably do not condone programs such as PRISM as they probably do
-not know about it (and this could happen if they are working on it).
+whole picture while doing their jobs due to strict access control. There are
+probably a [handful][p1] of [people][p2] that know about the extent of the
+Thought Police, but they are human beings too, subject to everything that are
+subject to us in terms of being human. However, we can assume that the vast
+majority of those working for the NSA are "good" and probably do not condone
+programs such as PRISM as they probably do not know about it (and this could
+happen if they are working on it).
 
 [p1]: http://en.wikipedia.org/wiki/Keith_B._Alexander
 [p2]: http://en.wikipedia.org/wiki/Obama
 
 This situation, while vastly different from the threats we learned in
-cryptography class, is actually not that different from the threats we learned
-in cryptography class. In those classes, we learned that there are a small
-minority of people who have malicious intent are the ones that we need to
-defend from and they are subject to the same limitations as the good guys are.
-While in this case the bad guys are not subject to the same [limitations][fisa]
-as we are, they are subject to the same limitation in terms of technical
-abilities as we are (though they have vastly more funds, but they *probably*
-have to use the same kind of technologies as we do, and hire the same kind of
-people as we do).
+cryptography class at first sight, is actually really not that different. In those classes, we learned that
+there are a small minority of people who have malicious intent are the ones
+that we need to defend from and they are subject to the same limitations as the
+good guys are. While in this case the bad guys are not subject to the same
+[limitations][fisa] as we are, they are subject to the same limitation in terms
+of technical abilities as we are. Even though these people have a lot of money
+and can hire a lot of people, they *probably* use the [same kind][sk] of
+technologies as we do and are therefore "reasonable" hackers. They *probably*
+can't do the things that we think they can't do.
+
+[sk]: http://xato.net/privacy/dear-nsa-meant-yottabytes/
 
 [fisa]: http://en.wikipedia.org/wiki/United_States_Foreign_Intelligence_Surveillance_Court
 
@@ -87,6 +91,12 @@ services. Some may decide to write to their representatives. This will help if
 enough people started to do something about this.
 
 There are also those in the position that can say no to all of this. If you
-are one of those, please use your best judgment.
+are one of those, use your best judgment to [do the right thing][rt].
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/akTqXdYLBZs" frameborder="0" allowfullscreen></iframe>
+[rt]: http://brendansterne.com/2013/07/11/do-the-right-thing-wait-to-get-fired/
+
+Complementary video ahead:
+
+<div class="center">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/akTqXdYLBZs" frameborder="0"
+allowfullscreen></iframe></div>
