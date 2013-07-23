@@ -108,4 +108,5 @@ Complementary video ahead:
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/akTqXdYLBZs" frameborder="0"
 allowfullscreen></iframe></div>
 
-*Thanks to [ZzBomb](http://zzbomb.com) for his fantastic editing!*
+<p></p>
+<p class="center"><em>Thanks to [ZzBomb](http://zzbomb.com) for his fantastic editing!</em></p>
