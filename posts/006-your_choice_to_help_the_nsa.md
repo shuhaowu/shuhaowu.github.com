@@ -109,4 +109,4 @@ Complementary video ahead:
 allowfullscreen></iframe></div>
 
 <p></p>
-<p class="center"><em>Thanks to [ZzBomb](http://zzbomb.com) for his fantastic editing!</em></p>
+<p class="center"><em>Thanks to <a href="http://zzbomb.com">ZzBomb</a> for his fantastic editing!</em></p>
