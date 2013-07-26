@@ -25,7 +25,7 @@ title: CV
       </li>
       <li>Currently working on <a href="https://github.com/mozilla/socorro">Socorro</a> and developing a way to find "explosive" crashes as they come in from the wild.
         <ul>
-          <li><a href="/blog/exploring_firefox_crash_data.html">Blog post 1</a></li>
+          <li><a href="/blog/exploring_firefox_crash_data_1.html">Blog post 1</a></li>
         </ul>
       </li>
       <li>May 2013 - Present</li>
