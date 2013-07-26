@@ -15,7 +15,7 @@ cite { text-align: right; float: right; }
 .certlink { text-align: center; font-size: 1.25em; font-weight: bold; }
 .center { text-align: center; }
 
-code { background-color: #DDD; border: 1px solid #AAA; font-weight: normal; }
+code { background-color: transparent; font-weight: normal; }
 pre code { display: block; padding: 1em; line-height: 1.25em; margin-top: 0.85em; margin-bottom: 0.85em; }
 
 .post h1 { font-size: 26px; }
