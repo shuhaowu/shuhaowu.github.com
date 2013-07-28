@@ -12,19 +12,19 @@ but definitely stupid Kerbalnaut, for the Mun.
 </div>
 
 Last weekend, I picked up [Kerbal Space Program][ksp] from the Steam summer
-sale and I have been messing around with it since. Kerbal Space Program is a 
+sale and I have been messing around with it since. Kerbal Space Program is a
 pretty realistic space flight simulator game where players get to develop their
 own space program. In the game, you can design and build rockets, spaceplanes,
 spacecrafts, space stations, and so forth. The game features a solar system
 somewhat resembling of our own, except with 1/10th the size but approximately
-the same amount of surface gravity. 
+the same amount of surface gravity.
 
 [ksp]: https://kerbalspaceprogram.com/
 
 The game is fairly difficult to get into. It took me a good solid two hours to
 just understand how everything worked. It is unfortunate as I have not yet taken
 my courses in aerospace for me to know what terms such as prograde and
-retrograde mean. However, after the built in tutorial and some 
+retrograde mean. However, after the built in tutorial and some
 [YouTube videos][yv], I was able to build some simple rockets that allowed me
 to venture out to space.
 
@@ -35,7 +35,7 @@ to venture out to space.
 One thing that I would say is while the game is pretty realistic, there are a
 couple of things that I wish it'd do better. The way the game models drag is
 currently not very realistic for a lot of scenarios. Furthermore, the game only
-uses two body physics and therefore does not have things like 
+uses two body physics and therefore does not have things like
 [Lagrangian points][lp], which is a disappointment, but acceptable due to
 computational limitations.
 
@@ -68,7 +68,7 @@ launched but landing was done by Jebediah.*
 </a>
 <a href="/static/img/ksp-moon/09-orbital-insertion-burn.png" title="Burning to orbital insertion." rel="lightbox[g]">
 </a>
-<a href="/static/img/ksp-moon/10-slow-down-mun.png" title="Slowing down so I can ready to land." rel="lightbox[g]">
+<a href="/static/img/ksp-moon/10-slow-down-mun.png" title="Slowing down so I can get ready to land." rel="lightbox[g]">
 </a>
 <a href="/static/img/ksp-moon/11-munlanding.png" title="Landing trajectory is set!" rel="lightbox[g]">
 </a>
