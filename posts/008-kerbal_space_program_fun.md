@@ -1,6 +1,7 @@
 title: Fun with Kerbal Space Program: To the Mun!
 published: yes
 lightbox: yes
+date: 2013-07-27 21:57
 
 T minus ten, nine, eight, seven, six, five, four, three, two, one, launch! With
 that, 5 rocket engines ignited and lifted off the launchpad along with a brave,
@@ -38,6 +39,8 @@ currently not very realistic for a lot of scenarios. Furthermore, the game only
 uses two body physics and therefore does not have things like
 [Lagrangian points][lp], which is a disappointment, but acceptable due to
 computational limitations.
+
+[lp]: http://en.wikipedia.org/wiki/Lagrangian_point
 
 Anyhow, the better part of last week has been dedicated to building myself a
 rocket that will allow me to get to the Mun (Kerbin's primary moon, resembling
