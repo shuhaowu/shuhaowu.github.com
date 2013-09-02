@@ -2,6 +2,8 @@ title: Showcase
 
 #### Active Projects <small>Active development or available for use</small> ####
 <dl>
+<dt>[Offline SUMO](https://github.com/mozilla/osumo)</dt>
+<dd>An HTML5 based offline application for SUMO, support.mozilla.org</dd>
 <dt>[Riakkit](https://github.com/shuhaowu/riakkit)</dt>
 <dd>Riakkit is an object mapper similar to MongoKit and CouchdbKit but for Riak. This is one of the most sophisticated of its kind for Riak and is currently being tested at an ongoing project.</dd>
 <dt>[Levelupdb](https://github.com/shuhaowu/levelupdb)</dt>

@@ -28,7 +28,8 @@ title: CV
           <li><a href="/blog/exploring_firefox_crash_data_1.html">Blog post 1</a></li>
         </ul>
       </li>
-      <li>May 2013 - Present</li>
+      <li>Summary presentation: https://air.mozilla.org/intern-presentation-wu/</li>
+      <li>May 2013 - Sept 2013</li>
     </ul>
   </li>
   <li id="csgv">
