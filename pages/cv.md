@@ -20,7 +20,7 @@ title: CV
       <li>Position: Web Development Intern</li>
       <li>Worked on <a href="http://support.mozilla.org">SUMO</a> and an offline version of that for Firefox OS.
         <ul>
-          <li><a href="https://github.com/mozilla/osumo">Code</a></li>
+          <li><a href="https://github.com/mozilla/osumo">Code</a> | <a href="http://osumo.paas.allizom.org">App</a></li>
         </ul>
       </li>
       <li>Currently working on <a href="https://github.com/mozilla/socorro">Socorro</a> and developing a way to find "explosive" crashes as they come in from the wild.
@@ -28,7 +28,7 @@ title: CV
           <li><a href="/blog/exploring_firefox_crash_data_1.html">Blog post 1</a></li>
         </ul>
       </li>
-      <li>Summary presentation: https://air.mozilla.org/intern-presentation-wu/</li>
+      <li><a href="https://air.mozilla.org/intern-presentation-wu/">Summary presentation</a></li>
       <li>May 2013 - Sept 2013</li>
     </ul>
   </li>
