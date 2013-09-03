@@ -5,7 +5,7 @@ title: CV
 #### Skills and Abilities ####
 
  - Languages: Python, CoffeeScript, JavaScript, Go, MATLAB/Octave, Java
- - Frameworks: Flask, Jinja2, AngularJS, Backbone.JS, matplotlib/numpy/scipy and others 
+ - Frameworks: Flask, Jinja2, Django, AngularJS, Backbone.JS, matplotlib/numpy/scipy and others 
  - Database: Riak, LevelDB, Redis, MongoDB, CouchDB, SQLite3, PgSQL, MySQL
  - Server administration: Ubuntu, Debian
  - Revision Control: git, svn
