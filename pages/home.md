@@ -6,7 +6,7 @@ template: homepage.html
 Welcome!
 --------
 My name is Shuhao Wu. I'm an Aerospace Engineering student at Carleton
-University. I'm also currently working at Mozilla as a web development intern.
+University. 
 
 Throughout my life, I wish to help in the advancement of humanity as a whole 
 and lessen the suffering of those who are in trouble along the way.
