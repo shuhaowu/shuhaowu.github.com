@@ -6,7 +6,8 @@ template: homepage.html
 Welcome!
 --------
 My name is Shuhao Wu. I'm an Aerospace Engineering student at Carleton
-University. 
+University. I'm also a software developer during my off hours and summer
+times.
 
 Throughout my life, I wish to help in the advancement of humanity as a whole 
 and lessen the suffering of those who are in trouble along the way.
@@ -24,8 +25,7 @@ hours and come up with a workable prototype.
 Current interests:
 
  - Data mining/ML/Data visualization. 
- - Scaling web application backends.
- - Autonomous robotics, self navigating robots.
+ - Scalable web applications
 
 === left ===
 
@@ -40,7 +40,7 @@ aerospace...)
 To give back to the open source community as I benefited a great deal from it,
 code that I've written is also online on [Github](https://github.com/shuhaowu).
 
-I am currently also an intern for Mozilla, an amazing company that is all about
+I have also interned at Mozilla, an amazing company that is all about
 open source. To learn more about them, [click here](http://mozilla.org).
 
 === middle ===
