@@ -19,7 +19,7 @@ title: Showcase
 <dl>
 <dt>[Colorado School Grade Visualizations](http://csgv.shuhaowu.com)</dt>
 <dd>Developed for a [kaggle competition](https://www.kaggle.com/c/visualize-the-state-of-education-in-colorado).</dd>
-<dt>[Automatic Document Classification](http://rdc.thekks.net)</dt>
+<dt>[Automatic Document Classification](http://rdc.shuhaowu.com)</dt>
 <dd>The Stanford AI and ML class taught me a lot. So why not put the knowledge to use! I did this for a project for my math class in school as well. With more time, I will eventually implement more things. So this is semi-inactive. This site may be up and down as it is running from my room with a VPN to a rev proxy...</dd>
 <dt>[Go pong](https://github.com/shuhaowu/gopong)</dt>
 <dd>A learning project for Go. It replicates the pong game and adds some extra features. Video: [Youtube](https://www.youtube.com/watch?v=sWwlvhQ1SdU)</dd>
