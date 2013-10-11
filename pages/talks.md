@@ -10,4 +10,11 @@ Below is a list of all the presentations I gave. Enjoy!
 <dd>
   <strong>Mozilla, Mountain View, Aug 2013</strong>
 </dd>
+<dt><a href="/static/pres/ottawajs-offline/index.html">Taking web applications offline with cutting edge HTML5 technologies</a></dt>
+<dd>
+  Presentation for the October OttawaJS meetup. Here I talked about how to build offline apps with technologies such as IndexedDB, Appcache, localStorage, and Open Web Apps
+</dd>
+<dd>
+  <strong>OttawaJS, Ottawa, Oct 2013</strong>
+</dd>
 </dl>
