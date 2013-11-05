@@ -7,7 +7,7 @@ times.
 
 It occurred to my that over the years, I have 
 [written plenty of code](https://github.com/shuhaowu). I would also say that I
-have gotten a lot better as a programmer from all the practise that I had.
+have gotten a lot better as a programmer from all the practice that I had.
 
 Over the same time, the amount of words that I write went down. As an
 engineering student, there are very few assignments that make us write things 
