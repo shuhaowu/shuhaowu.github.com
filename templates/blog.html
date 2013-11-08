@@ -4,7 +4,15 @@
 {% block main %}
 
 <div class="row">
-	<div class="nine columns">
+  <div class="large-12 columns blog-description">
+    <p style="float: left;" class="hide-for-small">Physics, Programming, Rockets. Welcome to my blog :)</p>
+    <p style="float: left;" class="show-for-small" id="blog-tagline">Rockets :)</p>
+    <p class="text-right"><a href="/blog/rss.xml">Subscribe (RSS)</a></p>
+  </div>
+</div>
+
+<div class="row">
+	<div class="large-12 columns">
 		{% block postarea %}
     {% for meta, html in posts %}
     <div class="panel post">
@@ -23,28 +31,15 @@
 	{% endfor %}
 		<div class="pagectrl">
 			{% if previous_page %}
-      <a href="/blog/page/{{ previous_page }}.html">Older Entries</a> |
+      <a href="/blog/page/{{ previous_page }}.html">Newer Entries</a> |
       {% endif %}
-      Page <a href="/blog/page/{{ current_page }}.html">{{ current_page }}</a> of {{ total_pages }}
+      Page {{ current_page }} of {{ total_pages }}
       {% if next_page %}
-      | <a href="/blog/page/{{ next_page }}.html">Newer Entries</a>
+      | <a href="/blog/page/{{ next_page }}.html">Older Entries</a>
       {% endif %}
 		</div>
 	{% endblock %}
 	</div>
-  <div class="three columns">
-    <div class="panel">
-      <p>Welcome to my blog where I post random thoughts that I have.</p>
-			<p>Did I sell that well? If so, you can <a href="/blog/rss.xml">subscribe (RSS)</a>.</p>
-			<hr />
-			<h5>Latest posts</h5>
-			<ol>
-			{% for meta, html in all_posts[:5] %}
-				<li><a href="/blog/{{ meta.postid }}.html">{{ meta.title }}</a></li>
-			{% endfor %}
-			</ol>
-    </div>
-  </div>
 </div>
 
 {% endblock %}
@@ -63,4 +58,10 @@ MathJax.Hub.Config({
 });
 </script>
 {% endif %}
+<script>
+$(function() {
+  var taglines = ["Rockets :)", "Physics <3", "Programming ^_^"];
+  $("#blog-tagline").text(taglines[Math.floor(Math.random() * taglines.length)]);
+});
+</script>
 {% endblock %}

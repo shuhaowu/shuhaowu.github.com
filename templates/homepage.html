@@ -2,26 +2,28 @@
 
 {% block main %}
 
-<div class="row coolboxrow">
-	<div class="ten columns coolbox centered">
-    {{ mainbox }}
+<div class="row">
+	<div class="small-12 columns">
+		<div class="panel welcomebox">
+			{{ mainbox }}
+		</div>
 	</div>
 </div>
 
 <div class="row">
-	<div class="four columns">
-    {{ left }}
+	<div class="large-12 small-11 small-centered columns">
+		<div class="row text-center">
+			<div class="large-4 columns">
+				{{ left }}
+			</div>
+			<div class="large-4 columns">
+				{{ middle }}
+			</div>
+			<div class="large-4 columns">
+				{{ right }}
+			</div>
+		</div>
 	</div>
-
-	<div class="four columns">
-    {{ middle }}
-	</div>
-
-	<div class="four columns">
-    {{ right }}
-	</div>
-
-	<hr />
 </div>
 
 {% endblock %}

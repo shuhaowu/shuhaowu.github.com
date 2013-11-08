@@ -3,29 +3,23 @@ template: homepage.html
 
 === mainbox ===
 
-Welcome!
---------
+# Hello &#9731; #
+
 My name is Shuhao Wu. I'm an Aerospace Engineering student at Carleton
 University. I'm also a software developer during my off hours and summer
 times.
 
-Throughout my life, I wish to help in the advancement of humanity as a whole 
+Throughout my life, I wish to help in the advancement of humanity as a whole
 and lessen the suffering of those who are in trouble along the way.
 
 === mainbox ===
 
 === left ===
+
 #### Codin' ####
-Yeah. I code in my spare time. A lot of what I write are things that I
-need/want and I've contributed to other people's projects as well.
-
-I love how it is possible to come up with an idea, sit down, code for a couple
-hours and come up with a workable prototype. 
-
-Current interests:
-
- - Data mining/ML/Data visualization. 
- - Scalable web applications
+Making things in my spare time is fun. Coding is a huge part of that as there
+are always things to make.
+<a href="/showcase" class="checkout">Check 'em out</a>
 
 === left ===
 
@@ -33,28 +27,20 @@ Current interests:
 
 #### Open Source ####
 
-Open source is awesome. There is nothing better than free (as in freedom)
-software as it promotes so much innovation! (Maybe we should bring this to
-aerospace...)
-
-To give back to the open source community as I benefited a great deal from it,
-code that I've written is also online on [Github](https://github.com/shuhaowu).
-
-I have also interned at Mozilla, an amazing company that is all about
-open source. To learn more about them, [click here](http://mozilla.org).
+Sharing is caring. Almost everything I make is open source. Perhaps one day,
+some of those will help others. :)
+<a href="https://github.com/shuhaowu" target="_blank" class="checkout">Fork me
+on github!</a>
 
 === middle ===
 
 === right ===
 
-#### Side projects ####
-Side projects are awesome. I usually have a couple going on at the same time.
-Right now I'm working on a web app that's a rewrite of 
-[spm](https://github.com/shuhaowu/spm) and it should be released soon.
+#### Experience ####
 
-Besides coding, I try to do some hardware hacks as well. Once I get some time,
-I'm going to sit down and model a couple of hardware modifications/additions
-to a music box set.
+Currently undergraduate student at Carleton University. Last interned at
+Mozilla. Available starting April 2014.
+<a href="/cv" class="checkout">Read my CV</a>
 
 === right ===
 

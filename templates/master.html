@@ -17,31 +17,20 @@
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
 	<meta charset="utf-8" />
 
-	<!-- Set the viewport width to device width for mobile -->
 	<meta name="viewport" content="width=device-width" />
 
 	<title>{{ title }} - Shuhao</title>
 
-	<!-- Included CSS Files -->
-	<link rel="stylesheet" href="/static/stylesheets/foundation.css">
+	<link rel="stylesheet" href="/static/stylesheets/foundation.min.css">
 	<link rel="stylesheet" href="/static/stylesheets/app.css">
 
 	{% if lightbox or (meta and meta.lightbox) %}
 	<link rel="stylesheet" type="text/css" href="/static/stylesheets/czbox.css">
 	{% endif %}
 
-	<!--[if lt IE 9]>
-		<link rel="stylesheet" href="/static/stylesheets/ie.css">
-	<![endif]-->
-
-
-	<!-- IE Fix for HTML5 Tags -->
-	<!--[if lt IE 9]>
-		<script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+	<script src="/static/js/custom.modernizr.js"></script>
 
 	{% block head %}
 	{% endblock %}
@@ -49,19 +38,28 @@
 </head>
 <body>
 
-	<div class="container master">
-
-		<div class="row show-for-small">
-			<ul class="nav-bar vertical">
-				{% for href, id, caption in navbar %}
-				<li{% if id == name %} class="active"{% endif %}><a href="{{ href }}">{{ caption }}</a></li>
-				{% endfor %}
+	<div class="contain-to-grid sticky show-for-small">
+		<nav class="top-bar">
+			<ul class="title-area">
+				<li class="name">
+					<h1><a href="/">Shuhao Wu</a></h1>
+				</li>
+				<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
 			</ul>
-		</div>
+			<section class="top-bar-section">
+				<ul class="left">
+					{% for href, id, caption in navbar %}
+					<li><a href="{{ href }}" {% if id == name %}class="active"{% endif %}>{{ caption }}</a></li>
+					{% endfor %}
+				</ul>
+			</section>
+		</nav>
+	</div>
 
-		<div class="row">
-			<div class="twelve columns">
-				<nav class="hide-for-small">
+	<div class="container master">
+		<div class="row hide-for-small">
+			<div class="large-12 columns">
+				<nav class="desktop">
 					<ul>
 						{% for href, id, caption in navbar %}
 						<li><a href="{{ href }}" {% if id == name %}class="active"{% endif %}>{{ caption }}</a></li>
@@ -81,8 +79,11 @@
 		</footer>
 
 	</div>
+	<script type="text/javascript" src="/static/js/jquery.js"></script>
+	<script type="text/javascript" src="/static/js/foundation.min.js"></script>
+	<script>$(document).foundation();</script>
+
 	{% if lightbox or (meta and meta.lightbox) %}
-	<script type="text/javascript" src="/static/js/zepto.js"></script>
 	<script type="text/javascript" src="/static/js/czbox2.js"></script>
 	<script type="text/javascript">CzBox.create();</script>
 	{% endif %}
