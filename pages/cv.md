@@ -1,89 +1,143 @@
 title: CV
 
-*Want a PDF/nicer version of my resume? Send me an email at shuhao [at] shuhaowu [dot] com.*
 
-#### Skills and Abilities ####
+<h4>Technical Skills</h4>
+<table class="cv">
+  <tbody>
+    <tr>
+      <th>Languages</th>
+      <td>Python, CoffeeScript, JavaScript, Go, MATLAB/GNU Octave, Java</td>
+    </tr>
+    <tr>
+      <th>Frameworks</th>
+      <td>Flask, Jinja2, Django, AngularJS, BackboneJS, matplotlib/numpy/scipy and others</td>
+    </tr>
+    <tr>
+      <th>Databases</th>
+      <td>Riak, LevelDB, Redis, MongoDB, SQLite3, PgSQL, CouchDB, MySQL</td>
+    </tr>
+    <tr>
+      <th>Server</th>
+      <td>Ubuntu, Debian</td>
+    </tr>
+    <tr>
+      <th>Revision Control</th>
+      <td>git, svn</td>
+    </tr>
+    <tr>
+      <th>Provisioning</th>
+      <td>Ansible</td>
+    </tr>
+  </tbody>
+</table>
 
- - Languages: Python, CoffeeScript, JavaScript, Go, MATLAB/Octave, Java
- - Frameworks: Flask, Jinja2, Django, AngularJS, Backbone.JS, matplotlib/numpy/scipy and others 
- - Database: Riak, LevelDB, Redis, MongoDB, CouchDB, SQLite3, PgSQL, MySQL
- - Server administration: Ubuntu, Debian
- - Revision Control: git, svn
- - Provisioning: Ansible
+<h4>Experience</h4>
 
-#### Major Projects/Experience ####
+<div class="row cv">
+  <div class="large-4 columns">
+    <h4>Mozilla</h4>
+    <p>May 2013 - Sept 2013 <br /> Mountain View, California</p>
+  </div>
+  <div class="large-8 columns">
+    <p>Webdev intern on the SUMO and crashstats team</p>
+    <p>Worked on an offline version of support.mozilla.org using HTML5.</p>
+    <p>Worked on a method to identify "explosive" crashes within 24 hours or reporting.</p>
+    <p><a href="https://github.com/mozilla/osumo">Offline SUMO code</a>
+      &#8226;
+      <a href="http://osumo.paas.allizom.org">Offline SUMO app</a>
+      &#8226;
+      <a href="http://crash-stats.mozilla.com/explosive">Explosive view in crashstat</a>
+      <br />
+    <a href="https://air.mozilla.org/intern-presentation-wu/">Summary presentation</a></p>
+  </div>
+</div>
 
-<ul>
-  <li id="mozilla">
-    <strong>Mozilla</strong>: Webdev Intern
-    <ul>
-      <li>Position: Web Development Intern</li>
-      <li>Worked on <a href="http://support.mozilla.org">SUMO</a> and an offline version of that for Firefox OS.
-        <ul>
-          <li><a href="http://osumo.paas.allizom.org">App</a> | <a href="https://github.com/mozilla/osumo">Code</a></li>
-        </ul>
-      </li>
-      <li>Currently working on <a href="https://github.com/mozilla/socorro">Socorro</a> and developing a way to find "explosive" crashes as they come in from the wild.
-        <ul>
-          <li><a href="/blog/exploring_firefox_crash_data_1.html">Blog post 1</a></li>
-        </ul>
-      </li>
-      <li><a href="https://air.mozilla.org/intern-presentation-wu/">Summary presentation</a></li>
-      <li>May 2013 - Sept 2013</li>
-    </ul>
-  </li>
-  <li id="csgv">
-    <strong>Colorado School Grade Visualizer</strong>: Data visualizer for Colorado School Grades/Colorado Department of Education
-    <ul>
-      <li>Position: Developer</li>
-      <li>An interactive school grade visualizer along with data analysis. Written for a Kaggle data visualization competition.</li>
-      <li>2013 - 2013</li>
-      <li><a href="http://csgv.shuhaowu.com">App</a> | <a href="https://github.com/shuhaowu/csgv">Code</a></li>
-    </ul>
-  </li>
-  <li id="riakkit">
-  <strong>Riakkit</strong>: An object management system for Riak in Python
-  <ul>
-    <li>Position: Original developer</li>
-    <li>An ORM for the NoSQL database Riak in Python. Currently transitioning into its own client.</li>
-    <li>2011 - Current</li>
-    <li>Current Status: Undergoing rewrite for riak-python-client 1.5+</li>
-    <li><a href="http://shuhaowu.com/riakkit">Website</a> | <a href="https://github.com/shuhaowu/riakkit">Github</a></li>
-  </ul>
-  </li>
-  <li id="loellenrobotics">
-  <strong>Lo-Ellen Robotics (FRC Team 4069)</strong>: Robotics team competing in the <a href="http://usfirst.org" target="_blank">FIRST Robotics Competition</a>
-  <ul>
-    <li>Position: Team captain</li>
-    <li>Developed a robot that shoots basketball and competed in the FIRST Robotics Competition. Responsible for developing both the software and electrical systems as well as managing the team.</li>
-    <li>2011 - 2012</li>
-    <li><a href="http://loellenrobotics.com">Website</a> |
-    <a href="https://github.com/FRCTeam4069">Github</a></li>
-  </ul>
-  </li>
-  <li id="pillar">
-  <strong>Pillar Ceramics</strong>: Local business website
-  <ul>
-    <li>Position: Web Developer</li>
-    <li>Designed and implemented a website using a self developed PHP web framework for a local business.</li>
-    <li>2010 - 2011</li>
-  </ul>
-  </li>
-  <li>More to be found in the <a href="/showcase/">showcase</a> page</li>
-</ul>
+<hr />
 
-#### Education ####
- - **Carleton University (Bachelor of Engineering, Aerospace, 2012-2016)**
-     - Carleton Robotics Club
-     - Member of the Software and Computer Engineering Society of Carleton University
- - **Lo-Ellen Park Secondary School (High school diploma, 2008-2012)**
-     - <span class="has-tip" title="Scored 75/100">95th percentile</span> in Grade 12 Euclid Math Contest in Grade 11, 2011
-     - <span class="has-tip" title="Scored 82/100">92nd place</span> out of 13000 contestants in the Grade 12 Euclid Math Contest in Grade 12, 2012
-     - 2011 Canadian Computation Competition Junior Division <span class="has-tip" title="Scored 75/75">1st place</span> in Canada.
-     - 2012 Canadian Computation Competition Senior Division <span class="has-tip" title="Scored 57/75">89th place</span> in Canada
-     - Lo-Ellen Robotics (FRC Team 4069): Team captain and Lead developer
- - [Machine learning at Coursera](http://ml-class.org) (2012)
- - [Introduction to AI at ai-class](http://ai-class.com) (2012)
- - [Applied Cryptography (CS387) at Udacity](http://www.udacity.com/overview/Course/cs387/CourseRev/apr2012) (2012)
- - [Artificial Intelligence (CS 373) at Udacity](http://www.udacity.com/overview/Course/cs373/CourseRev/apr2012) (2012)
+<div class="row cv">
+  <div class="large-4 columns">
+    <h4>Lo-Ellen Robotics <small>(FRC Team 4069)</small></h4>
+    <p>2011 - 2012 <br /> Sudbury, Ontario</p>
+  </div>
+  <div class="large-8 columns">
+    <p>Team captain and lead programmer</p>
+    <p>Lead a team that developed a robot that competed in the FIRST Robotics Competition. Team was ranked top 30% in the world.</p>
+    <p>Responsible for designing and implementing the software and the electrical system of the robot.</p>
+    <p><a href="https://github.com/FRCTeam4069/RobotCode2012">Robot Code</a>
+        &#8226;
+        <a href="https://github.com/FRCTeam4069">Github</a></p>
+  </div>
+</div>
 
+<hr />
+
+<div class="row cv">
+  <div class="large-4 columns">
+    <h4>Pillar Ceramics</h4>
+    <p>2010 - 2011 <br /> Sudbury, Ontario</p>
+  </div>
+  <div class="large-8 columns">
+    <p>Web developer</p>
+    <p>Designed and implemented a website that showcased a local business's inventory.</p>
+    <p>Wrote a PHP framework that simplified the objectives specified by the owner.</p>
+  </div>
+</div>
+
+<hr />
+
+<div class="row cv separate">
+  <div class="large-4 columns">
+    <h4>Other Projects</h4>
+    <p>2011 - ongoing <br /> The Internet</p>
+  </div>
+  <div class="large-8 columns">
+    <p>Open source on Github</p>
+    <p>I have plenty of other projects that I made on <a href="https://github.com/shuhaowu">Github</a>. A lot of these
+      are listed in the <a href="/showcase">Showcase</a> page.</p>
+  </div>
+</div>
+
+<h4>Education</h4>
+
+<div class="row cv">
+  <div class="large-4 columns">
+    <h4>Carleton University</h4>
+    <p>2012 - 2016 <br /> Ottawa, Ontario</p>
+  </div>
+  <div class="large-8 columns">
+    <p>Bachelor of Engineering in Aerospace</p>
+    <p>Member of the Carleton University Robotics Club</p>
+    <p>Member of the Software and Computer Engineering Society of Carleton</p>
+  </div>
+</div>
+
+<hr />
+
+<div class="row cv">
+  <div class="large-4 columns">
+    <h4>Lo-Ellen Park Secondary School</h4>
+    <p>2008 - 2012 <br /> Sudbury, Ontario</p>
+  </div>
+  <div class="large-8 columns">
+    <p>High school diploma</p>
+    <p>Member of Lo-Ellen Robotics</p>
+    <p>Won school first for the 2011 Euclid Math Contest. <span data-tooltip class="has-tip" title="Scored 75/100">95th percentile</span> Canada-wide.</p>
+    <p>Won school first for the 2012 Euclid Math Contest. <span data-tooltip class="has-tip" title="Scored 82/100">92nd place out of 13000</span> Canada-wide.</p>
+  </div>
+</div>
+
+<hr />
+
+<div class="row cv">
+  <div class="large-4 columns">
+    <h4>Other Courses</h4>
+    <p>2011 - ongoing <br /> The Internet</p>
+  </div>
+  <div class="large-8 columns">
+    <p>Computer science</p>
+    <p>Introduction to Artificial Intelligence at Udacity</p>
+    <p>Applied Cryptography (CS387) at Udacity</p>
+    <p>Artificial Intelligence (CS373) at Udacity</p>
+    <p>Machine Learning at Coursera</p>
+  </div>
+</div>
