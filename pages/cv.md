@@ -61,8 +61,8 @@ title: CV
   </div>
   <div class="large-8 columns">
     <p>Team captain and lead programmer</p>
-    <p>Lead a team that developed a robot that competed in the FIRST Robotics Competition. Team was ranked top 30% in the world.</p>
-    <p>Responsible for designing and implementing the software and the electrical system of the robot.</p>
+    <p>Lead a team that developed a robot to compete in the FIRST Robotics Competition. Team was ranked top 30% in the world.</p>
+    <p>Personally responsible for designing and implementing the software and the electrical system of the robot.</p>
     <p><a href="https://github.com/FRCTeam4069/RobotCode2012">Robot Code</a>
         &#8226;
         <a href="https://github.com/FRCTeam4069">Github</a></p>
@@ -92,7 +92,7 @@ title: CV
   </div>
   <div class="large-8 columns">
     <p>Open source on Github</p>
-    <p>I have plenty of other projects that I made on <a href="https://github.com/shuhaowu">Github</a>. A lot of these
+    <p>There are plenty of other projects that I made available on <a href="https://github.com/shuhaowu">Github</a>. A lot of these
       are listed in the <a href="/showcase">Showcase</a> page.</p>
   </div>
 </div>

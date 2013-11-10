@@ -100,7 +100,7 @@ title: Showcase
 </div>
 
 
-### In-active Projects <small>No longer with any development</small> ###
+### Inactive Projects <small>No longer with any development</small> ###
 
 <div class="row showcase">
 	<div class="large-4 columns">
@@ -172,10 +172,10 @@ title: Showcase
 #### Other Projects <small>Projects for knowledge or fun in the early days of my programming career</small> ####
 <dl>
 <dt>[plugin-based-core](https://github.com/shuhaowu/plugin-based-core)</dt>
-<dd>I did this when I first learned programming. Back then, I was intriguied about how Eclipse was able to have a really small core size and accomplish everything with plugins. Without realizing it, I developed a topological sorting algorithm that worked. Was quite impressed (and disappointed in my implementation) when I learned topological sorting after the fact.</dd>
+<dd>I did this when I first learned programming. Back then, I was intrigued about how Eclipse was able to have a really small core size and accomplish everything with plugins. Without realizing it, I developed a topological sorting algorithm that worked. Was quite impressed (and disappointed in my implementation) when I learned topological sorting after the fact.</dd>
 <dt>[AI Server](https://github.com/shuhaowu/aiserver)</dt>
 <dd>A server designed for me to take a peek into the networking world.
- Also, easy to use for simple turn based games with a horrible horrible protocal.</dd>
+ Also, easy to use for simple turn based games with a horrible horrible protocol.</dd>
 <dt>[liteFramework](https://github.com/shuhaowu/liteframework)</dt>
 <dd>Back in the days of PHP (and when I didn't have access to anything other
 than shared hosting), I had a great interest in developing a system that could

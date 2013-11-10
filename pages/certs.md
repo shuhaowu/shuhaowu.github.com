@@ -1,6 +1,6 @@
 title: Certificates
 
-Privacy is a big deal. When systems such as [PRISM](http://en.wikipedia.org/wiki/PRISM_%28surveillance_program%29) exist, we cannot trust that our communication is completely private. This page is created as a response to such threats and provide you a method of authenticating my identity as well as sending me private contents without the fear of anyone eavedropping.
+Privacy is a big deal. When systems such as [PRISM](http://en.wikipedia.org/wiki/PRISM_%28surveillance_program%29) exist, we cannot trust that our communication is completely private. This page is created as a response to such threats and provide you a method of authenticating my identity as well as sending me private contents without the fear of anyone eavesdropping.
 
 > "Even if you're not doing anything wrong, you're being watched and recorded.
 > ...it's getting to the point where you don't have to have done anything wrong,
