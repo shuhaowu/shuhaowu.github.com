@@ -27,8 +27,8 @@ are always things to make.
 
 #### Open Source ####
 
-Sharing is caring. Almost everything I make is open source. Perhaps one day,
-some of those will help others. :)
+Sharing is caring, so almost everything I make is open source. 
+Hopefully one day something of mine will help others. :)
 <a href="https://github.com/shuhaowu" target="_blank" class="checkout">Fork me
 on github!</a>
 
@@ -38,7 +38,7 @@ on github!</a>
 
 #### Experience ####
 
-Currently undergraduate student at Carleton University. Last interned at
+Currently an undergraduate student at Carleton University. Last interned at
 Mozilla. Available starting April 2014.
 <a href="/cv" class="checkout">Read my CV</a>
 
