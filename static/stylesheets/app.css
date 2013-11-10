@@ -5,7 +5,7 @@ nav.desktop ul .active { color: #777; }
 .master { margin-top: 20px; }
 footer { color: #BBB; text-align: center; font-size: 12px; margin: 20px auto;}
 footer p { margin: 0px auto ; padding: 222px auto; }
-
+ul { margin-left: 2em; }
 cite { text-align: right; float: right; }
 .certlink { text-align: center; font-size: 1.25em; font-weight: bold; }
 .center { text-align: center; }

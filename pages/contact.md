@@ -1,5 +1,8 @@
 title: Contact Me
 
-Simplest way would be directly emailing me at shuhao [ at ] shuhaowu [ dot ] com.
-Someone squatted shuhao.com or else my email would have been simpler.
+The simplest way to contact me would be emailing me directly at
+[shuhao@shuhaowu.com](mailto:shuhao@shuhaowu.com). If you want to follow me
+generally, consider these places:
 
+ - Twitter: [@shuhaowu](https://twitter.com/shuhaowu)
+ - Github: [@shuhaowu](https://github.com/shuhaowu)
