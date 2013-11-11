@@ -1,6 +1,5 @@
 title: Software is Easy, Hardware is on Medium Difficulty
 date: 2013-11-11 11:11
-published: no
 
 The article [Why Hardware Development Is Hard, Part 2: The Physical World Is Unforgiving](http://danluu.com/hardware-unforgiving/)
 just showed up on [Hacker News](https://news.ycombinator.com/item?id=6709925).
