@@ -7,8 +7,8 @@ just showed up on [Hacker News](https://news.ycombinator.com/item?id=6709925).
 I encourage you to read it, as it is a fairly interesting read.
 
 The article gave us some convincing arguments about why hardware is difficult, 
-the primary of which is that hardware development takes time and money. When 
-"change consume real [and] physical resources", there is no room for errors and
+the main one being that hardware development takes time and money. When 
+"change consume[s] real [and] physical resources", there is no room for errors and
 errors are expensive and sometimes even dangerous. 
 
 As an aerospace engineering student, I can definitely appreciate this point. 
@@ -20,8 +20,7 @@ the realm of possibilites.
 ------------------------------------------------------------------------------
 
 One thing that annoys me a lot while studying my engineering courses is the
-lack of abilities to try things while I learn. Growing up with learning
-plenty of programming, I got very used to the cycle of learn, apply, 
+lack of lack of ability to try things while I learn. Learning programming got me very used to the cycle of learn, apply, 
 succeed/fail (mostly fail), and learn again. This cycle is not very practical
 with my aerospace training. The second step, apply, does not happen very
 often. The amount of labs and experiments is too little compared to the amount in my adventures
@@ -34,16 +33,16 @@ That said, I don't really see any *practical* way for the situation to improve.
 The real world is hard and is full of constraints (more on that in a later blog
 post, perhaps) and these constraints tend to collide with our imaginations.
 
-Students who studies computer science can learn much faster, at least in theory,
+Students who study computer science can learn much faster, at least in theory,
 than their peers in other fields.
 Instead of performing an experiment every two weeks, experiments
 can be done in real time, as the lecturer teaches. Instead of costing tens or hundres of
 thousands of dollars to get equipments for students, a lot of cool things in CS can 
 be accomplished, or at least demonstrated in principle, on machines that cost only 
 a few hundred dollars. Instead of fiddling with equipments by flicking the 
-bubbles out of a pitot tube and get confused over why there is a large deviation 
+bubbles out of a pitot tube and getting confused over why there is a large deviation 
 between your experimental results and standard values, 
-one can expect relatively the same, or even exactly the same results in CS. 
+you can expect relatively the same, or even exactly the same results in CS. 
 All of these can be traced back to limitations faced by traditional engineering.
 
 Another interesting point is that in software, you're encouraged to make 
