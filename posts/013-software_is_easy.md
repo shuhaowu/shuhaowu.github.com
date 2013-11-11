@@ -65,7 +65,7 @@ student who has been programming since a very young age and is now creating her
 own startup (I'm probably wrong, however).
 
 Saying that hardware is hard, in the other hand, is probably wrong. Hardware is hard is more like an
-belief, or the lack of willingness to tackle the problem. Limitations are not something that are commonly thought about
+opinion, or the lack of willingness to tackle the problem. Limitations are not something that are commonly thought about
 by programmers. We tend to think that we can conquer the world with code. We tend
 to forget about the fundamental rules and boundaries that we cannot break. All
 of this, made worse by the fact that the work we do is essentially writing rules 
