@@ -82,3 +82,4 @@ from your MacBook Pro. I've had that problem too. I just think that an AutoCAD
 rendering of your machine is fundamentally different than a copy of your 
 rendering that you can hold in your hand. That is just an opinion, though,
 
+Edit: Discussions on [Hacker News](https://news.ycombinator.com/item?id=6714681).
