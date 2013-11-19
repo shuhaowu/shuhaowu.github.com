@@ -1,7 +1,24 @@
 title: CV
 
+<div class="row cv-title-print print-only">
+  <div class="large-8 columns">
+    <h1 class="light-weight" id="cvname">
+      Shuhao Wu
+    </h1>
+  </div>
+  <div class="large-4 columns">
+    <div id="cvinfo">
+      <p>
+        https://shuhaowu.com
+      </p>
+      <p>
+        shuhao@shuhaowu.com
+      </p>
+    </div>
+  </div>
+</div>
 
-<h4>Technical Skills</h4>
+<h4 class="section-title">Technical Skills</h4>
 <table class="cv">
   <tbody>
     <tr>
@@ -31,7 +48,7 @@ title: CV
   </tbody>
 </table>
 
-<h4>Experience</h4>
+<h4 class="section-title">Experience</h4>
 
 <div class="row cv">
   <div class="large-4 columns">
@@ -42,7 +59,7 @@ title: CV
     <p>Webdev intern on the SUMO and crashstats team</p>
     <p>Worked on an offline version of support.mozilla.org using HTML5.</p>
     <p>Worked on a method to identify "explosive" crashes within 24 hours or reporting.</p>
-    <p><a href="https://github.com/mozilla/osumo">Offline SUMO code</a>
+    <p class="hide-on-print"><a href="https://github.com/mozilla/osumo">Offline SUMO code</a>
       &#8226;
       <a href="http://osumo.paas.allizom.org">Offline SUMO app</a>
       &#8226;
@@ -56,14 +73,14 @@ title: CV
 
 <div class="row cv">
   <div class="large-4 columns">
-    <h4>Lo-Ellen Robotics <small>(FRC Team 4069)</small></h4>
+    <h4>Lo-Ellen Robotics <br class="print-only" /><small>(FRC Team 4069)</small></h4>
     <p>2011 - 2012 <br /> Sudbury, Ontario</p>
   </div>
   <div class="large-8 columns">
     <p>Team captain and lead programmer</p>
     <p>Lead a team that developed a robot to compete in the FIRST Robotics Competition. Team was ranked top 30% in the world.</p>
     <p>Personally responsible for designing and implementing the software and the electrical system of the robot.</p>
-    <p><a href="https://github.com/FRCTeam4069/RobotCode2012">Robot Code</a>
+    <p class="hide-on-print"><a href="https://github.com/FRCTeam4069/RobotCode2012">Robot Code</a>
         &#8226;
         <a href="https://github.com/FRCTeam4069">Github</a></p>
   </div>
@@ -83,7 +100,7 @@ title: CV
   </div>
 </div>
 
-<hr />
+<hr class="hide-on-print" /> <!-- need to hide on print -->
 
 <div class="row cv separate">
   <div class="large-4 columns">
@@ -92,12 +109,20 @@ title: CV
   </div>
   <div class="large-8 columns">
     <p>Open source on Github</p>
-    <p>There are plenty of other projects that I made available on <a href="https://github.com/shuhaowu">Github</a>. A lot of these
+    <p class="hide-on-print">There are plenty of other projects that I made available on <a href="https://github.com/shuhaowu">Github</a>. A lot of these
       are listed in the <a href="/showcase">Showcase</a> page.</p>
+    <p class="print-only">
+      There are plenty of other projects that I made available on Github. A
+      lot of these can be found in the showcase page on my website:
+    </p>
+    <ul class="print-only">
+      <li>Github: https://github.com/shuhaowu</li>
+      <li>Website: https://shuhaowu.com</li>
+    </ul>
   </div>
 </div>
 
-<h4>Education</h4>
+<h4 class="section-title">Education</h4>
 
 <div class="row cv">
   <div class="large-4 columns">

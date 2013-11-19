@@ -30,31 +30,6 @@ dd { margin-left: 10px; }
 	div.showlink { text-align: right; }
 }
 
-/* cv */
-table.cv {
-	border: none;
-	font-size: 1.2em;
-}
-
-table.cv { margin-bottom: 3em;  }
-table.cv th { text-align: left; font-weight: 600; }
-table.cv td span { margin-left: 1em;}
-table.cv td.location { text-align: right; font-weight: bold; }
-table.cv td.time { text-align: right; }
-table.cv tr.even, table tr.alt, table tr:nth-of-type(2n) {
-	background-color: #FFF;
-}
-
-div.row.cv h4 { font-weight: 600; margin-top: 0;}
-div.row.cv .large-8 p:first-child { font-style: italic; font-size: 1.125em; margin-left: 0; margin-bottom: 0.5em; }
-div.row.cv p { margin-bottom: 0.3em; margin-left: 10px; }
-@media only screen and (min-width: 768px) {
-	div.row.cv .large-4 h4 { font-size: 1.3em; }
-	div.row.cv .large-8 p:first-child { line-height: 1.4em; font-size: 1.3em; }
-}
-div.row.cv.separate { margin-bottom: 3.5em; }
-
-
 /* blog */
 .blog-description { color: #787878; }
 

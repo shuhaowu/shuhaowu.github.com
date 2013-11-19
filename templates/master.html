@@ -25,6 +25,9 @@
 
 	<link rel="stylesheet" href="/static/stylesheets/foundation.min.css">
 	<link rel="stylesheet" href="/static/stylesheets/app.css">
+	{% if name == "cv" %}
+	<link rel="stylesheet" href="/static/stylesheets/cv.css">
+	{% endif %}
 
 	{% if lightbox or (meta and meta.lightbox) %}
 	<link rel="stylesheet" type="text/css" href="/static/stylesheets/czbox.css">
@@ -38,7 +41,7 @@
 </head>
 <body>
 
-	<div class="contain-to-grid sticky show-for-small">
+	<div class="contain-to-grid sticky show-for-small topthing">
 		<nav class="top-bar">
 			<ul class="title-area">
 				<li class="name">
@@ -57,7 +60,7 @@
 	</div>
 
 	<div class="container master">
-		<div class="row hide-for-small">
+		<div class="row hide-for-small topthing">
 			<div class="large-12 columns">
 				<nav class="desktop">
 					<ul>
