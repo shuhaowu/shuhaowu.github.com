@@ -100,7 +100,7 @@ title: CV
   </div>
 </div>
 
-<hr class="hide-on-print" /> <!-- need to hide on print -->
+<hr />
 
 <div class="row cv separate">
   <div class="large-4 columns">
