@@ -23,7 +23,7 @@ title: CV
   <tbody>
     <tr>
       <th>Languages</th>
-      <td>Python, CoffeeScript, JavaScript, Go, MATLAB/GNU Octave, Java</td>
+      <td>Python, JavaScript, CoffeeScript, Go, MATLAB/GNU Octave, Java</td>
     </tr>
     <tr>
       <th>Frameworks</th>
