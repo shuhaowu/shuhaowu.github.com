@@ -4,6 +4,23 @@ title: Showcase
 
 <div class="row showcase">
 	<div class="large-4 columns">
+		<a class="text-center" href="/static/img/showcase/projecto.png">
+			<div style="background-image:url(/static/img/showcase/projecto.png)" class="img"></div>
+		</a>
+	</div>
+	<div class="large-8 columns">
+		<p><strong>Projecto</strong> is an all-in-on project management system designed for fast
+			moving teams. Written with AngularJS and Flask, it is an excellent example
+			of a contemporary web application.</p>
+		<div class="showlink">
+			<a href="https://github.com/shuhaowu/projecto">Code</a> &#8226;
+			Demo coming soon
+		</div>
+	</div>
+</div>
+
+<div class="row showcase">
+	<div class="large-4 columns">
 		<a class="text-center" href="/static/img/showcase/gioku.png">
 			<div style="background-image:url(/static/img/showcase/gioku.png)" class="img"></div>
 		</a>
@@ -83,21 +100,6 @@ title: Showcase
 		</div>
 	</div>
 </div>
-<div class="row showcase">
-	<div class="large-4 columns">
-		<a class="text-center" href="/static/img/showcase/projecto.png">
-			<div style="background-image:url(/static/img/showcase/projecto.png)" class="img"></div>
-		</a>
-	</div>
-	<div class="large-8 columns">
-		<p><strong>Projecto</strong> is an all-in-on project management system designed for fast
-			moving teams. Written with AngularJS and Flask, it is an excellent example
-			of a contemporary web application.</p>
-		<div class="showlink">
-			Coming soon
-		</div>
-	</div>
-</div>
 
 
 ### Inactive Projects <small>No longer with any development</small> ###
@@ -115,7 +117,7 @@ title: Showcase
 		Written in Python + BackboneJS with a touch of SciPy/NumPy in the back.
 		</p>
 		<div class="showlink">
-			<a href="https://github.com/shuhaowu/Funnel">Code</a> &#8226;
+			<a href="https://github.com/shuhaowu/csgv">Code</a> &#8226;
 			<a href="http://csgv.shuhaowu.com">App</a>
 		</div>
 	</div>
