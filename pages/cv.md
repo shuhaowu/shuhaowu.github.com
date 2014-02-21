@@ -52,6 +52,22 @@ title: CV
 
 <div class="row cv">
   <div class="large-4 columns">
+    <h4>Graphite Software</h4>
+    <p>Feb 2014 - Present <br /> Ottawa, Ontario</p>
+  </div>
+  <div class="large-8 columns">
+    <p>Software developer</p>
+    <p>Hacking on the core of Android with
+       <a href="http://www.securespaces.com/">Secure Spaces</a>.
+    </p>
+    <p>Working Secure Spaces' server UI component</p>.
+  </div>
+</div>
+
+<hr />
+
+<div class="row cv">
+  <div class="large-4 columns">
     <h4>Mozilla</h4>
     <p>May 2013 - Sept 2013 <br /> Mountain View, California</p>
   </div>
@@ -66,6 +82,22 @@ title: CV
       <a href="http://crash-stats.mozilla.com/explosive">Explosive view in crashstat</a>
       <br />
     <a href="https://air.mozilla.org/intern-presentation-wu/">Summary presentation</a></p>
+  </div>
+</div>
+
+<hr />
+
+<div class="row cv">
+  <div class="large-4 columns">
+    <h4>Projecto</h4>
+    <p>2013 - Present <br /></p>
+  </div>
+  <div class="large-8 columns">
+    <p>Primary Developer</p>
+    <p>Designing, implementing, and testing Projecto, a web based project management solution.</p>
+    <p class="hide-on-print"><a href="https://github.com/shuhaowu/projecto">Code</a> 
+    &#8226;
+      Demo Available Soon
   </div>
 </div>
 
