@@ -9,7 +9,7 @@ title: Showcase
 		</a>
 	</div>
 	<div class="large-8 columns">
-		<p><strong>Projecto</strong> is an all-in-on project management system designed for fast
+		<p><strong>Projecto</strong> is an all-in-one project management system designed for fast
 			moving teams. Written with AngularJS and Flask, it is an excellent example
 			of a contemporary web application.</p>
 		<div class="showlink">
@@ -26,7 +26,7 @@ title: Showcase
 		</a>
 	</div>
 	<div class="large-8 columns">
-		<p><strong>Gioku</strong> is a clone of Github Page for your own
+		<p><strong>Gioku</strong> is a clone of Github Pages for your own
 			server with SSL certificates support, enabling one command
 			push-to-deploy from anywhere.</p>
 		<div class="showlink">
@@ -77,7 +77,7 @@ title: Showcase
 	</div>
 	<div class="large-8 columns">
 		<p><strong>Levelupdb</strong> is a drop in replacement for Riak designed for
-			single node operation. It is designed to have high performance and low
+			single node operation. It is designed to have high performance and a low
 			footprint. Written in Go.</p>
 		<div class="showlink">
 			<a href="https://github.com/shuhaowu/levelupdb">Code</a>
