@@ -18,6 +18,8 @@ However, it does generate correct mostly correct IntelliJ configurations.
 
 [2]: http://source.android.com/source/using-eclipse.html
 
+-------------------------------------------------------------------------------
+
 Before getting started, you first need to make sure that your IDE have lots of
 RAM allocated to it. You can modify the file idea.vmoptions and idea64.vmoptions
 and add these:
