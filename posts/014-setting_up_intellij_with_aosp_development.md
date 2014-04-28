@@ -1,6 +1,6 @@
 title: Setting up Intellij with CyanogenMod/AOSP development
-date: 2014-04-27 20:20
-published: no
+date: 2014-04-27 23:05
+published: yes
 
 Recently, I discovered a way to import the [CyanogenMod][1] source into Intellij.
 Since the documentation in this area is severely lacking, I thought I might
