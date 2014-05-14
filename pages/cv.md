@@ -52,15 +52,28 @@ title: CV
 
 <div class="row cv">
   <div class="large-4 columns">
+    <h4>Shopify</h4>
+    <p>May 2014 - Present <br /> Ottawa, Ontario</p>
+  </div>
+  <div class="large-8 columns">
+    <p>Developer intern on the web scale team</p>
+    <p>Working on <a href="http://shopify.com">Shopify</a>.</p>
+  </div>
+</div>
+
+<hr />
+
+<div class="row cv">
+  <div class="large-4 columns">
     <h4>Graphite Software</h4>
-    <p>Feb 2014 - Present <br /> Ottawa, Ontario</p>
+    <p>Feb 2014 - May 2014 <br /> Ottawa, Ontario</p>
   </div>
   <div class="large-8 columns">
     <p>Software developer</p>
     <p>Hacking on the core of Android with
        <a href="http://www.securespaces.com/">Secure Spaces</a>.
     </p>
-    <p>Working Secure Spaces' server UI component</p>.
+    <p>Working Secure Spaces' server UI component.</p>
   </div>
 </div>
 
@@ -95,7 +108,7 @@ title: CV
   <div class="large-8 columns">
     <p>Primary Developer</p>
     <p>Designing, implementing, and testing Projecto, a web based project management solution.</p>
-    <p class="hide-on-print"><a href="https://github.com/shuhaowu/projecto">Code</a> 
+    <p class="hide-on-print"><a href="https://github.com/shuhaowu/projecto">Code</a>
     &#8226;
       Demo Available Soon
   </div>
@@ -162,7 +175,7 @@ title: CV
     <p>2012 - 2016 <br /> Ottawa, Ontario</p>
   </div>
   <div class="large-8 columns">
-    <p>Bachelor of Engineering in Aerospace</p>
+    <p>Bachelor of Engineering<span id="aero"></span></p>
     <p>Member of the Carleton University Robotics Club</p>
     <p>Member of the Software and Computer Engineering Society of Carleton</p>
   </div>
@@ -198,3 +211,10 @@ title: CV
     <p>Machine Learning at Coursera</p>
   </div>
 </div>
+
+<script>
+var r = Math.random();
+if (r < 0.3 && atob) {
+  document.getElementById("aero").innerHTML = atob("IGluIEFlcm9zcGFjZQ==");
+}
+</script>

@@ -14,7 +14,7 @@ title: Showcase
 			of a contemporary web application.</p>
 		<div class="showlink">
 			<a href="https://github.com/shuhaowu/projecto">Code</a> &#8226;
-			Demo coming soon
+			<a href="https://getprojecto.com">App</a>
 		</div>
 	</div>
 </div>

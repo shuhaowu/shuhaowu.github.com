@@ -38,7 +38,7 @@ on github!</a>
 
 #### Experience ####
 
-Currently an undergraduate student at Carleton University. Web development intern at Mozilla
+Currently a developer intern at Shopify. Web development intern at Mozilla
 in the summer of 2013.
 <a href="/cv" class="checkout">Read my CV</a>
 
