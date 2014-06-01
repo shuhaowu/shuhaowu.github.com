@@ -32,7 +32,9 @@ hr { margin: 18px 0 18px 0; }
 .show-print { display: none; }
 @media only print {
 
-	body { margin: 0 !important; padding: 0 !important; font-size: 14px;}
+	body { margin: 0 !important; padding: 0 !important; font-size: 12px;}
+
+
 	.topthing, footer, .no-print {
 		display: none !important;
 	}
@@ -59,7 +61,7 @@ hr { margin: 18px 0 18px 0; }
 
 	h4.section-title { font-size: 1.2em !important; }
 
-	table.cv { margin-bottom: 40px !important; }
+	table.cv { margin-bottom: 25px !important; }
 	div.row.cv.separate { margin-bottom: 20px !important; }
 	table.cv th, table.cv td {
 		padding: 0.35em 0.1em !important;
@@ -70,6 +72,8 @@ hr { margin: 18px 0 18px 0; }
 
 	@page { margin: 15mm; }
 	ul { margin-left: 2.5em !important; }
+
+	#aero { display: none !important; }
 
 	div.columns {
 		float:left !important;

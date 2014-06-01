@@ -23,23 +23,27 @@ title: CV
   <tbody>
     <tr>
       <th>Languages</th>
-      <td>Python, JavaScript, CoffeeScript, Go, MATLAB/GNU Octave, Java</td>
+      <td>Python, JavaScript/CoffeeScript, Go, SASS, MATLAB/GNU Octave, Java, Ruby</td>
     </tr>
     <tr>
       <th>Frameworks</th>
-      <td>Flask, Jinja2, Django, AngularJS, BackboneJS, matplotlib/numpy/scipy and others</td>
+      <td>Flask, Jinja2, Django, AngularJS, BackboneJS, NodeJS, matplotlib/numpy/scipy and others</td>
     </tr>
     <tr>
       <th>Databases</th>
-      <td>Riak, LevelDB, Redis, MongoDB, SQLite3, PgSQL, CouchDB, MySQL</td>
+      <td>SQL (SQLite, PgSQL, MySQL), Riak, LevelDB, Redis, MongoDB, CouchDB</td>
     </tr>
     <tr>
       <th>Server</th>
       <td>Ubuntu, Debian</td>
     </tr>
     <tr>
+      <th>Platforms</th>
+      <td>Android, AOSP internals</td>
+    </tr>
+    <tr>
       <th>Revision Control</th>
-      <td>git, svn</td>
+      <td>git</td>
     </tr>
     <tr>
       <th>Provisioning</th>
@@ -48,7 +52,7 @@ title: CV
   </tbody>
 </table>
 
-<h4 class="section-title">Experience</h4>
+<h4 class="section-title">Experiences</h4>
 
 <div class="row cv">
   <div class="large-4 columns">
@@ -56,7 +60,7 @@ title: CV
     <p>May 2014 - Present <br /> Ottawa, Ontario</p>
   </div>
   <div class="large-8 columns">
-    <p>Developer intern on the web scale team</p>
+    <p>Developer intern on the web scale/performance team</p>
     <p>Working on <a href="http://shopify.com">Shopify</a>.</p>
   </div>
 </div>

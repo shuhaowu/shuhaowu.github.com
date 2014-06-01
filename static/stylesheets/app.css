@@ -27,7 +27,7 @@ dd { margin-left: 10px; }
 .showlink { font-weight: bold; text-align: center; }
 
 @media only screen and (min-width: 768px) {
-	div.showlink { text-align: right; }
+  div.showlink { text-align: right; }
 }
 
 /* blog */
