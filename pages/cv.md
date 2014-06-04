@@ -43,7 +43,7 @@ title: CV
     </tr>
     <tr>
       <th>Revision Control</th>
-      <td>git</td>
+      <td>git, repo</td>
     </tr>
     <tr>
       <th>Provisioning</th>
