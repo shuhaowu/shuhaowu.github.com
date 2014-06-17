@@ -60,7 +60,7 @@ title: CV
     <p>May 2014 - Present <br /> Ottawa, Ontario</p>
   </div>
   <div class="large-8 columns">
-    <p>Developer intern on the web scale/performance team</p>
+    <p>Developer intern on the performance team</p>
     <p>Working on <a href="http://shopify.com">Shopify</a>.</p>
   </div>
 </div>
