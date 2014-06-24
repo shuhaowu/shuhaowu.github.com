@@ -112,9 +112,11 @@ title: CV
   <div class="large-8 columns">
     <p>Primary Developer</p>
     <p>Designing, implementing, and testing Projecto, a web based project management solution.</p>
-    <p class="hide-on-print"><a href="https://github.com/shuhaowu/projecto">Code</a>
-    &#8226;
-      Demo Available Soon
+    <p class="hide-on-print">
+      <a href="https://github.com/shuhaowu/projecto">Code</a>
+      &#8226;
+      <a href="https://getprojecto.com">Demo</a>
+    </p>
   </div>
 </div>
 
