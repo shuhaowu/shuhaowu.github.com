@@ -147,7 +147,7 @@ title: Showcase
 	<div class="large-8 columns">
 		<p><strong>Go Pong</strong> is a pong game clone with the ability to move
 			horizontally. Written in Go as a learning project.
-			Note the image links to a video of it in action.
+			The image links to a video of it in action.
 		</p>
 		<div class="showlink">
 			<a href="https://github.com/shuhaowu/gopong">Code</a>
