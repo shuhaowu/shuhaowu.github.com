@@ -1,5 +1,6 @@
 title: Exploring Firefox crash data, Part I
 published: yes
+date: 2013-07-25 23:04
 mathjax: yes
 lightbox: yes
 

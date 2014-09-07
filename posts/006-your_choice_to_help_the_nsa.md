@@ -1,4 +1,5 @@
 title: It is your choice to help the NSA
+date: 2013-07-23 03:01
 published: yes
 
 [Recent revelations][relevations] about [the NSA spying on everyone](wiki-
