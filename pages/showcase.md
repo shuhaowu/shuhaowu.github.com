@@ -21,6 +21,24 @@ title: Showcase
 
 <div class="row showcase">
 	<div class="large-4 columns">
+		<a class="text-center" href="/static/img/showcase/funnel.png">
+			<div style="background-image:url(/static/img/showcase/funnel.png)" class="img"></div>
+		</a>
+	</div>
+	<div class="large-8 columns">
+		<p><strong>Funnel</strong> is lightweight static website generator with blog posts
+			written in Python. This website is created using this and deployed via
+			Giotown.</p>
+		<div class="showlink">
+			<a href="https://github.com/shuhaowu/Funnel">Code</a>
+		</div>
+	</div>
+</div>
+
+### Inactive Projects <small>No longer with any development</small> ###
+
+<div class="row showcase">
+	<div class="large-4 columns">
 		<a class="text-center" href="/static/img/showcase/gioku.png">
 			<div style="background-image:url(/static/img/showcase/gioku.png)" class="img"></div>
 		</a>
@@ -34,8 +52,6 @@ title: Showcase
 		</div>
 	</div>
 </div>
-
-
 
 <div class="row showcase">
 	<div class="large-4 columns">
@@ -84,25 +100,6 @@ title: Showcase
 		</div>
 	</div>
 </div>
-
-<div class="row showcase">
-	<div class="large-4 columns">
-		<a class="text-center" href="/static/img/showcase/funnel.png">
-			<div style="background-image:url(/static/img/showcase/funnel.png)" class="img"></div>
-		</a>
-	</div>
-	<div class="large-8 columns">
-		<p><strong>Funnel</strong> is lightweight static website generator with blog posts
-			written in Python. This website is created using this and deployed via
-			Giotown.</p>
-		<div class="showlink">
-			<a href="https://github.com/shuhaowu/Funnel">Code</a>
-		</div>
-	</div>
-</div>
-
-
-### Inactive Projects <small>No longer with any development</small> ###
 
 <div class="row showcase">
 	<div class="large-4 columns">
