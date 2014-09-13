@@ -12,8 +12,8 @@
 </div>
 
 <div class="row">
-	<div class="large-12 columns">
-		{% block postarea %}
+  <div class="large-12 columns">
+    {% block postarea %}
     {% for meta, html in posts %}
     <div class="panel post">
       <div class="meta">
@@ -23,23 +23,23 @@
         Written by {{ meta.author }} on {{ meta.date.strftime("%Y-%m-%d %H:%M") }}
         </p>
       </div>
-			<div class="content">
-        {{ meta.exerpt }}
+      <div class="content">
+        {{ meta.excerpt }}
         <p class="readmore"><a href="/blog/{{ meta.postid }}.html">&gt;&gt; Read more</a></p>
-			</div>
+      </div>
     </div>
-	{% endfor %}
-		<div class="pagectrl">
-			{% if previous_page %}
+  {% endfor %}
+    <div class="pagectrl">
+      {% if previous_page %}
       <a href="/blog/page/{{ previous_page }}.html">Newer Entries</a> |
       {% endif %}
       Page {{ current_page }} of {{ total_pages }}
       {% if next_page %}
       | <a href="/blog/page/{{ next_page }}.html">Older Entries</a>
       {% endif %}
-		</div>
-	{% endblock %}
-	</div>
+    </div>
+  {% endblock %}
+  </div>
 </div>
 
 {% endblock %}
