@@ -33,6 +33,7 @@ dd { margin-left: 10px; }
 /* blog */
 .blog-description { color: #787878; }
 
+.post.panel { padding-bottom: 0.5em; }
 .post h1 { font-size: 26px; }
 .post h2 { font-size: 24px; }
 .post h3 { font-size: 22px; }
