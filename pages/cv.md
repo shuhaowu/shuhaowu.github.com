@@ -74,10 +74,10 @@ title: CV
   </div>
   <div class="large-8 columns">
     <p>Software developer</p>
-    <p>Hacking on the Android's framework/base with
+    <p>Worked on the Android's framework/base with
        <a href="http://www.securespaces.com/">Secure Spaces</a>.
     </p>
-    <p>Working Secure Spaces' server UI component.</p>
+    <p>Worked on Secure Spaces' server UI component.</p>
   </div>
 </div>
 
