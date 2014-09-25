@@ -23,7 +23,7 @@ title: CV
   <tbody>
     <tr>
       <th>Languages</th>
-      <td>Python, JavaScript/CoffeeScript, Go, SASS, MATLAB/GNU Octave, Java, Ruby</td>
+      <td>Python, JavaScript/CoffeeScript, Go, MATLAB/GNU Octave, Java, Ruby</td>
     </tr>
     <tr>
       <th>Frameworks</th>
@@ -39,7 +39,7 @@ title: CV
     </tr>
     <tr>
       <th>Platforms</th>
-      <td>Android, AOSP internals</td>
+      <td>Android, AOSP</td>
     </tr>
     <tr>
       <th>Revision Control</th>
@@ -61,7 +61,7 @@ title: CV
   </div>
   <div class="large-8 columns">
     <p>Developer intern on the performance team</p>
-    <p>Working on <a href="http://shopify.com">Shopify</a>.</p>
+    <p>Working on the SSL infrastructure of <a href="http://shopify.com">Shopify</a>.</p>
   </div>
 </div>
 
@@ -74,7 +74,7 @@ title: CV
   </div>
   <div class="large-8 columns">
     <p>Software developer</p>
-    <p>Hacking on the core of Android with
+    <p>Hacking on the Android's framework/base with
        <a href="http://www.securespaces.com/">Secure Spaces</a>.
     </p>
     <p>Working Secure Spaces' server UI component.</p>
