@@ -49,6 +49,10 @@ title: CV
       <th>Provisioning</th>
       <td>Ansible</td>
     </tr>
+    <tr>
+      <th>Design</th>
+      <td>AutoDesk Inventor, Creo Parametric, STK (Certified)</td>
+    </tr>
   </tbody>
 </table>
 
