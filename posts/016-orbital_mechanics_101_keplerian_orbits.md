@@ -4,6 +4,9 @@ mathjax: yes
 
 Orbital mechanics. That thing that Kerbal Space Program does in the background when you put on the Mun. While it is [a lot of fun][ksp-blog-ref] to fool around with in games, how does it actually work? With this post, we will take a look at the basics on Keplerian orbits and gain some insights on how KSP and real life, really works.
 
+The objective of this post is to develop a set of equations that allow us to
+calculate the position and velocity at any time during an orbit.
+
 ![To the Mun!](/static/img/ksp-moon/05-to-the-mun.png)
 
 [ksp-blog-ref]: /blog/kerbal_space_program_fun.html
@@ -72,4 +75,33 @@ The eccentricity vector is defined as:
 $$ \vec{e} = \frac{\vec{v} \times \vec{h}}{\mu} - \frac{\vec{r}}{r} $$
 
 ### Orbital Elements in 2D ###
+
+    INSERT ORBIT WITH ADJUSTABLE a AND e.
+
+A spacecraft orbit in 2D is an ellipse with the focal point as the center of mass of the planet. An ellipse, can be defined with two parameters known as the **semi-major axis** (\\( a\\)) and the **eccentricity** (\\(e\\)).
+
+Semi-major axis is half the distance of the widest part of the orbit.
+Eccentricity, on the other hand, is the ratio between the distance from the
+center of the ellipse to the focal point and the semi major axis. This ratio
+varies between 0 and 1, with 0 being a perfectly circular orbit, and 1 being a
+parabolic orbit, or an orbit that will escape the gravity of this planet. For
+anything in between, this will result in an elliptical orbit.
+
+    INSERT ORBIT WITH LABELED p, b, a, e, rp, ra
+
+There are some additional parameters that will aid us with our calculations later. These values can be derived from a and e (or be used to derive a and e). They are outlined as follows:
+
+- **semi-latus rectum**: \\( p = a(1-e^2) \\)
+- **semi-minor axis**: \\( b = a * \sqrt{1 - e^2} \\)
+- **minimum distance (periapsis)**: \\(r_p = \frac{p}{1-e} = a(1 + e) \\)
+- **maximum distance (apoapsis)**: \\(r_a = \frac{p}{1+e} = a(1 - e) \\)
+
+These can be derived from equations governing the basic operations of an ellipse
+and hence I won't go into how they are actually derived.
+
+### Kepler's Laws ###
+
+    INSERT ORBIT WITH MOVING BODY.
+
+With most of the tedious mathematical background out of the way, we can now start to formulate 
 
