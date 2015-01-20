@@ -92,7 +92,7 @@ anything in between, this will result in an elliptical orbit.
 There are some additional parameters that will aid us with our calculations later. These values can be derived from a and e (or be used to derive a and e). They are outlined as follows:
 
 - **semi-latus rectum**: \\( p = a(1-e^2) \\)
-- **semi-minor axis**: \\( b = a * \sqrt{1 - e^2} \\)
+- **semi-minor axis**: \\( b = a \sqrt{1 - e^2} \\)
 - **minimum distance (periapsis)**: \\(r_p = \frac{p}{1-e} = a(1 + e) \\)
 - **maximum distance (apoapsis)**: \\(r_a = \frac{p}{1+e} = a(1 - e) \\)
 
@@ -103,5 +103,5 @@ and hence I won't go into how they are actually derived.
 
     INSERT ORBIT WITH MOVING BODY.
 
-With most of the tedious mathematical background out of the way, we can now start to formulate 
+With most of the tedious mathematical background out of the way, we can now start to formulate Kepler's Law.
 
