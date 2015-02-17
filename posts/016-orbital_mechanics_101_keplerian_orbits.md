@@ -1,6 +1,7 @@
 title: Orbital Mechanics 101: Keplerian Orbits
 published: no
 mathjax: yes
+orbitjs: yes
 
 Orbital mechanics. That thing that Kerbal Space Program does in the background when you put on the Mun. While it is [a lot of fun][ksp-blog-ref] to fool around with in games, how does it actually work? With this post, we will take a look at the basics on Keplerian orbits and gain some insights on how KSP and real life, really works.
 
@@ -43,12 +44,19 @@ $$\mu_{\mathrm{Kerbin}} = 3531.5 \mathrm{\frac{km^3}{s^2}} $$
 
 ### Constants of Keplerian Motion ###
 
-    INSERT ORBIT HERE!
-    Technical requirements:
-     - r vector
-     - v vector
-     - eccentricity vector
-     - orbit with animation
+<div id="view1" class="orbitalviewport">
+  <canvas class="background" width="500" height="500"></canvas>
+  <canvas class="foreground" width="500" height="500">Your browser is not supported</canvas>
+</div>
+<p class="orbitalcaption">
+    This is a highly eccentric orbit around Kerbin.
+    <br/>
+    The <span class="red">red arrow</span> is the radial/radius vector and the <span class="blue">blue arrow</span> is the velocity vector.
+    <br />
+    The solid circle is the center body, the hollow circle is the orbiting satellite, and the black ellipse is the orbital path.
+    <br />
+    This convention will be used later as well.
+</p>
 
 An ideal orbit involving two bodies is very predictable. Naturally, there are several parameters that are constant for that orbit. These values allow us to calculate almost all of the characteristics of an orbit. These values are constant no matter where you are on the orbit and will only change when you change the orbit.
 
@@ -105,3 +113,17 @@ and hence I won't go into how they are actually derived.
 
 With most of the tedious mathematical background out of the way, we can now start to formulate Kepler's Law.
 
+<script>
+    window.onload = function() {
+        var o1 = new Orbits.Elliptic2D({
+          a: 4200,
+          e: (8/10),
+          mu: Orbits.constants.mu_kerbin,
+          r: 600,
+          show_r_vector: true,
+          show_v_vector: true,
+        });
+        var canvas = new Canvas("view1", null);
+        canvas.set_orbit(o1);
+    };
+</script>

@@ -1,6 +1,43 @@
 {% extends "master.html" %}
 {% set name = "blog" %}
 {% set title = title|default("Blog") -%}
+
+{% block head %}
+{% if orbitjs %}
+<style>
+div.orbitalviewport {
+  width: 500px;
+  height: 502px;
+  margin: 0 auto;
+  position: relative;
+}
+
+div.orbitalviewport canvas.background {
+  left: -1px;
+  z-index: 50;
+}
+
+div.orbitalviewport canvas.foreground {
+  left: -1px;
+  border: 1px solid #CCC;
+  z-index: 100;
+}
+
+div.orbitalviewport canvas {
+  position: absolute;
+  background-color: transparent;
+}
+
+p.orbitalcaption {
+  font-size: 0.85em;
+  color: #777;
+  text-align: center;
+  margin-bottom: 0.8em;
+}
+</style>
+{% endif %}
+{% endblock %}
+
 {% block main %}
 
 <div class="row">
@@ -56,6 +93,10 @@ MathJax.Hub.Config({
     processEscapes: true
   }
 });
+</script>
+{% endif %}
+{% if orbitjs %}
+<script type="text/javascript" src="/static/js/orbit.js">
 </script>
 {% endif %}
 <script>
