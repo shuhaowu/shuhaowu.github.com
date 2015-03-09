@@ -49,7 +49,7 @@ $$\mu_{\mathrm{Kerbin}} = 3531.5 \mathrm{\frac{km^3}{s^2}} $$
   <canvas class="foreground" width="500" height="500">Your browser is not supported</canvas>
 </div>
 <p class="orbitalcaption">
-    This is a highly eccentric orbit around Kerbin.
+    This is a highly eccentric orbit.
     <br/>
     The <span class="red">red arrow</span> is the radial/radius vector and the <span class="blue">blue arrow</span> is the velocity vector.
     <br />
@@ -60,7 +60,7 @@ $$\mu_{\mathrm{Kerbin}} = 3531.5 \mathrm{\frac{km^3}{s^2}} $$
 
 An ideal orbit involving two bodies is very predictable. Naturally, there are several parameters that are constant for that orbit. These values allow us to calculate almost all of the characteristics of an orbit. These values are constant no matter where you are on the orbit and will only change when you change the orbit.
 
-The first of the trio is the **orbital angular momentum**. This is defined as the cross product between the radial vector and the velocity vector and it is denoted as \\( \vec{h} \\):
+The first of the trio is the **orbital angular momentum**. This is defined as the cross product between the radial vector ( \\( \vec{r} \\) ) and the velocity vector ( \\( \vec{v} \\) ) and it is denoted as \\( \vec{h} \\):
 
 $$ \vec{h} = \vec{r} \times \vec{v} $$
 
@@ -84,8 +84,6 @@ $$ \vec{e} = \frac{\vec{v} \times \vec{h}}{\mu} - \frac{\vec{r}}{r} $$
 
 ### Orbital Elements in 2D ###
 
-    INSERT ORBIT WITH ADJUSTABLE a AND e.
-
 A spacecraft orbit in 2D is an ellipse with the focal point as the center of mass of the planet. An ellipse, can be defined with two parameters known as the **semi-major axis** (\\( a\\)) and the **eccentricity** (\\(e\\)).
 
 Semi-major axis is half the distance of the widest part of the orbit.
@@ -95,7 +93,25 @@ varies between 0 and 1, with 0 being a perfectly circular orbit, and 1 being a
 parabolic orbit, or an orbit that will escape the gravity of this planet. For
 anything in between, this will result in an elliptical orbit.
 
-    INSERT ORBIT WITH LABELED p, b, a, e, rp, ra
+<div id="adjustable_view" class="orbitalviewport">
+  <canvas class="background" width="500" height="500"></canvas>
+  <canvas class="foreground" width="500" height="500">Your browser is not supported</canvas>
+</div>
+<p class="orbitalcaption">
+    Try adjusting the parameters to see the effects yourself!
+    <br />
+    <label for="adjustable_a">Semimajor Axis (km): </label>
+    <input id="adjustable_a" type="range" min="600" max="10000" value="800">
+    <span id="adjustable_a_value">800</span> km
+    <br />
+    <label for="adjustable_e">Eccentricity (km): </label>
+    <input id="adjustable_e" type="range" min="0" max="1000" value="0">
+    <span id="adjustable_e_value">0</span>
+    <br />
+    Note: since we only have limited size, the planet rescales with the orbit size. 
+    <br />
+    Also, if your orbit is inside the planet, that means your satellite will crash!
+</p>
 
 There are some additional parameters that will aid us with our calculations later. These values can be derived from a and e (or be used to derive a and e). They are outlined as follows:
 
@@ -105,7 +121,12 @@ There are some additional parameters that will aid us with our calculations late
 - **maximum distance (apoapsis)**: \\(r_a = \frac{p}{1+e} = a(1 - e) \\)
 
 These can be derived from equations governing the basic operations of an ellipse
-and hence I won't go into how they are actually derived.
+and hence I won't go into how they are actually derived. The following diagram shows what they mean physically:
+
+<p class="text-center">
+<img src="/static/img/orbit101/labeled-orbit.png" alt="labeled orbit" />
+</p>
+
 
 ### Kepler's Laws ###
 
@@ -115,7 +136,7 @@ With most of the tedious mathematical background out of the way, we can now star
 
 <script>
     window.onload = function() {
-        var o1 = new Orbits.Elliptic2D({
+        var highly_eccentric_orbit = new Orbits.Elliptic2D({
           a: 4200,
           e: (8/10),
           mu: Orbits.constants.mu_kerbin,
@@ -123,7 +144,43 @@ With most of the tedious mathematical background out of the way, we can now star
           show_r_vector: true,
           show_v_vector: true,
         });
-        var canvas = new Canvas("view1", null);
-        canvas.set_orbit(o1);
+        var view1canvas = new Canvas("view1", null);
+        view1canvas.set_orbit(highly_eccentric_orbit);
+
+        var adjustable_orbit = new Orbits.Elliptic2D({
+          a: 800,
+          e: 0,
+          mu: Orbits.constants.mu_kerbin,
+          r: 600,
+          show_r_vector: true,
+          show_v_vector: true,
+        });
+        var adjustable_view_canvas = new Canvas("adjustable_view", null);
+        adjustable_view_canvas.set_orbit(adjustable_orbit);
+
+        var adjustable_semimajor_axis_control = $("#adjustable_a");
+        var adjustable_semimajor_axis_value = $("#adjustable_a_value");
+        var adjustable_eccentricity_control = $("#adjustable_e");
+        var adjustable_eccentricity_value = $("#adjustable_e_value");
+
+        adjustable_semimajor_axis_control.on("input", function() {
+          adjustable_semimajor_axis_value.text(parseInt(adjustable_semimajor_axis_control.val()));
+        });
+
+        adjustable_semimajor_axis_control.on("mouseup", function() {
+          adjustable_orbit.a = parseInt(adjustable_semimajor_axis_control.val());
+          adjustable_orbit.recompute();
+          adjustable_view_canvas.set_orbit(adjustable_orbit);
+        });
+
+        adjustable_eccentricity_control.on("input", function() {
+          adjustable_eccentricity_value.text(parseInt(adjustable_eccentricity_control.val()) / 1000);
+        });
+
+        adjustable_eccentricity_control.on("mouseup", function() {
+          adjustable_orbit.e = parseInt(adjustable_eccentricity_control.val()) / 1000;
+          adjustable_orbit.recompute();
+          adjustable_view_canvas.set_orbit(adjustable_orbit);
+        });
     };
 </script>
