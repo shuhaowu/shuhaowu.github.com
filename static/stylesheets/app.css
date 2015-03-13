@@ -55,3 +55,6 @@ dd { margin-left: 10px; }
 .content .img p { font-size: 12px; padding: 0; margin: 5px 0 0 0; }
 .red { color: #F00; }
 .blue { color: #00F; }
+.draft-notice { text-align: center; color: #FFF; margin: 0.7em auto; padding: 0.7em; background-color: #F08A24; border: 1px solid #DE770F; }
+.draft-notice a { color: #00F; }
+.draft-notice a:hover { text-decoration: underline; }
