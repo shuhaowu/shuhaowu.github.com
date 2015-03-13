@@ -4,23 +4,6 @@ title: Showcase
 
 <div class="row showcase">
 	<div class="large-4 columns">
-		<a class="text-center" href="/static/img/showcase/projecto.png">
-			<div style="background-image:url(/static/img/showcase/projecto.png)" class="img"></div>
-		</a>
-	</div>
-	<div class="large-8 columns">
-		<p><strong>Projecto</strong> is an all-in-one project management system designed for fast
-			moving teams. Written with AngularJS and Flask, it is an excellent example
-			of a contemporary web application.</p>
-		<div class="showlink">
-			<a href="https://github.com/shuhaowu/projecto">Code</a> &#8226;
-			<a href="https://getprojecto.com">App</a>
-		</div>
-	</div>
-</div>
-
-<div class="row showcase">
-	<div class="large-4 columns">
 		<a class="text-center" href="/static/img/showcase/funnel.png">
 			<div style="background-image:url(/static/img/showcase/funnel.png)" class="img"></div>
 		</a>
@@ -36,6 +19,23 @@ title: Showcase
 </div>
 
 ### Inactive Projects <small>No longer with any development</small> ###
+
+<div class="row showcase">
+	<div class="large-4 columns">
+		<a class="text-center" href="/static/img/showcase/projecto.png">
+			<div style="background-image:url(/static/img/showcase/projecto.png)" class="img"></div>
+		</a>
+	</div>
+	<div class="large-8 columns">
+		<p><strong>Projecto</strong> is an all-in-one project management system designed for fast
+			moving teams. Written with AngularJS and Flask, it is an excellent example
+			of a contemporary web application.</p>
+		<div class="showlink">
+			<a href="https://github.com/shuhaowu/projecto">Code</a> &#8226;
+			<a href="http://getprojecto.ml">App</a>
+		</div>
+	</div>
+</div>
 
 <div class="row showcase">
 	<div class="large-4 columns">
@@ -64,8 +64,7 @@ title: Showcase
 			provides support.mozilla.org content offline entirely using HTML5
 			technologies.</p>
 		<div class="showlink">
-			<a href="https://github.com/shuhaowu/giotown">Code</a> &#8226;
-			<a href="http://osumo.paas.allizom.org">App</a>
+			<a href="https://github.com/mozilla/osumo">Code</a>
 		</div>
 	</div>
 </div>
@@ -114,8 +113,11 @@ title: Showcase
 		Written in Python + BackboneJS with a touch of SciPy/NumPy in the back.
 		</p>
 		<div class="showlink">
-			<a href="https://github.com/shuhaowu/csgv">Code</a> &#8226;
+			<a href="https://github.com/shuhaowu/csgv">Code</a>
+			<!-- 
+			&#8226;
 			<a href="http://csgv.shuhaowu.com">App</a>
+			-->
 		</div>
 	</div>
 </div>
@@ -129,9 +131,11 @@ title: Showcase
 		<p><strong>Automatic Document Classification</strong> is a text news
 			classifier based on Bayes Theorem. Developed for a high school statistics
 			class.</p>
+		<!-- 
 		<div class="showlink">
 			<a href="http://rdc.shuhaowu.com">App</a>
 		</div>
+		-->
 	</div>
 </div>
 
@@ -162,8 +166,11 @@ title: Showcase
 			for the city of Greater Sudbury, Ontario as the official one sucked. Uses
 			technologies such as Appcache and IndexedDB.</p>
 		<div class="showlink">
-			<a href="https://github.com/shuhaowu/sudbury-bustracker">Code</a> &#8226;
+			<a href="https://github.com/shuhaowu/sudbury-bustracker">Code</a>
+			<!--
+			 &#8226;
 			<a href="http://bus.shuhaowu.com">App</a>
+			-->
 		</div>
 	</div>
 </div>

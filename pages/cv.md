@@ -23,7 +23,7 @@ title: CV
   <tbody>
     <tr>
       <th>Languages</th>
-      <td>Python, JavaScript/CoffeeScript, Go, MATLAB/GNU Octave, Java, Ruby</td>
+      <td>Python, JavaScript/CoffeeScript, Go, MATLAB/GNU Octave, C, Java, Ruby</td>
     </tr>
     <tr>
       <th>Frameworks</th>
@@ -47,7 +47,7 @@ title: CV
     </tr>
     <tr>
       <th>Provisioning</th>
-      <td>Ansible</td>
+      <td>Ansible, Chef</td>
     </tr>
     <tr>
       <th>Design</th>
