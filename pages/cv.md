@@ -18,44 +18,6 @@ title: CV
   </div>
 </div>
 
-<h4 class="section-title">Technical Skills</h4>
-<table class="cv">
-  <tbody>
-    <tr>
-      <th>Languages</th>
-      <td>Python, JavaScript/CoffeeScript, Go, MATLAB/GNU Octave, C, Java, Ruby</td>
-    </tr>
-    <tr>
-      <th>Frameworks</th>
-      <td>Flask, Jinja2, Django, AngularJS, BackboneJS, NodeJS, matplotlib/numpy/scipy and others</td>
-    </tr>
-    <tr>
-      <th>Databases</th>
-      <td>SQL (SQLite, PgSQL, MySQL), Riak, LevelDB, Redis, MongoDB, CouchDB</td>
-    </tr>
-    <tr>
-      <th>Server</th>
-      <td>Ubuntu, Debian</td>
-    </tr>
-    <tr>
-      <th>Platforms</th>
-      <td>Android, AOSP</td>
-    </tr>
-    <tr>
-      <th>Revision Control</th>
-      <td>git, repo</td>
-    </tr>
-    <tr>
-      <th>Provisioning</th>
-      <td>Ansible, Chef</td>
-    </tr>
-    <tr>
-      <th>Design</th>
-      <td>AutoDesk Inventor, Creo Parametric, STK (Certified)</td>
-    </tr>
-  </tbody>
-</table>
-
 <h4 class="section-title">Experiences</h4>
 
 <div class="row cv">
@@ -104,24 +66,6 @@ title: CV
       <a href="http://crash-stats.mozilla.com/explosive">Explosive view in crashstat</a>
       <br />
     <a href="https://air.mozilla.org/intern-presentation-wu/">Summary presentation</a></p>
-  </div>
-</div>
-
-<hr />
-
-<div class="row cv">
-  <div class="large-4 columns">
-    <h4>Projecto</h4>
-    <p>2013 - Present <br /></p>
-  </div>
-  <div class="large-8 columns">
-    <p>Primary Developer</p>
-    <p>Designing, implementing, and testing Projecto, a web based project management solution.</p>
-    <p class="hide-on-print">
-      <a href="https://github.com/shuhaowu/projecto">Code</a>
-      &#8226;
-      <a href="https://getprojecto.com">Demo</a>
-    </p>
   </div>
 </div>
 
@@ -209,10 +153,9 @@ title: CV
 
 <hr />
 
-<div class="row cv">
+<div class="row cv separate">
   <div class="large-4 columns">
     <h4>Other Courses</h4>
-    <p>2011 - ongoing <br /> The Internet</p>
   </div>
   <div class="large-8 columns">
     <p>Computer science</p>
@@ -222,6 +165,44 @@ title: CV
     <p>Machine Learning at Coursera</p>
   </div>
 </div>
+
+<h4 class="section-title">Technical Skills</h4>
+<table class="cv">
+  <tbody>
+    <tr>
+      <th>Languages</th>
+      <td>Python, JavaScript/CoffeeScript, Go, MATLAB/GNU Octave, C, Java, Ruby</td>
+    </tr>
+    <tr>
+      <th>Frameworks</th>
+      <td>Flask, Jinja2, Django, AngularJS, BackboneJS, NodeJS, matplotlib/numpy/scipy and others</td>
+    </tr>
+    <tr>
+      <th>Databases</th>
+      <td>SQL (SQLite, PgSQL, MySQL), Riak, LevelDB, Redis, MongoDB, CouchDB</td>
+    </tr>
+    <tr>
+      <th>Server</th>
+      <td>Ubuntu, Debian</td>
+    </tr>
+    <tr>
+      <th>Platforms</th>
+      <td>Android, AOSP</td>
+    </tr>
+    <tr>
+      <th>Revision Control</th>
+      <td>git, repo</td>
+    </tr>
+    <tr>
+      <th>Provisioning</th>
+      <td>Ansible, Chef</td>
+    </tr>
+    <tr>
+      <th>Design</th>
+      <td>AutoDesk Inventor, Creo Parametric, STK (Certified)</td>
+    </tr>
+  </tbody>
+</table>
 
 <script>
 var r = Math.random();
