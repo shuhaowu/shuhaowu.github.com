@@ -1,5 +1,6 @@
 title: Traffic Cop: Network (2G/3G) Emulation on an OpenWRT Router
-published: no
+date: 2015-09-02 00:30
+published: yes
 
 A common issue in application development nowadays is that people do not always test their application against devices and networks that have very low performance. This is somewhat understandable, especially when not everyone has the resources to setup a big testing rig testing high end, mid tier, and low end devices on a variety of different networks. This is not to mention that even when there are the means to test, people probably skip it as it is a giant hassle to do so.
 
