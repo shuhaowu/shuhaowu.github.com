@@ -9,6 +9,8 @@ Traffic Cop is an application running on a router with [OpenWRT][openwrt] that a
 
 All a client has to do is connect to this network, go to the router's IP address (at port 8080 by default), and select a network profile to simulate. You can then watch the client's ping latency, bandwidth, and packet loss rate match the ones indicated for that profile.
 
+The whole project is open source here: [https://github.com/shuhaowu/trafficcop][trafficcop-github].
+
 Spoiler! The finished product looks like the following:
 
 <div class="center">
