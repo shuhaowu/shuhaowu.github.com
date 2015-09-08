@@ -27,7 +27,7 @@ title: CV
   </div>
   <div class="large-8 columns">
     <p>Developer intern on the performance team</p>
-    <p>Working on the SSL infrastructure of <a href="http://shopify.com">Shopify</a>.</p>
+    <p>Worked on the SSL infrastructure of <a href="http://shopify.com">Shopify</a>.</p>
     <p>Working with the database infrastructure.</p>
   </div>
 </div>

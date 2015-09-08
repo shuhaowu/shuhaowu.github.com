@@ -18,6 +18,21 @@ title: Showcase
 	</div>
 </div>
 
+<div class="row showcase">
+	<div class="large-4 columns">
+		<a class="text-center" href="/static/img/showcase/trafficcop.gif">
+			<div style="background-image:url(/static/img/showcase/trafficcop.gif)" class="img"></div>
+		</a>
+	</div>
+	<div class="large-8 columns">
+		<p><strong>Traffic Cop</strong> is a piece of software that runs on OpenWRT routers, allowing users to choose a network they would like to emulate once they connect to this special router via WiFi/ethernet. This enables developers to test their apps/sites on a lower quality network with any WiFi/ethernet capable devices.</p>
+		<div class="showlink">
+			<a href="/blog/network_emulation_on_your_router.html">Blog Post</a> &#8226;
+			<a href="https://github.com/shuhaowu/trafficcop">Code</a>
+		</div>
+	</div>
+</div>
+
 ### Inactive Projects <small>No longer with any development</small> ###
 
 <div class="row showcase">
