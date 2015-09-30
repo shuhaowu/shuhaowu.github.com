@@ -199,7 +199,7 @@ title: CV
     </tr>
     <tr>
       <th>Design</th>
-      <td>AutoDesk Inventor, Creo Parametric, STK (Certified)</td>
+      <td>AutoDesk Inventor, Creo Parametric, ANSYS CFX, STK (Certified), ANSYS Mechanical APDL</td>
     </tr>
   </tbody>
 </table>
