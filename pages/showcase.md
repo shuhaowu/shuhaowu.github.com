@@ -1,6 +1,21 @@
 title: Showcase
 
-### Active Projects <small>Active development or available for use</small> ###
+### Active Projects <small>Projects available for production use</small> ###
+
+<div class="row showcase">
+	<div class="large-4 columns">
+		<a class="text-center" href="/static/img/showcase/trafficcop.gif">
+			<div style="background-image:url(/static/img/showcase/trafficcop.gif)" class="img"></div>
+		</a>
+	</div>
+	<div class="large-8 columns">
+		<p><strong>Traffic Cop</strong> is a piece of software that runs on OpenWRT routers, allowing users to choose a network they would like to emulate once they connect to this special router via WiFi/ethernet. This enables developers to test their apps/sites on a lower quality network with any WiFi/ethernet capable devices.</p>
+		<div class="showlink">
+			<a href="/blog/network_emulation_on_your_router.html">Blog Post</a> &#8226;
+			<a href="https://github.com/shuhaowu/trafficcop">Code</a>
+		</div>
+	</div>
+</div>
 
 <div class="row showcase">
 	<div class="large-4 columns">
@@ -18,17 +33,32 @@ title: Showcase
 	</div>
 </div>
 
+### Experimental Projects <small>Under development, not recommended for use</small> ###
+
 <div class="row showcase">
 	<div class="large-4 columns">
-		<a class="text-center" href="/static/img/showcase/trafficcop.gif">
-			<div style="background-image:url(/static/img/showcase/trafficcop.gif)" class="img"></div>
+		<a class="text-center" href="/static/img/showcase/goblin.png">
+			<div style="background-image:url(/static/img/showcase/goblin.png)" class="img"></div>
 		</a>
 	</div>
 	<div class="large-8 columns">
-		<p><strong>Traffic Cop</strong> is a piece of software that runs on OpenWRT routers, allowing users to choose a network they would like to emulate once they connect to this special router via WiFi/ethernet. This enables developers to test their apps/sites on a lower quality network with any WiFi/ethernet capable devices.</p>
+		<p><strong>Goblin</strong> explores the possibility of implementing a <abbr title="Simultaneous localization and mapping">SLAM</abbr> system with the Xbox Kinect (Gen 1) for a planetary rover.</p>
 		<div class="showlink">
-			<a href="/blog/network_emulation_on_your_router.html">Blog Post</a> &#8226;
-			<a href="https://github.com/shuhaowu/trafficcop">Code</a>
+			<a href="https://gitlab.com/shuhao/goblin">Code</a>
+		</div>
+	</div>
+</div>
+
+<div class="row showcase">
+	<div class="large-4 columns">
+		<a class="text-center" href="/static/img/showcase/confpack.png">
+			<div style="background-image:url(/static/img/showcase/confpack.png)" class="img"></div>
+		</a>
+	</div>
+	<div class="large-8 columns">
+		<p><strong>Confpack</strong> is a provision system built on top of traditional package management systems. Confpack's advantage over traditional systems are its ease of use and the ability to clean up after itself if the original provisioning definition changes.</p>
+		<div class="showlink">
+			<a href="https://github.com/confpack">Code</a>
 		</div>
 	</div>
 </div>
@@ -92,8 +122,7 @@ title: Showcase
 	</div>
 	<div class="large-8 columns">
 		<p><strong>Riakkit</strong> is an object mapper for Riak that's similar to
-			MongoKit and CouchdbKit. This project is currently pending a merge with
-			leveldbkit.</p>
+			MongoKit and CouchdbKit.</p>
 		<div class="showlink">
 			<a href="https://github.com/shuhaowu/riakkit">Code</a>
 		</div>
@@ -218,7 +247,7 @@ this parser could mine words for each person and what not.</dd>
 <a href="https://github.com/shuhaowu"><img alt="Github Contributions" src="/static/img/showcase/github.png" /></a>
 <p>
 Since I just come up with things from time to time, this list may not be
-exhaustive. Follow me on <a href="https://github.com/shuhaowu">Github</a> to
+exhaustive. Follow me on <a href="https://github.com/shuhaowu">Github</a> and <a href="https://gitlab.com/shuhao">Gitlab</a> to
 find out more about what I am doing!
 </p>
 
