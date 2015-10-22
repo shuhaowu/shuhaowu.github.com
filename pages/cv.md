@@ -127,7 +127,7 @@ title: CV
 <div class="row cv">
   <div class="large-4 columns">
     <h4>Carleton University</h4>
-    <p>2012 - 2016 <br /> Ottawa, Ontario</p>
+    <p>2012 - 2017 <br /> Ottawa, Ontario</p>
   </div>
   <div class="large-8 columns">
     <p>Bachelor of Engineering<span id="aero"></span></p>
