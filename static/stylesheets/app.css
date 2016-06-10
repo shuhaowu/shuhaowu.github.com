@@ -14,16 +14,21 @@ code { background-color: transparent; font-weight: normal; }
 pre code { display: block; padding: 1em; line-height: 1.25em; margin-top: 0.85em; margin-bottom: 0.85em; }
 
 /* homepage */
-.welcomebox { padding: 2rem; margin-bottom: 2rem; }
+.welcomebox { padding: 2rem; margin-bottom: 1rem; }
 .welcomebox h1 { font-size: 1.7em; }
-.checkout { display: block; margin-top: 0.5em; }
+p.checkout { text-align: center; font-size: 0.9em; font-weight: bold; margin-bottom: 0.5em; }
+div.mainpage-box { text-align: center; border: #EEE solid 1px; margin-bottom: 0.5em; }
+div.mainpage-box h4 { border-bottom: #EEE 1px solid; margin-top: 0; margin-bottom: 0.5em; padding-top: 0.2em; padding-bottom: 0.2em; }
+div.mainpage-box dl { margin-bottom: 0.5em; }
+div.mainpage-box dl dt { font-size: 0.95em; line-height: 1; margin-bottom: 0.3em; color: #777; }
+div.mainpage-box dl dd { font-size: 0.9em; line-height: 1; }
 
 /* Showcase */
 div.row.showcase { margin-bottom: 3em; }
 div.showcase .img { border-radius: 5px; height: 125px; background-size: cover; background-position: center top; background-repeat: no-repeat; border: 1px solid #DDD;}
-dl { margin-bottom: 20px; }
-dt { font-weight: bold; margin: 6px 0; font-size: 1.3em; }
-dd { margin-left: 10px; }
+dl.talks { margin-bottom: 20px; }
+dl.talks dt { font-weight: bold; margin: 6px 0; font-size: 1.3em; }
+dl.talks dd { margin-left: 10px; }
 .showlink { font-weight: bold; text-align: center; }
 
 @media only screen and (min-width: 768px) {
