@@ -17,8 +17,8 @@ pre code { display: block; padding: 1em; line-height: 1.25em; margin-top: 0.85em
 .welcomebox { padding: 2rem; margin-bottom: 1rem; }
 .welcomebox h1 { font-size: 1.7em; }
 p.checkout { text-align: center; font-size: 0.9em; font-weight: bold; margin-bottom: 0.5em; }
-div.mainpage-box { text-align: center; border: #EEE solid 1px; margin-bottom: 0.5em; }
-div.mainpage-box h4 { border-bottom: #EEE 1px solid; margin-top: 0; margin-bottom: 0.5em; padding-top: 0.2em; padding-bottom: 0.2em; }
+div.mainpage-box { text-align: center; margin-bottom: 0.5em; }
+div.mainpage-box h4 { border-bottom: #DDD 1px solid; margin-top: 0; margin-bottom: 0.5em; padding-top: 0.2em; padding-bottom: 0.2em; }
 div.mainpage-box dl { margin-bottom: 0.5em; }
 div.mainpage-box dl dt { font-size: 0.95em; line-height: 1; margin-bottom: 0.3em; color: #777; }
 div.mainpage-box dl dd { font-size: 0.9em; line-height: 1; }
