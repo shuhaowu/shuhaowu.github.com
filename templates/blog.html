@@ -43,8 +43,8 @@ p.orbitalcaption {
 
 <div class="row">
   <div class="large-12 columns blog-description">
-    <p style="float: left;" class="hide-for-small">Physics, Programming, Rockets. Welcome to my blog :)</p>
-    <p style="float: left;" class="show-for-small" id="blog-tagline">Rockets :)</p>
+    <p style="float: left;" class="hide-for-small">Physics and Programming. Welcome to my blog :)</p>
+    <p style="float: left;" class="show-for-small" id="blog-tagline">Physics! :)</p>
     <p class="text-right"><a href="/blog/rss.xml">Subscribe (RSS)</a></p>
   </div>
 </div>
@@ -84,8 +84,8 @@ p.orbitalcaption {
 
 {% block end %}
 {% if mathjax or (meta and meta.mathjax) %}
-<script type="text/javascript"
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 <script>
 MathJax.Hub.Config({
@@ -102,7 +102,7 @@ MathJax.Hub.Config({
 {% endif %}
 <script>
 $(function() {
-  var taglines = ["Rockets :)", "Physics <3", "Programming ^_^"];
+  var taglines = ["Physics! :)", "Programming! :D"];
   $("#blog-tagline").text(taglines[Math.floor(Math.random() * taglines.length)]);
 });
 </script>
