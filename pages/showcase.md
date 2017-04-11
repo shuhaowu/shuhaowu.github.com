@@ -19,6 +19,20 @@ title: Showcase
 
 <div class="row showcase">
 	<div class="large-4 columns">
+		<a class="text-center" href="/static/img/showcase/itadomni.png">
+			<div style="background-image:url(/static/img/showcase/itadomni.png)" class="img"></div>
+		</a>
+	</div>
+	<div class="large-8 columns">
+    <p><strong>iTAD OmniPlatform</strong> is an omnidirectional robotics
+    platform measuring 2 feet across capable of driving 120lb of 
+    weight. Originally developed for the iTAD fourth year project, the system
+    now serves as an excellent robotics research platform.</p>
+	</div>
+</div>
+
+<div class="row showcase">
+	<div class="large-4 columns">
 		<a class="text-center" href="/static/img/showcase/funnel.png">
 			<div style="background-image:url(/static/img/showcase/funnel.png)" class="img"></div>
 		</a>
