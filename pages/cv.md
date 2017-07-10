@@ -124,15 +124,30 @@ title: CV
 
 <h4 class="section-title">Education</h4>
 
+<!--
 <div class="row cv">
   <div class="large-4 columns">
     <h4>Carleton University</h4>
-    <p>2012 - 2017 <br /> Ottawa, Ontario</p>
+    <p>Sept 2017 - 2019 (Expected) <br /> Ottawa, Ontario</p>
   </div>
   <div class="large-8 columns">
-    <p>Bachelor of Engineering<span id="aero"></span></p>
-    <p>Member of the Carleton University Robotics Club</p>
-    <p>Member of the Software and Computer Engineering Society of Carleton</p>
+    <p>Master of Applied Science</p>
+  </div>
+</div>
+
+<hr />
+-->
+
+<div class="row cv">
+  <div class="large-4 columns">
+    <h4>Carleton University</h4>
+    <p>Sept 2012 - Apr 2017 <br /> Ottawa, Ontario</p>
+  </div>
+  <div class="large-8 columns">
+    <p>Bachelor of Engineering in Aerospace</p>
+    <p>Graduated with a GPA of 11.1/12.0</p>
+    <p>Won the Matthew Johnston Memorial Scholarship</p>
+    <p>Deans' Honour List 2013 - 2016</p>
   </div>
 </div>
 
@@ -171,35 +186,35 @@ title: CV
   <tbody>
     <tr>
       <th>Languages</th>
-      <td>Python, JavaScript/CoffeeScript, Go, MATLAB/GNU Octave, C, Java, Ruby</td>
+      <td>Python, Ruby, JS, Go, MATLAB, C, Java</td>
     </tr>
     <tr>
-      <th>Frameworks</th>
-      <td>Flask, Jinja2, Django, AngularJS, BackboneJS, NodeJS, matplotlib/numpy/scipy and others</td>
+      <th>Web Frameworks</th>
+      <td>Rails, Flask, Django, among others</td>
     </tr>
     <tr>
       <th>Databases</th>
-      <td>SQL (SQLite, PgSQL, MySQL), Riak, LevelDB, Redis, MongoDB, CouchDB</td>
-    </tr>
-    <tr>
-      <th>Server</th>
-      <td>Ubuntu, Debian</td>
+      <td>MySQL, SQLite, LevelDB, Redis</td>
     </tr>
     <tr>
       <th>Platforms</th>
-      <td>Android, AOSP</td>
-    </tr>
-    <tr>
-      <th>Revision Control</th>
-      <td>git, repo</td>
+      <td>Ubuntu, Debian, Android, AOSP</td>
     </tr>
     <tr>
       <th>Provisioning</th>
       <td>Ansible, Chef</td>
     </tr>
     <tr>
-      <th>Design</th>
-      <td>AutoDesk Inventor, Creo Parametric, ANSYS CFX, STK (Certified), ANSYS Mechanical APDL</td>
+      <th>Design and Simulations</th>
+      <td>Creo Parametric, AutoDesk Inventor, ANSYS CFX, STK, ANSYS APDL</td>
+    </tr>
+    <tr>
+      <th>Scientific Computing</th>
+      <td>numpy/scipy/matplotlib, Paraview, Tecplot</td>
+    </tr>
+    <tr>
+      <th>General Productivity</th>
+      <td>LaTeX, LibreOffice, Microsoft Office</td>
     </tr>
   </tbody>
 </table>

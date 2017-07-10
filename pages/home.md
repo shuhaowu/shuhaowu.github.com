@@ -33,9 +33,9 @@ title: Home
           <h4>School and Work</h4>
           <dl>
             <dt><a href="http://carleton.ca">Carleton University</a></dt>
-            <dd>Working towards Bachelor of Engineering</dd>
+            <dd>Bachelor of Engineering in Aerospace</dd>
             <dt><a href="https://shopify.com">Shopify</a></dt>
-            <dd>Developer on site reliability team</dd>
+            <dd>Developer on the site reliability team</dd>
           </dl>
           <p class="checkout"><a href="/cv">See More</a></p>
         </div>
