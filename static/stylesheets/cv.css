@@ -12,17 +12,25 @@ table.cv tr.even, table tr.alt, table tr:nth-of-type(2n) {
 }
 table.cv tr:last-child td, table.cv tr:last-child th { padding-bottom: 0; }
 
-div.row.cv h4 { font-weight: 600; margin-top: 0;}
-div.row.cv .large-8 p:first-child { font-style: italic; font-size: 1.125em; margin-left: 0; margin-bottom: 0.5em; }
+div.row.cv h4 { font-weight: normal; font-style: italic; margin-top: 0;}
 div.row.cv p { margin-bottom: 0.3em; margin-left: 10px; }
 
 @media only screen and (max-width: 768px) {
-	div.row.cv h4:first-child { margin-top: 20px; }
+	h4.section-title { font-size: 1.3em; }
+
+	div.row.cv p { font-size: 0.9em; }
+	div.row.cv .large-4 h4 { margin-top: 0; }
+	div.row.cv .large-4 p { display: none; }
+	div.row.cv .large-4 h4 small { display: inline; }
+	div.row.cv .large-8 p:first-child { font-style: italic; margin-bottom: 0.5em; margin-left: 0; }
+	div.row.cv .large-8 p:not(:first-child) { display: list-item; list-style: disc outside none; margin-left: 15px; }
 }
 
 @media only screen and (min-width: 768px) {
-	div.row.cv .large-4 h4 { font-size: 1.3em; }
-	div.row.cv .large-8 p:first-child { line-height: 1.4em; font-size: 1.3em; }
+	div.row.cv .large-4 h4 { font-size: 1.2em; }
+	div.row.cv .large-4 h4 small { display: none; }
+	div.row.cv .large-4 h4 small.show { display: inline; }
+	div.row.cv .large-8 p:first-child { font-style: italic; line-height: 1.4em; font-size: 1.1em; margin-left: 0; margin-bottom: 0.5em; }
 }
 
 table.cv, div.row.cv.separate { margin-bottom: 50px; }

@@ -22,13 +22,17 @@ title: CV
 
 <div class="row cv">
   <div class="large-4 columns">
-    <h4>Shopify</h4>
+    <h4>Shopify <small>May 2014 - Present</small></h4>
     <p>May 2014 - Present <br /> Ottawa, Ontario</p>
   </div>
   <div class="large-8 columns">
-    <p>Developer on site reliability (Datastores) team</p>
-    <p>Worked on the SSL infrastructure of <a href="http://shopify.com">Shopify</a>.</p>
-    <p>Working with the database infrastructure.</p>
+    <p>Developer on site reliability (Datastores/MySQL) team</p>
+    <p>Working on <a href="https://github.com/Shopify/ghostferry">Ghostferry</a>, an open source, online MySQL data migration tool.</p>
+    <p>Working on automation with respect to the sharded MySQL infrastructure.</p>
+    <p>Prototyped on the SSL infrastructure of <a href="https://shopify.com">Shopify</a>.</p>
+    <p class="hide-on-print"><a href="https://github.com/Shopify/ghostferry">Ghostferry code</a>
+      &#8226;
+    <a href="https://www.percona.com/live/18/sessions/ghostferry-the-swiss-army-knife-of-live-data-migrations-with-minimum-downtime">Ghostferry presentation</a></p>
   </div>
 </div>
 
@@ -36,11 +40,11 @@ title: CV
 
 <div class="row cv">
   <div class="large-4 columns">
-    <h4>Graphite Software</h4>
+    <h4>Graphite Software <small>Feb 2014 - May 2014</small></h4>
     <p>Feb 2014 - May 2014 <br /> Ottawa, Ontario</p>
   </div>
   <div class="large-8 columns">
-    <p>Software developer</p>
+    <p>Software developer contractor</p>
     <p>Worked on the Android's framework/base with
        <a href="http://www.securespaces.com/">Secure Spaces</a>.
     </p>
@@ -52,7 +56,7 @@ title: CV
 
 <div class="row cv">
   <div class="large-4 columns">
-    <h4>Mozilla</h4>
+    <h4>Mozilla <small>May 2013 - Sept 2013</small></h4>
     <p>May 2013 - Sept 2013 <br /> Mountain View, California</p>
   </div>
   <div class="large-8 columns">
@@ -61,10 +65,6 @@ title: CV
     <p>Worked on a method to identify "explosive" crashes within 24 hours or reporting.</p>
     <p class="hide-on-print"><a href="https://github.com/mozilla/osumo">Offline SUMO code</a>
       &#8226;
-      <a href="http://osumo.paas.allizom.org">Offline SUMO app</a>
-      &#8226;
-      <a href="http://crash-stats.mozilla.com/explosive">Explosive view in crashstat</a>
-      <br />
     <a href="https://air.mozilla.org/intern-presentation-wu/">Summary presentation</a></p>
   </div>
 </div>
@@ -73,7 +73,7 @@ title: CV
 
 <div class="row cv">
   <div class="large-4 columns">
-    <h4>Lo-Ellen Robotics <br class="print-only" /><small>(FRC Team 4069)</small></h4>
+    <h4>Lo-Ellen Robotics <br class="print-only" /><small class="show">(FRC Team 4069)</small> <small>2011 - 2012</small></h4>
     <p>2011 - 2012 <br /> Sudbury, Ontario</p>
   </div>
   <div class="large-8 columns">
@@ -90,7 +90,7 @@ title: CV
 
 <div class="row cv">
   <div class="large-4 columns">
-    <h4>Pillar Ceramics</h4>
+    <h4>Pillar Ceramics <small>2010 - 2011</small></h4>
     <p>2010 - 2011 <br /> Sudbury, Ontario</p>
   </div>
   <div class="large-8 columns">
@@ -124,23 +124,21 @@ title: CV
 
 <h4 class="section-title">Education</h4>
 
-<!--
 <div class="row cv">
   <div class="large-4 columns">
-    <h4>Carleton University</h4>
+    <h4>Carleton University <small>2017 - 2019 (Expected)</small></h4>
     <p>Sept 2017 - 2019 (Expected) <br /> Ottawa, Ontario</p>
   </div>
   <div class="large-8 columns">
-    <p>Master of Applied Science</p>
+    <p>Master of Applied Science in Mechanical Engineering</p>
   </div>
 </div>
 
 <hr />
--->
 
 <div class="row cv">
   <div class="large-4 columns">
-    <h4>Carleton University</h4>
+    <h4>Carleton University <small>Sept 2012 - Apr 2017</small></h4>
     <p>Sept 2012 - Apr 2017 <br /> Ottawa, Ontario</p>
   </div>
   <div class="large-8 columns">
@@ -155,7 +153,7 @@ title: CV
 
 <div class="row cv">
   <div class="large-4 columns">
-    <h4>Lo-Ellen Park Secondary School</h4>
+    <h4>Lo-Ellen Park Secondary School <small>2008 - 2012</small></h4>
     <p>2008 - 2012 <br /> Sudbury, Ontario</p>
   </div>
   <div class="large-8 columns">
@@ -186,7 +184,7 @@ title: CV
   <tbody>
     <tr>
       <th>Languages</th>
-      <td>Python, Ruby, JS, Go, MATLAB, C, Java</td>
+      <td>Python, Ruby, JS, Go, Java, C, MATLAB</td>
     </tr>
     <tr>
       <th>Web Frameworks</th>
@@ -198,7 +196,7 @@ title: CV
     </tr>
     <tr>
       <th>Platforms</th>
-      <td>Ubuntu, Debian, Android, AOSP</td>
+      <td>Ubuntu, Debian, Android, AOSP, LXD/Containers</td>
     </tr>
     <tr>
       <th>Provisioning</th>
@@ -210,7 +208,7 @@ title: CV
     </tr>
     <tr>
       <th>Scientific Computing</th>
-      <td>numpy/scipy/matplotlib, Paraview, Tecplot</td>
+      <td>numpy/scipy/matplotlib, Paraview, VTK, Tecplot</td>
     </tr>
     <tr>
       <th>General Productivity</th>

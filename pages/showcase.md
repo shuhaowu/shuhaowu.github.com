@@ -28,6 +28,9 @@ title: Showcase
     platform measuring 2 feet across capable of driving 120lb of 
     weight. Originally developed for the iTAD fourth year project, the system
     now serves as an excellent robotics research platform.</p>
+		<div class="showlink">
+			<a href="/static/img/showcase/itadomni.webm">Video Demo</a>
+		</div>
 	</div>
 </div>
 
@@ -47,35 +50,9 @@ title: Showcase
 	</div>
 </div>
 
+<!--
 ### Experimental Projects <small>Under development, not recommended for use</small> ###
-
-<div class="row showcase">
-	<div class="large-4 columns">
-		<a class="text-center" href="/static/img/showcase/goblin.png">
-			<div style="background-image:url(/static/img/showcase/goblin.png)" class="img"></div>
-		</a>
-	</div>
-	<div class="large-8 columns">
-		<p><strong>Goblin</strong> explores the possibility of implementing a <abbr title="Simultaneous localization and mapping">SLAM</abbr> system with the Xbox Kinect (Gen 1) for a planetary rover.</p>
-		<div class="showlink">
-			<a href="https://gitlab.com/shuhao/goblin">Code</a>
-		</div>
-	</div>
-</div>
-
-<div class="row showcase">
-	<div class="large-4 columns">
-		<a class="text-center" href="/static/img/showcase/confpack.png">
-			<div style="background-image:url(/static/img/showcase/confpack.png)" class="img"></div>
-		</a>
-	</div>
-	<div class="large-8 columns">
-		<p><strong>Confpack</strong> is a provision system built on top of traditional package management systems. Confpack's advantage over traditional systems are its ease of use and the ability to clean up after itself if the original provisioning definition changes.</p>
-		<div class="showlink">
-			<a href="https://github.com/confpack">Code</a>
-		</div>
-	</div>
-</div>
+-->
 
 ### Inactive Projects <small>No longer with any development</small> ###
 
