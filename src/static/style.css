@@ -1,0 +1,338 @@
+body {
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+}
+
+/* Adapter from bootstrap */
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+
+  ul {
+    padding-left: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+
+  ul {
+    padding-left: 1.75rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+nav.container {
+  border-bottom: 0px solid #CCC;
+}
+
+nav.container > div.pure-menu > a.pure-menu-heading {
+  font-size: 1.3rem;
+  padding: 0.5rem 1rem;
+}
+
+nav li.pure-menu-item a.pure-menu-link {
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+}
+
+nav a.pure-menu-link {
+  color: #785def;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+nav a.pure-menu-link:hover {
+  color: #5838ea;
+}
+
+nav a.pure-menu-link.selected {
+  background-color: #EEE;
+}
+
+/*
+body {
+  font-family: serif;
+}
+
+.pure-g [class*="pure-u"] {
+  font-family: serif;
+}
+*/
+
+h1 {
+  font-size: 1.7rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+h4 {
+  font-size: 1rem;
+  color: #777;
+}
+
+div.page {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+div.callout {
+  background-color: #f2f2f2;
+  border: 1px solid #d9d9d9;
+}
+
+footer {
+  padding-top: 1rem;
+  color: #AAA;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+footer a {
+  color: #2ba6cb;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+footer a:hover {
+  color: #2489a8;
+}
+
+div.container > div:first-child {
+  margin-top: 0.5rem;
+}
+
+/* Resume */
+
+div.resume div.callout {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+div.resume h3.job-title {
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+div.resume p {
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+div.resume ul {
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+div.resume li {
+  line-height: 1.5;
+}
+
+div.resume li > ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+div.resume h3.job-title small {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Blog */
+
+div.blogpost.page {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+h1.blogpost-title {
+  margin: 0;
+}
+
+p.blogpost-subtitle {
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+div.blogpost-header {
+  border-bottom: 1px solid #CCC;
+}
+
+div.blogpost-header.no-divider {
+  border-bottom: 0 !important;
+}
+
+div.blogpost-header.no-divider p.blogpost-subtitle {
+  margin-bottom: 0.3rem;
+}
+
+p.blogpost-subtitle > .highlight {
+  color: #606060;
+  font-style: italic;
+}
+
+.blogpost-body h1 {
+  font-size: 1.4rem;
+  color: #555;
+}
+
+.blogpost-body h2 {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.blogpost-body h3 {
+  font-size: 1.0rem;
+  color: #555;
+}
+
+.blogpost-body h4 {
+  font-size: 1.0rem;
+  color: #999;
+}
+
+.blog-page-controls {
+  text-align: right;
+  margin: 0;
+}
+
+/* Main page */
+div.splash {
+  position: absolute;
+  margin: auto;
+  top: 4rem;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+}
+
+div.splash h1 {
+  color: #5b5b5b;
+  font-size: 2.3rem;
+  font-weight: normal;
+}
+
+div.splash h1 small {
+  font-size: 1rem;
+}
+
+div.splash p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+div.splash .cactus {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+}
+
+div.splash + footer {
+  position: absolute;
+  margin: auto;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+}
+
+/* Project page */
+
+div.page.project {
+  margin-bottom: 0.5rem;
+}
+
+div.project.callout {
+  border-radius: 5px;
+}
+
+.project-category h1 {
+  font-size: 1.3rem;
+  margin-top: 0rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-category p {
+  margin: 0;
+}
+
+h2.project-name {
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+h2.project-name a {
+  color: black;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+div.callout.project {
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+div.project .img {
+  width: 100%;
+  height: 200px;
+  display: block;
+  margin: 0 auto;
+}
+
+div.project .img img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 992px) {
+  div.project .img {
+    height: 300px;
+  }
+}
+
+div.project p {
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+}

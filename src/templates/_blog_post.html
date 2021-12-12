@@ -1,0 +1,38 @@
+{% set active_page = "blog" %}
+{% extends "templates/_base.html" %}
+
+{% block title %}{{ title }} - Shuhao's Blog{% endblock %}
+
+{% block head %}
+
+{% if has_code %}
+<link rel="stylesheet" type="text/css" href="/static/code.css">
+{% endif %}
+
+{% endblock %}
+
+{% block content %}
+<div class="pure-g">
+  <div class="pure-u-1 blogpost page callout">
+    <div class="blogpost-header">
+      <h1 class="blogpost-title"><a href="{{ href }}">{{ title }}</a></h1>
+      <p class="blogpost-subtitle">
+        By <span class="highlight">{{ authors }}</span> at <span class="highlight">{{ created_at }}</span>
+        {% if updated_at %}(updated at <span class="highlight">{{ updated_at }}</span>){% endif %}
+      </p>
+
+      {% if draft %}
+      <p class="blogpost-subtitle">
+        <strong style="color: red;">
+          THIS IS A DRAFT AND IS NOT PUBLISHED.
+        </strong>
+      </p>
+      {% endif %}
+    </div>
+
+    <div class="blogpost-body">
+      {{ html_body }}
+    </div>
+  </div>
+</div>
+{% endblock %}

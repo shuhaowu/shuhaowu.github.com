@@ -1,0 +1,173 @@
+{% set active_page = "resume" %}
+
+{% extends "templates/_base.html" %}
+
+{% block title %}Résumé - Shuhao{% endblock %}
+
+{% block content %}
+<div class="pure-g">
+  <div class="pure-u-1 page resume callout">
+    <h2>About me &#127797; </h2>
+    <p>
+      I have a wide skill sets across multiple disciplines of engineering and also deep understanding in several research-level problems. Specifically, I have:
+    </p>
+
+    <ul>
+      <li>
+        Over 8 years of professional software development experience, with a recent emphasis on distributed system, formal methods, and performance;
+      </li>
+      <li>
+        Over 3 years mobile robots experience, which included mechanical, electronics, and software design;
+      </li>
+      <li>
+        Over 3 years of academic experience in fluid dynamics research, via both computational and experimental approaches.
+      </li>
+    </ul>
+
+    <p>
+      My current technical interests include (but not limited to): autonomous mobile robots (perception and controls), real-time systems for robotics, formal methods in software design, and distributed computer systems.
+    </p>
+
+    <p>Contact: <a href="mailto:shuhao@shuhaowu.com">shuhao@shuhaowu.com</a> | Github: <a href="https://github.com/shuhaowu" target="_blank">@shuhaowu</a> | LinkedIn: <a href="https://www.linkedin.com/in/shuhao-wu-2712ba4a/" target="_blank">Shuhao Wu</a></p>
+  </div>
+</div>
+
+<div class="pure-g">
+  <div class="pure-u-1 page resume callout">
+    <h2>Experiences</h2>
+    <h3 class="job-title" id="shopify">Staff Production Engineer @ Shopify <small>Dec 2021 - Present</small></h3>
+
+    <ul>
+      <li>
+        Currently prototyping observability tools with BPF.
+      </li>
+    </ul>
+
+    <h3 class="job-title">Senior Production Engineer @ Shopify <small>Jan 2020 - Nov 2021</small></h3>
+    <ul>
+      <li>
+        Worked on running stateful services on Kubernetes via custom controllers.
+      </li>
+      <li>
+        Used various data-driven approaches for technical deep dives into various production systems, such as the shard balancing system, to resolve technical issues and improve performance.
+      </li>
+      <li>
+        Experimented with technologies such as BPF to trace and improve the performance of various software systems.
+      </li>
+      <li>
+        Provided technical guidance and direction for a number of different projects.
+      </li>
+    </ul>
+
+    <h3 class="job-title">Software Engineering Intern @ Shopify <small>May 2014 - Dec 2019</small></h3>
+
+    <ul>
+      <li>
+        Developed and open sourced <a href="https://github.com/Shopify/ghostferry">Ghostferry</a>, a tool that performs petabyte-scale, live data migration with no downtime. This was <a href="https://github.com/Shopify/ghostferry/blob/master/docs/source/_static/percona-talk.pdf">presented at Percona Live 2018</a> as a keynote presentation.
+      </li>
+      <li>
+        Employed formal verification methods (<a href="https://lamport.azurewebsites.net/tla/tla.html">TLA+</a>) in the development of concurrent systems such as Ghostferry and uncovered data-loss faults prior to the implementation.
+      </li>
+      <li>
+        Collaborated with efforts to balance load between database shards by moving tenant data from one shard to another with Ghostferry with no downtime.
+      </li>
+      <li>
+        Designed and implemented tooling to run database schema migrations for hundreds of database shards.
+      </li>
+      <li>
+        Worked on automatic SSL provisioning prior to the availability of Lets Encrypt.
+      </li>
+    </ul>
+
+    <h3 class="job-title">Software development contractor @ Graphite Software <small>Feb 2014 - May 2019</small></h3>
+
+    <ul>
+      <li>Worked on the Android's framework/base with Secure Spaces.</li>
+      <li>Worked on Secure Spaces' server UI component.</li>
+    </ul>
+
+    <h3 class="job-title">Software development intern @ Mozilla <small>May 2013 - Sept 2013</small></h3>
+
+    <ul>
+      <li>
+        Worked on an offline version of support.mozilla.org using HTML5.
+      </li>
+      <li>
+        Worked on a method to identify "explosive" crashes within 24 hours or reporting.
+      </li>
+    </ul>
+
+    <h3 class="job-title">Team captain and lead programmer @ Loellen Robotics (FRC Team 4069) <small>2011 - 2012</small></h3>
+
+    <ul>
+      <li>
+        Lead a team that developed a robot to compete in the FIRST Robotics Competition. Team was ranked top 30% in the world.
+      </li>
+      <li>
+        Personally responsible for designing and implementing the software and the electrical system of the robot.
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="pure-g">
+  <div class="pure-u-1 page resume callout">
+    <h2>Education</h2>
+    <h3 class="job-title">Master of Applied Science in Mechanical Engineering @ Carleton University <small>2017 - 2021</small></h3>
+
+    <ul>
+      <li>
+        Published "<a href="https://doi.org/10.1063/5.0062617">Interaction of a turbulent spot with a two-dimensional cavity</a>" to Physics of Fluid and accepted as an Editor's pick.
+      </li>
+      <li>
+        Defended thesis with the same title and passed with distinction and Senate medal nomination.
+      </li>
+      <li>
+        Studied the interaction between turbulence and surface cavities via both direct numerical simulations (ANSYS CFX) and wind-tunnel experiments (hotwire and pitot measurements) in low-Reynolds-number regimes.
+      </li>
+      <li>
+        Designed, built, and commissioned a robotic linear positioning systems (mechanical, electrical, and software) for probe traversal within a wind tunnel.
+      </li>
+      <li>Designed, implemented, and commissioned a control system to regulate the Mach number within a transonic wind-tunnel.</li>
+    </ul>
+
+    <h3 class="job-title">Bachelor of Engineering in Aerospace @ Carleton University <small>2012 - 2017</small></h3>
+
+    <ul>
+      <li>
+        Designed and built an extensible omni-directional robotic platform (23" diameter) from scratch known as iTAD Omni for the final year project.
+        <ul>
+          <li>Mechanical design completed via Creo Parametric and machined with aluminum.</li>
+          <li>Software written with Python and C++ and Robot Operating System (ROS).</li>
+          <li>Implemented electrical system using off-the-shelf power delivery, motor controller, and microcontroller solutions.</li>
+        </ul>
+      </li>
+      <li>On the Deans' Honour List from 2013 - 2016.</li>
+      <li>Won the Matthew Johston Memorial Scholarship.</li>
+    </ul>
+
+    <h3 class="job-title">Lo-Ellen Park Secondary School <small>2008 - 2012</small></h3>
+    <ul>
+      <li>Founding member and team captain of Loellen Robotics, FRC Team 4069.</li>
+      <li>Won school first for the 2011 Euclid Math Contest. 95th percentile Canada-wide.</li>
+      <li>Won school first for the 2012 Euclid Math Contest. 92nd place out of 13000 Canada-wide.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="pure-g">
+  <div class="pure-u-1 page resume callout">
+    <h2>Technical Skills</h2>
+    <p>This is a non-exhaustive list of the things I am familiar with:</p>
+    <ul>
+      <li><strong>Programming</strong>: Python, Modern C++, Ruby, Golang, SQL, Julia, MATLAB, Java</li>
+      <li><strong>Software platforms</strong>: Linux, Kubernetes, ROS/ROS2, Docker, LXD/LXC, BPF, Ftrace, Ansible, Android, Google Cloud Platform, MySQL</li>
+      <li><strong>Scientific computing</strong>: numpy, scipy, matplotlib, Jupyter, Paraview, VTK, Tecplot, Julia</li>
+      <li><strong>Mechanical design and simulations</strong>: Creo Parametric, SolidWorks, Fusion 360, ANSYS CFX</li>
+      <li><strong>General Productivity</strong>: Office (Microsoft, Google, LibreOffice), LaTeX</li>
+      <li><strong>Mathematics</strong>: statistics, numerical methods for differential equations, linear programming, non-linear optimization, temporal logic</li>
+    </ul>
+  </div>
+</div>
+
+{% endblock %}

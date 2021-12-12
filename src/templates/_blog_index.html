@@ -1,0 +1,50 @@
+{% set active_page = "blog" %}
+
+{% extends "templates/_base.html" %}
+
+{% block title %}Blog - Shuhao{% endblock %}
+
+{% block head %}
+<link href="/blog/feed/index.xml" type="application/atom+xml" rel="alternate" title="Blog Atom feed" />
+{% endblock %}
+
+{% block content %}
+{% for post in posts %}
+  <div class="pure-g">
+    <div class="pure-u-1 blogpost page callout">
+      <div class="blogpost-header no-divider">
+        <h1 class="blogpost-title"><a href="{{ post.href }}">{{ post.title }}</a></h1>
+        <p class="blogpost-subtitle">
+          By <span class="highlight">{{ post.authors }}</span> at <span class="highlight">{{ post.created_at }}</span>
+          {% if post.updated_at %}(updated at <span class="highlight">{{ post.updated_at }}</span>){% endif %}
+        </p>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+
+<div class="pure-g">
+  <div class="pure-u-1">
+    <p class="blog-page-controls">
+      {% if page_num > 1 -%}
+      <a href="/blog/index/{{ page_num - 1 }}.html">Previous Page</a>
+      {%- endif %}
+      {% if page_num > 1 and page_num < num_pages -%}
+      &#8226;
+      {%- endif %}
+      {% if page_num < num_pages -%}
+      <a href="/blog/index/{{ page_num + 1 }}.html">Next Page</a>
+      {%- endif %}
+    </p>
+  </div>
+</div>
+
+{% if posts|length == 0 %}
+  <div class="pure-g page">
+    <div class="pure-u-1">
+      <p>There's no content here yet...</p>
+    </div>
+  </div>
+{% endif %}
+
+{% endblock %}

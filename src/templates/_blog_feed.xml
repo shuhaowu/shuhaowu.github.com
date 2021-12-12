@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Shuhao's Personal Blog</title>
+  <updated>{{ now.isoformat("T") }}</updated>
+  <author>
+    <name>Shuhao Wu</name>
+  </author>
+
+  <id>https://shuhaowu.com/</id>
+
+  <link rel="self" href="https://shuhaowu.com/blog/feed/{{ page_num }}.xml" />
+  <link rel="first" href="https://shuhaowu.com/blog/feed/1.xml" />
+  {% if page_num < num_pages -%}
+  <link rel="next" href="https://shuhaowu.com/blog/feed/{{ page_num + 1 }}.xml" />
+  {%- endif %}
+  {% if page_num > 1 -%}
+  <link rel="previous" href="https://shuhaowu.com/blog/feed/{{ page_num - 1 }}.xml" />
+  {%- endif %}
+
+  {% for post in posts %}
+  <entry>
+    <id>https://shuhaowu.com{{ post.href }}</id>
+    <title>{{ post.title }}</title>
+    <updated>
+      {%- if post.updated_at -%}
+        {{ post.updated_at }}
+      {%- else -%}
+        {{ post.created_at }}
+      {%- endif -%}
+    </updated>
+    <author>
+      <name>{{ post.authors }}</name>
+    </author>
+    <link href="https://shuhaowu.com{{ post.href }}" />
+    <content type="html">
+      {{ post.html_body|e }}
+    </content>
+  </entry>
+  {% endfor %}
+</feed>
