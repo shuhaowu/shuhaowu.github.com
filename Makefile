@@ -5,6 +5,8 @@ PROD_HOST := lettuce.thekks.net
 
 out: $(SOURCE_FILES)
 	funnel4
+	mkdir -p out/archive/2021
+	tar -C out/archive/2021 -xf archive/2021.tar.gz
 	touch out # To make the timestamp workout
 
 server: out
