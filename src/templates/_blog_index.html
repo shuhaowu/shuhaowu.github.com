@@ -5,7 +5,7 @@
 {% block title %}Blog - Shuhao{% endblock %}
 
 {% block head %}
-<link href="/blog/feed/index.xml" type="application/atom+xml" rel="alternate" title="Blog Atom feed" />
+<link href="blog/feed/index.xml" type="application/atom+xml" rel="alternate" title="Blog Atom feed" />
 {% endblock %}
 
 {% block content %}
@@ -27,13 +27,13 @@
   <div class="pure-u-1">
     <p class="blog-page-controls">
       {% if page_num > 1 -%}
-      <a href="/blog/index/{{ page_num - 1 }}.html">Previous Page</a>
+      <a href="blog/index/{{ page_num - 1 }}.html">Previous Page</a>
       {%- endif %}
       {% if page_num > 1 and page_num < num_pages -%}
       &#8226;
       {%- endif %}
       {% if page_num < num_pages -%}
-      <a href="/blog/index/{{ page_num + 1 }}.html">Next Page</a>
+      <a href="blog/index/{{ page_num + 1 }}.html">Next Page</a>
       {%- endif %}
     </p>
   </div>
