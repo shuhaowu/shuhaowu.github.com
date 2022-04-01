@@ -60,6 +60,13 @@ nav.container > div.pure-menu > a.pure-menu-heading {
   padding: 0.5rem 1rem;
 }
 
+@media (min-width: 768px) {
+  nav ul.pure-menu-list.right {
+    float: right;
+    margin-top: 3px; /* Not sure why it is needed to vertical align... */
+  }
+}
+
 nav li.pure-menu-item a.pure-menu-link {
   padding-left: 0.4rem;
   padding-right: 0.4rem;
@@ -210,12 +217,10 @@ p.blogpost-subtitle > .highlight {
 
 .blogpost-body h1 {
   font-size: 1.4rem;
-  color: #555;
 }
 
 .blogpost-body h2 {
   font-size: 1.2rem;
-  color: #555;
 }
 
 .blogpost-body h3 {
@@ -231,6 +236,21 @@ p.blogpost-subtitle > .highlight {
 .blog-page-controls {
   text-align: right;
   margin: 0;
+}
+
+object.align-center {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+table.footnote {
+  font-size: 0.85rem;
+}
+
+a.footnote-reference {
+  vertical-align: super;
+  font-size: 0.8rem;
 }
 
 /* Main page */

@@ -18,6 +18,7 @@
   {%- endif %}
 
   {% for post in posts %}
+  {% if not post.draft %}
   <entry>
     <id>https://shuhaowu.com{{ post.href }}</id>
     <title>{{ post.title }}</title>
@@ -36,5 +37,6 @@
       {{ post.html_body|e }}
     </content>
   </entry>
+  {% endif %}
   {% endfor %}
 </feed>

@@ -10,6 +10,7 @@
 
 {% block content %}
 {% for post in posts %}
+{% if not post.draft %}
   <div class="pure-g">
     <div class="pure-u-1 blogpost page callout">
       <div class="blogpost-header no-divider">
@@ -21,6 +22,7 @@
       </div>
     </div>
   </div>
+{% endif %}
 {% endfor %}
 
 <div class="pure-g">

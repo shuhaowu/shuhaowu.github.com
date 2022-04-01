@@ -30,6 +30,13 @@
             <a href="contact.html" class="pure-menu-link{% if active_page == "contact" %} selected{% endif %}">Contact</a>
           </li>
         </ul>
+        {% if active_page =="blog" %}
+        <ul class="pure-menu-list right">
+          <li class="pure-menu-item">
+            <a href="blog/feed/index.xml" class="pure-menu-link">Subscribe via RSS</a>
+          </li>
+        </ul>
+        {% endif %}
       </div>
     </nav>
     {% endblock %}
@@ -40,7 +47,7 @@
     {% block footer %}
     <footer>
       License: <a rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> <br>
-      &#9883; Last updated: 2021-12-15 &#9883;
+      &#9883; Last updated: 2022-04-01 &#9883;
     </footer>
     {% endblock %}
     </div>
