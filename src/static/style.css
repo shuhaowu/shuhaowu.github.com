@@ -238,12 +238,20 @@ p.blogpost-subtitle > .highlight {
   margin: 0;
 }
 
-object.align-center {
+/* Figure formatting */
+div.figure object {
   display: block;
   margin: 0 auto;
   max-width: 100%;
 }
 
+div.figure p.caption {
+  margin-top: 0;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+/* Footnote */
 table.footnote {
   font-size: 0.85rem;
 }
@@ -251,6 +259,12 @@ table.footnote {
 a.footnote-reference {
   vertical-align: super;
   font-size: 0.8rem;
+}
+
+/* Code block */
+
+pre.code {
+  white-space: pre-wrap;
 }
 
 /* Main page */

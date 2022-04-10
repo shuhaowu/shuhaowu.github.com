@@ -40,8 +40,7 @@ particular piece of software on two independent axes: maximum allowed latency
 and consequence severity of missed deadline. With these two axes, I can plot
 (subjectively) as follows:
 
-.. image:: static/imgs/blog/2022/01-rt-classification.svg
-   :class: align-center
+.. figure:: /static/imgs/blog/2022/01-rt-classification.svg
 
 I like this two axes system, as each application is unique and must be
 evaluated individually. That said, this is not how applications are typically
@@ -85,8 +84,7 @@ the hardware that the application relies on.
 Overview of latency sources
 ===========================
 
-.. image:: static/imgs/blog/2022/01-rt-latencies-overview.svg
-   :class: align-center
+.. figure:: /static/imgs/blog/2022/01-rt-latencies-overview.svg
 
 To be able to develop an application that can meet its deadlines every time,
 the developer must be able to predict the worst-case execution time of every
@@ -161,6 +159,6 @@ orders of 10 milliseconds, an application such as robotics controllers that
 has deadlines of a few milliseconds requires the careful examination and
 validation of the hardware, operating system, and the application code.
 
-In the `next post <blog/2022/02-linux-rt-appdev-part2.html>`_, I will write a
+In the `next post </blog/2022/02-linux-rt-appdev-part2.html>`_, I will write a
 very simple program that can achieve a maximum latency of 1ms and configure it
 to run on Linux.

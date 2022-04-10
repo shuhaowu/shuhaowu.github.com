@@ -3,7 +3,7 @@ PROD_HOST := lettuce.thekks.net
 
 .PHONY: clean server deploy-prod deploy-staging
 
-out: $(SOURCE_FILES) funnel4.yml
+out: $(SOURCE_FILES)
 	funnel4
 	mkdir -p out/archive/2021
 	tar -C out/archive/2021 -xf archive/2021.tar.gz

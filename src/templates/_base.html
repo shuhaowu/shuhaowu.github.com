@@ -3,10 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>{% block title %}Shuhao{% endblock %}</title>
-    <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="static/pure.css">
-    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/pure.css">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
     {% block head %}
     {% endblock %}
   </head>
@@ -15,25 +14,25 @@
     {% block navbar %}
     <nav class="container">
       <div class="pure-menu pure-menu-horizontal pure-menu-scrollable">
-        <a href="index.html" class="pure-menu-heading pure-menu-link{% if active_page =="home" %} selected{% endif %}">Shuhao Wu</a>
+        <a href="/" class="pure-menu-heading pure-menu-link{% if active_page =="home" %} selected{% endif %}">Shuhao Wu</a>
         <ul class="pure-menu-list">
           <li class="pure-menu-item">
-            <a href="resume.html" class="pure-menu-link{% if active_page == "resume" %} selected{% endif %}">Résumé</a>
+            <a href="/resume.html" class="pure-menu-link{% if active_page == "resume" %} selected{% endif %}">Résumé</a>
           </li>
           <li class="pure-menu-item">
-            <a href="projects.html" class="pure-menu-link{% if active_page == "projects" %} selected{% endif %}">Projects</a>
+            <a href="/projects.html" class="pure-menu-link{% if active_page == "projects" %} selected{% endif %}">Projects</a>
           </li>
           <li class="pure-menu-item">
-            <a href="blog/index/" class="pure-menu-link{% if active_page == "blog" %} selected{% endif %}">Blog</a>
+            <a href="/blog/index/" class="pure-menu-link{% if active_page == "blog" %} selected{% endif %}">Blog</a>
           </li>
           <li class="pure-menu-item">
-            <a href="contact.html" class="pure-menu-link{% if active_page == "contact" %} selected{% endif %}">Contact</a>
+            <a href="/contact.html" class="pure-menu-link{% if active_page == "contact" %} selected{% endif %}">Contact</a>
           </li>
         </ul>
         {% if active_page =="blog" %}
         <ul class="pure-menu-list right">
           <li class="pure-menu-item">
-            <a href="blog/feed/index.xml" class="pure-menu-link">Subscribe via RSS</a>
+            <a href="/blog/feed/index.xml" class="pure-menu-link">Subscribe via RSS</a>
           </li>
         </ul>
         {% endif %}
