@@ -10,11 +10,11 @@ constant frequency with low latency. Missing the deadline generally results in
 pops and cracks emitted by the speaker. When developing advanced `controllers
 <https://en.wikipedia.org/wiki/Control_theory>`_ for a robot, the system also
 must read, compute, and write data to the hardware at a constant frequency with
-low latency. Failure to do so can result in the controlling becoming unstable,
+low latency. Failure to do so can result in the controller becoming unstable,
 potentially causing damage to property and life.
 
 This is a series where I document my journey on real-time C++ development on
-Linux. While there are lots of material out there, ranging from blog posts and
+Linux. While there are lots of materials out there, ranging from blog posts and
 presentations, to PhD thesis and journal articles, they tend to cover only a
 subset of the problem that combines *real-time*, *C++*, and *Linux* together.
 As a result, I found it difficult to tie everything I have read together to
@@ -40,10 +40,9 @@ particular piece of software on two independent axes: maximum allowed latency
 and consequence severity of missed deadline. With these two axes, I can plot
 (subjectively) as follows:
 
-.. image:: static/imgs/blog/2022/01-rt-classification.svg
-   :class: align-center
+.. figure:: /static/imgs/blog/2022/01-rt-classification.svg
 
-I like this two axes system, as each application is unique and must be
+I like this two-axes system, as each application is unique and must be
 evaluated individually. That said, this is not how applications are typically
 classified in the literature. Instead, there are a lot of references to "hard"
 and "soft" real-time systems, which are not consistently defined everywhere.
@@ -64,7 +63,7 @@ and it didn't respond for a few minutes, you'll likely forcefully reboot it. If
 this happens all the time, you'll either throw the computer out, or at least
 install a different operating system on which this doesn't happen. Thus, the
 answer to the question of "what is real-time" is "it depends". The requirements
-of the application dictates what kind of guarantees you need from your code,
+of the application dictate what kind of guarantees you need from your code,
 the libraries you call, the operating system you use, and the hardware you
 deploy on. If you write an application today with off-the-shelf operating
 systems and hardware, deadlines are basically guaranteed to be met if they are
@@ -85,8 +84,7 @@ the hardware that the application relies on.
 Overview of latency sources
 ===========================
 
-.. image:: static/imgs/blog/2022/01-rt-latencies-overview.svg
-   :class: align-center
+.. figure:: /static/imgs/blog/2022/01-rt-latencies-overview.svg
 
 To be able to develop an application that can meet its deadlines every time,
 the developer must be able to predict the worst-case execution time of every
@@ -132,10 +130,10 @@ completely different mechanisms. The most famous example is the `system
 management interrupt (SMI)
 <https://wiki.linuxfoundation.org/realtime/documentation/howto/debugging/smi-latency/start>`_,
 which can introduce an unpredictable amount of delay as it hijacks the CPU from
-both the application and the operating system. Further, modern CPUs usually
-have dynamic frequency scaling based on its utilization to provide a balance
+both the application and the operating system. Further, a modern CPU usually
+has dynamic frequency scaling based on its utilization to provide a balance
 between performance and power consumption. This can cause larger-than-expected
-delay as the system performance is not uniform with respect to time. Other
+delays as the system performance is not uniform with respect to time. Other
 factors like `SMT <https://en.wikipedia.org/wiki/Simultaneous_multithreading>`_
 (more commonly referred to as hyper-threading) can also impact latency. I have
 even seen bad clocks on a single-board computer causing higher-than-expected
@@ -154,13 +152,13 @@ Summary
 =======
 
 In the first part of this series, we've defined what a "real-time system" is.
-We've also summarized the terminology of"soft" and "hard" real-time systems
+We've also summarized the terminology of "soft" and "hard" real-time systems
 with the conclusion that the definition is not universally agreed upon.
 However, given that present technologies can only achieve deadlines above the
-orders of 10 milliseconds, an application such as robotics controllers that
-has deadlines of a few milliseconds requires the careful examination and
+orders of 10 milliseconds, applications such as robotics controllers that
+have deadlines of a few milliseconds require the careful examination and
 validation of the hardware, operating system, and the application code.
 
-In the `next post <blog/2022/02-linux-rt-appdev-part2.html>`_, I will write a
+In the `next post </blog/2022/02-linux-rt-appdev-part2.html>`_, I will write a
 very simple program that can achieve a maximum latency of 1ms and configure it
 to run on Linux.
