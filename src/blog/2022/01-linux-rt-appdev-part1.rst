@@ -1,7 +1,9 @@
 .. meta::
-   :title: Real-time software development with Linux, part 1: What is real-time?
+   :title: Real-time programming with Linux, part 1: What is real-time?
    :authors: Shuhao Wu
    :created_at: 2021-04-01 20:45
+
+Part 1 - `Part 2 </blog/2022/02-linux-rt-appdev-part2.html>`_ - `Part 3 </blog/2022/03-linux-rt-appdev-part3.html>`_
 
 Recently I've been looking at real-time applications from two different angles:
 (1) audio applications and (2) advanced robotics. When developing live audio

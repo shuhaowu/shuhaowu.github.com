@@ -1,7 +1,9 @@
 .. meta::
-   :title: Real-time software development with Linux, part 2: configuring Linux for real-time
+   :title: Real-time programming with Linux, part 2: configuring Linux for real-time
    :authors: Shuhao Wu
    :created_at: 2021-04-11 18:30
+
+`Part 1 </blog/2022/01-linux-rt-appdev-part1.html>`_ - Part 2 - `Part 3 </blog/2022/03-linux-rt-appdev-part3.html>`_
 
 In the `last post </blog/2022/01-linux-rt-appdev-part1.html>`_, I went over the
 definition of real-time (RT) and listed a few sources of latency. I noted that
@@ -391,8 +393,9 @@ This highlights the necessity of validating both the hardware and the operating
 system to ensure good real-time performance, before even writing a single line
 of application code.
 
-In the next post, I will actually talk about where I wanted to get to with this
-post: setting up a simple C++ application in RT on Linux + ``PREEMPT_RT``.
+In the `next post </blog/2022/03-linux-rt-appdev-part3.html>`__, I will
+actually talk about where I wanted to get to with this post: setting up a
+simple C++ application in RT on Linux + ``PREEMPT_RT``.
 
 Appendix: References
 ====================

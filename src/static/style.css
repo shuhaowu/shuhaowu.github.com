@@ -246,6 +246,15 @@ p.blogpost-subtitle > .highlight {
   margin: 0;
 }
 
+/* Blockquote */
+blockquote {
+  background: #e8e8e8;
+  border-left: 10px solid #BBB;
+  margin: 0;
+  padding: 0.1rem 0.75rem;
+  font-style: italic;
+}
+
 /* Figure formatting */
 div.figure object {
   display: block;
@@ -254,7 +263,7 @@ div.figure object {
 }
 
 div.figure p.caption {
-  margin-top: 0;
+  margin-top: 0.25rem;
   text-align: center;
   font-size: 0.85rem;
 }
