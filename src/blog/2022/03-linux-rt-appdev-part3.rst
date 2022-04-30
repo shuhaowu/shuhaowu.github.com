@@ -322,12 +322,12 @@ When an application runs, it usually performs a lot of `system calls
 <https://en.wikipedia.org/wiki/System_call>`__ to instruct the OS kernel to do
 some work on its behalf, usually synchronously during the application's
 execution. We have already seen two of them: ``malloc`` (via ``sbrk`` and
-``mmap``) and ``mlockall``.  Others may include writing to files, getting the
-current time, and interacting with USB devices. Most of these system calls are
-hidden behind libraries commonly used by applications. Since Linux was not
-originally designed to be a RTOS, there are generally no guarantees that a
-particular system call won't cause page faults or priority inversion problems
-internally. Further, system calls may result in a full `context switch
+``mmap``) and ``mlockall``.  Others may include writing to files and
+interacting with USB devices. Most of these system calls are hidden behind
+libraries commonly used by applications. Since Linux was not originally
+designed to be a RTOS, there are generally no guarantees that a particular
+system call won't cause page faults or priority inversion problems internally.
+Further, system calls may result in a full `context switch
 <https://en.wikipedia.org/wiki/Context_switch>`__, which is associated with a
 small CPU overhead that may be problematic in some situations.
 
