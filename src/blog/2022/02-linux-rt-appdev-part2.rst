@@ -105,7 +105,7 @@ and OS configurations should likely always be checked and tuned:
 
 * Disable `dynamic frequency scaling <https://wiki.archlinux.org/title/CPU_frequency_scaling>`__
 
-  * Modern CPUs ramp down their clock frequency while idling and ramp up
+  * Modern CPUs ramp down their clock frequencies while idling and ramp up
     when there is load. This introduces unpredictability as it causes the
     performance of the CPU to vary with time. Anecdotally, I have noticed an
     order of magnitude higher worst-case latency when frequency scaling is on
