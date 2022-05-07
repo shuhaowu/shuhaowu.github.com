@@ -1,7 +1,7 @@
 .. meta::
    :title: Real-time programming with Linux, part 3: Sources of latency in real-time applications
    :authors: Shuhao Wu
-   :created_at: 2021-04-29 23:30
+   :created_at: 2022-04-29 23:30
 
 `Part 1 </blog/2022/01-linux-rt-appdev-part1.html>`_ - `Part 2 </blog/2022/02-linux-rt-appdev-part2.html>`_ - Part 3
 
