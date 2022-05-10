@@ -327,6 +327,8 @@ interacting with USB devices. Most of these system calls are hidden behind
 libraries commonly used by applications. Since Linux was not originally
 designed to be a RTOS, there are generally no guarantees that a particular
 system call won't cause page faults or priority inversion problems internally.
+It might even block the process (such as calls like ``accept``) which causes
+the process to be scheduled out of the CPU until the call is unblocked.
 Further, system calls may result in a full `context switch
 <https://en.wikipedia.org/wiki/Context_switch>`__, which is associated with a
 small CPU overhead that may be problematic in some situations.
@@ -335,9 +337,10 @@ There are a few solutions to these problems:
 
 #. Use an OS where all system calls are documented with worst-case execution
    time.
-#. Audit the kernel source code to determine worst-case execution time.
-   Alternatively, obtains some sort of "soft" guarantee from someone else that
-   has audited the code\ [#fauditkernel]_.
+#. Audit the kernel source code to determine worst-case execution time and
+   ensure the calls used do not block. Alternatively, obtains some sort of
+   "soft" guarantee from someone else that has audited the code\
+   [#fauditkernel]_.
 #. Don't trust the kernel, be defensive, and avoid system calls unless
    absolutely necessary (such as for IO, and getting the current time in
    high-resolution).
