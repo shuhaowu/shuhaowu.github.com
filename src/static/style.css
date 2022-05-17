@@ -185,6 +185,26 @@ div.resume h3.job-title small {
 
 /* Blog */
 
+@media (min-width: 768px) {
+  div.blogpost-date {
+    font-size: 0.9rem;
+    color: #888;
+    text-align: right;
+    margin: 0.5rem 0;
+  }
+
+  div.blogpost-title {
+    margin: 0.5rem 0;
+  }
+}
+
+div.blogpost-date {
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+}
+
 div.blogpost.page {
   padding-top: 1rem;
   padding-bottom: 1rem;

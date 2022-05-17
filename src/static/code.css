@@ -10,7 +10,9 @@
 /* pygments-default using class hierarchies.                                 */
 /* Use it as example for "handcrafted" styles with only few rules.      */
 
-.code                              { background: #f8f8f8; }
+/* .code                              { background: #f8f8f8; } */
+
+.code .ln                          { color: #777; padding-right: 0.5rem; }
 .code .comment                     { color: #008800; font-style: italic }
 .code .error                       { border: 1px solid #FF0000 }
 .code .generic.deleted             { color: #A00000 }

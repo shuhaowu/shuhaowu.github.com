@@ -9,21 +9,23 @@
 {% endblock %}
 
 {% block content %}
-{% for post in posts %}
-{% if not post.draft %}
-  <div class="pure-g">
-    <div class="pure-u-1 blogpost page callout">
-      <div class="blogpost-header no-divider">
-        <h1 class="blogpost-title"><a href="{{ post.href }}">{{ post.title }}</a></h1>
-        <p class="blogpost-subtitle">
-          By <span class="highlight">{{ post.authors }}</span> at <span class="highlight">{{ post.created_at }}</span>
-          {% if post.updated_at %}(updated at <span class="highlight">{{ post.updated_at }}</span>){% endif %}
-        </p>
+<div class="pure-g">
+  <div class="pure-u-1 page">
+    <div class="pure-g">
+      {% for post in posts %}
+      {% if not post.draft %}
+      <div class="pure-u-1 pure-u-md-4-5 blogpost-title">
+        <a href="{{ post.href }}">{{ post.title }}</a>
       </div>
+
+      <div class="pure-u-1 pure-u-md-1-5 blogpost-date">
+        {{ post.created_at }}
+      </div>
+      {% endif %}
+      {% endfor %}
     </div>
   </div>
-{% endif %}
-{% endfor %}
+</div>
 
 <div class="pure-g">
   <div class="pure-u-1">

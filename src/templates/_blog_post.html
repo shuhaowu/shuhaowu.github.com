@@ -6,7 +6,7 @@
 {% block head %}
 
 {% if has_code %}
-<link rel="stylesheet" type="text/css" href="static/code.css">
+<link rel="stylesheet" type="text/css" href="/static/code.css">
 {% endif %}
 
 {% endblock %}
@@ -17,7 +17,7 @@
     <div class="blogpost-header">
       <h1 class="blogpost-title"><a href="{{ href }}">{{ title }}</a></h1>
       <p class="blogpost-subtitle">
-        By <span class="highlight">{{ authors }}</span> at <span class="highlight">{{ created_at }}</span>
+        By <span class="highlight">{{ authors }}</span> on <span class="highlight">{{ created_at }}</span>
         {% if updated_at %}(updated at <span class="highlight">{{ updated_at }}</span>){% endif %}
       </p>
 

@@ -1,9 +1,9 @@
 .. meta::
    :title: Real-time programming with Linux, part 2: configuring Linux for real-time
    :authors: Shuhao Wu
-   :created_at: 2022-04-11 18:30
+   :created_at: 2022-04-11
 
-`Part 1 </blog/2022/01-linux-rt-appdev-part1.html>`_ - Part 2 - `Part 3 </blog/2022/03-linux-rt-appdev-part3.html>`_
+`Part 1 </blog/2022/01-linux-rt-appdev-part1.html>`_ - Part 2 - `Part 3 </blog/2022/03-linux-rt-appdev-part3.html>`_ - `Part 4 </blog/2022/04-linux-rt-appdev-part4.html>`__
 
 In the `last post </blog/2022/01-linux-rt-appdev-part1.html>`_, I went over the
 definition of real-time (RT) and listed a few sources of latency. I noted that
