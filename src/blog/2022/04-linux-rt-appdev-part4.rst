@@ -1,44 +1,42 @@
 .. meta::
    :title: Real-time programming with Linux, part 4: C++ application tutorial
    :authors: Shuhao Wu
-   :created_at: 2022-05-20
+   :created_at: 2022-05-23
    :has_code: true
 
 `Part 1 </blog/2022/01-linux-rt-appdev-part1.html>`__ - `Part 2 </blog/2022/02-linux-rt-appdev-part2.html>`__ - `Part 3 </blog/2022/03-linux-rt-appdev-part3.html>`__ - Part 4
 
-As we have explored thoroughly in this series, ensuring a real-time (RT)
-systems satisfy its latency constraints means ensuring the hardware, operating
-system (OS), and the application all have bounded latency. In the `last post
-</blog/2022/03-linux-rt-appdev-part3.html>`__, I explained the theory behind
-the unbounded latency caused by interactions between the OS and the
-application. In this post, we will put that knowledge into practice by writing
-the boilerplate code necessary to setup an application for real-time with C++.
-All the sample code shown in this post also exist in my `rt-demo repository
-<https://github.com/shuhaowu/rt-demo>`__, which contains an RT application
-framework as well as a number of example applications.
-
-The most minimal setup for a real-time application involves the following few
-steps:
+As we have explored thoroughly in this series, building a real-time (RT) system
+involves ensuring the hardware, operating system (OS), and the application all
+have bounded latency. In the `last post
+</blog/2022/03-linux-rt-appdev-part3.html>`__, I described a few sources of
+unbounded latency caused by interactions between the OS and the application. In
+this post, we will write the necessary boilerplate code to avoid these
+sources of latency in C++ with these few steps:
 
 #. Lock all memory pages into physical RAM.
-#. Setup RT process scheduling for the application thread(s).
-#. Loop at a predictable rate with low jitter.
+#. Setup RT process scheduling for the real-time thread(s).
+#. Run a loop at a predictable rate with low jitter.
 #. Ensure data can be safely passed from one thread to another without data
    races.
 
-All of these will be covered in this post, giving you a minimal foundation to
-build on.
+Since this code is required for basically all Linux RT applications, I
+refactored the code into a small RT application framework in my `rt-demo
+repository <https://github.com/shuhaowu/rt-demo>`__. All the examples in this
+post are also shown in full in that repository, along with a number of
+additional examples based on the refactored app framework.
 
 Locking memory pages with ``mlockall``
 ======================================
 
 As noted in the `previous post
 </blog/2022/03-linux-rt-appdev-part3.html#virtual-memory-avoid-page-faults-and-use-mlockall>`__,
-code in the RT section needs to avoid page faults. This can be done by locking
-the application's entire virtual memory space into physical RAM via the
-|mlockall|_ function call. This can be done immediately upon application startup
-before the creation of any threads since all threads in a process share the
-same virtual memory space.  The following code snippet shows how to do this:
+code in the RT section needs to avoid page faults to ensure that memory access
+latency is not occasionally unbounded. This can be done by locking the
+application's entire virtual memory space into physical RAM via the |mlockall|_
+function call. Usually, this is done immediately upon application startup and
+before the creation of any threads, since all threads in a process share the
+same virtual memory space. The following code snippet shows how to do this:
 
 .. code-block:: c++
    :number-lines:
@@ -57,75 +55,81 @@ same virtual memory space.  The following code snippet shows how to do this:
    int main() {
      LockMemory();
 
-     // Do your work...
+     // Start the RT thread... etc.
    }
 
 
 .. |mlockall| replace:: ``mlockall(MCL_CURRENT | MCL_FUTURE)``
 .. _mlockall: https://man7.org/linux/man-pages/man2/mlock.2.html
 
-This code is relatively straight-forward. Line 6 shows the usage of
-``mlockall``, along with some error handling after. More advanced and optional
-memory-related tuning are discussed in the `Appendix: advanced configurations`_
-section at the end of this post.
+This code is straight-forward: line 6 shows the usage of ``mlockall``, along
+with some error handling after.
 
 Setting up real-time threads with pthreads
 ==========================================
 
-By default, threads created on Linux are scheduled with a non-RT scheduler.
-The non-RT scheduler is not optimized for latency and thus cannot be used to
-satisfy RT constraints. To setup an RT thread, we need to inform the OS to
-schedule the thread with one of the RT policies. There are three RT scheduling
-policies: ``SCHED_FIFO``, ``SCHED_RR``, and ``SCHED_DEADLINE``. Generally,
-``SCHED_RR`` should probably not be used as it is tricky to use correctly\
-[#fschedrr]_. ``SCHED_DEADLINE`` is an interesting but advanced scheduler that
-I may cover in another time. For most applications, ``SCHED_FIFO`` is likely
-good enough. With this policy, if a process is `runnable
-<https://tldp.org/LDP/tlk/kernel/processes.html>`__ (i.e. not blocked due to
-mutex, IO, sleep, etc.), it will run until it is done, blocked, or preempted
-(interrupted) by a higher-priority process\ [#fschedfifo]_. With `the right
-system setup </blog/2022/02-linux-rt-appdev-part2.html>`__, ``SCHED_FIFO`` can
-be easily used to program an RT loop where it perform some work, sleep for a
-predictable amount of time, then wake up and perform some more work in the next
-iteration. An example of this is something we will build towards in this post.
+By default, threads created on Linux are scheduled with a non-RT scheduler. The
+non-RT scheduler is not optimized for latency and thus cannot generally be used
+to satisfy RT constraints. To setup an RT thread, we need to inform the OS to
+schedule the thread with a RT scheduling policy. As of the time of this
+writing, there are three RT scheduling policies on Linux: ``SCHED_RR``,
+``SCHED_DEADLINE``, and ``SCHED_FIFO``. Generally, ``SCHED_RR`` should probably
+not be used as it is tricky to use correctly\ [#fschedrr]_. ``SCHED_DEADLINE``
+is an interesting but advanced scheduler that I may cover in another time. For
+most applications, ``SCHED_FIFO`` is likely good enough. With this policy, if a
+thread is `runnable <https://tldp.org/LDP/tlk/kernel/processes.html>`__ (i.e.
+not blocked due to mutex, IO, sleep, etc.), it will run until it is done,
+blocked, or preempted (interrupted) by a higher-priority thread\
+[#fschedfifo]_. With `the right system setup
+</blog/2022/02-linux-rt-appdev-part2.html>`__, ``SCHED_FIFO`` can be used to
+program an RT loop with relatively low jitter (0.05 - 0.2ms depending on the
+hardware). This is something that you will know how to do by the end of this
+post.
 
 In addition to configuring the thread with an RT scheduling policy, we also
-need to give it an RT priority level. If two processes are runnable, the
-higher-priority process will run, even if it means preempting the
-lower-priority process in the process. The priority of a normal Linux process
-is controlled by its `nice values
+need to give it an RT priority level. If two threads are runnable, the
+higher-priority thread will run, even if it means preempting the
+lower-priority thread in the process. The priority of a normal Linux thread\
+[#fthreadtask]_ is controlled by its `nice values
 <https://man7.org/linux/man-pages/man2/nice.2.html>`__ and ranges from -20 to
 +19, with the *lower* values taking a *higher* priority. However, these values
-are not used by RT threads\ [#fnice]_. Instead, a thread scheduled by an RT
-scheduling policy always have higher priority than non-RT threads and thus have
-to use a different set of priority values, ranging from 0 to 99. Confusingly,
-with this system, a *higher* value takes a *higher* priority. On a typical
-Linux distribution with the ``PREEMPT_RT`` patch, there should not be able RT
-tasks running on the system except for some built-in kernel tasks. The kernel
-interrupt request (IRQ) handlers handle interrupt requests originating from
-hardware devices and run with an RT priority value of 50. Some critical
-kernel-internal tasks, such as the process migration tasks and the watchdog
-task, run with a RT priority value of 99. To ensure that the RT
-application gets priority over the IRQ handlers, its RT priority is usually set
-to 80\ [#fprio80]_. Its RT priority should not be set to 99 to ensure
-kernel-critical tasks can run. All of this is illustrated in *Figure 1*.
+are not applicable to RT threads\ [#fnice]_. Instead, the RT priority values of
+a thread scheduled by an RT scheduling policy ranges from 0 to 99. Confusingly,
+in this system, a *higher* value takes a *higher* priority. Fortunately, nice
+values and RT priority values are unrelated and RT threads always have higher
+priority than the non-RT threads. The scale for the nice and RT priority values
+is illustrated in *Figure 1*.
+
+On a typical Linux distribution with the ``PREEMPT_RT`` patch, there should not
+be able RT tasks running on the system except for a few built-in kernel tasks.
+The kernel interrupt request (IRQ) handlers handle interrupt requests
+originating from hardware devices and run with an RT priority value of 50.
+These are necessary for communication with the hardware and should generally
+not be changed\ [#fprio80]_. Some critical kernel-internal tasks, such as the
+process migration tasks and the watchdog task, always run with a RT priority
+value of 99. To ensure that the RT application gets priority over the IRQ
+handlers, its RT priority is usually set to 80 as a reasonable default.
+Userspace RT applications should generally not set its RT to 99 to ensure
+kernel-critical tasks can run. These processes are also marked on *Figure 1*.
 
 .. figure:: /static/imgs/blog/2022/04-rt-priority.svg
 
    *Figure 1*: Diagram depicting the ranges of priority levels on Linux (not to
-   scale)
+   scale). ``SCHED_OTHER`` is a non-RT scheduling policy while ``SCHED_FIFO``
+   is an RT scheduling policy.
 
-To setup the scheduling policy and priority, we must interact with the
-``pthread`` API. The C++ standard library defines the ``std::thread`` class as
+To setup the RT scheduling policy and priority, we can interact with the
+``pthread`` API\ [#frtset]_. The C++ standard library defines the ``std::thread`` class as
 a cross-platform abstraction around the OS-level threads. However, there is no
-built-in way to setup the scheduling policy and priority as these APIs are not
-standardized across platforms. Instead, ``std::thread`` has a
-``native_handle()`` method that returns the underlying ``pthread_t`` struct on
-Linux. With the right API calls, it is possible to set the scheduling policy
-and priority after the creation of the thread. However, I find this to be a bit
-tedious and prefer interact with the ``pthread`` API directly so that the
-thread is created with the right attributes. This code can then be wrapped into
-a ``Thread`` class for convenience (`full code is shown here
+C++-native ways to setup the scheduling policy and priority as the OS-level
+APIs (such as ``pthread``) are not standardized across platforms. Instead,
+``std::thread`` has a ``native_handle()`` method that returns the underlying
+``pthread_t`` struct on Linux. With the right API calls, it is possible to set
+the scheduling policy and priority after the creation of the thread. However, I
+find this to be a bit tedious and prefer interact with the ``pthread`` API
+directly so that the thread is created with the right attributes. This code can
+then be wrapped into a ``Thread`` class for convenience (`full code is shown
+here
 <https://github.com/shuhaowu/rt-demo/tree/master/examples/blog_examples/basic.cpp>`__):
 
 .. code-block:: c++
@@ -149,7 +153,6 @@ a ``Thread`` class for convenience (`full code is shown here
     public:
      Thread(int priority, int policy)
          : priority_(priority), policy_(policy) {}
-     virtual ~Thread() = default;
 
      void Start() {
        pthread_attr_t attr;
@@ -221,27 +224,28 @@ The above code snippet defines the class ``Thread`` with three important methods
    real-time safe.
 
 Most of the magic is contained in the ``Start()`` method. The scheduling policy
-is set on line 31 and the scheduling priority is set on line 38 and 39. Note
+is set on line 30 and the scheduling priority is set on line 37 and 38. Note
 that ``policy_ = SCHED_FIFO`` and ``priority_ = -80`` is set with the
-construction of the ``Thread`` object on line 72. The thread is finally started
-on line 52. This calls the method ``Thread::RunThread`` on the newly-created RT
+construction of the ``Thread`` object on line 71. The thread is finally started
+on line 51. This calls the method ``Thread::RunThread`` on the newly-created RT
 thread, which simply calls ``thread->Run()``. This indirection is needed
 because pthread takes a function pointer with a specific signature and the
-``Run()`` method does not quite have the right signature.
+``Run()`` method does not quite have the right signature. Code written within
+the ``Run()`` method will be scheduled with the ``SCHED_FIFO`` policy. As
+previously noted, this means it won't be interrupted unless preempted by a
+higher-priority thread. With this scaffolding (note that ``LockMemory`` is also
+included in the example above), we can start writing an RT application.
+Since RT applications generally loop at some predictable frequency, we will
+look at how the loop itself is programmed for RT in the next section.
 
-If you compile `the full code
-<https://github.com/shuhaowu/rt-demo/tree/master/examples/blog_examples/basic.cpp>`__
-and run it, you will likely encounter a permission error. This is because Linux
-restricts the creation of RT threads to privileged users only. You'll either
-need to run this program as root, or edit your user's max ``rtprio`` value in
-``/etc/security/limits.conf`` as per `the man page
+If you compile and run `the full code
+<https://github.com/shuhaowu/rt-demo/tree/master/examples/blog_examples/basic.cpp>`__,
+you will likely encounter a permission error when the program starts. This is
+because Linux restricts the creation of RT threads to privileged users only.
+You'll either need to run this program as root, or edit your user's max
+``rtprio`` value in ``/etc/security/limits.conf`` as per `the man page
 <https://www.man7.org/linux/man-pages/man5/limits.conf.5.html>`__\
 [#flimitconf]_.
-
-With this scaffolding, we can start writing an RT application. Generally, RT
-applications loop at some predictable frequency. The looping code must also be
-carefully written to ensure deadlines are not occasionally missed. This will be
-discussed in the next section.
 
 .. [#fschedrr] See `56:40 of this talk <https://youtu.be/w3yT8zJe0Uw?t=3400>`__
    for more details about the problems of ``SCHED_RR``.
@@ -249,6 +253,8 @@ discussed in the next section.
    much more complex especially for a case where there's only a single RT
    process. `See `the man page for sched(7)
    <https://man7.org/linux/man-pages/man7/sched.7.html>`__ for more details.
+.. [#fthreadtask] Thread, tasks, and processes are synonymous from the
+   perspective of the OS scheduler.
 .. [#fnice] Nice values are technically related to the RT priority values.
    However, the actual formula is very confusing. See the `kernel source
    <https://github.com/torvalds/linux/blob/v5.17/include/linux/sched/prio.h>`__
@@ -260,6 +266,10 @@ discussed in the next section.
    than the network IRQ handler, it may be blocking the networking handler from
    receiving the packet being waited on. In other cases, stopping IRQ handlers
    from working for a long time may even crash the entire system.
+.. [#frtset] It is also possible to set RT priority via the `chrt utility
+   <https://man7.org/linux/man-pages/man1/chrt.1.html>`__ without having to
+   write code, but I find it cleaner to set the RT scheduling policy and
+   priority directly in the code to better convey intent.
 .. [#flimitconf] If you create the file
    ``/etc/security/limits.d/20-USERNAME-rtprio.conf`` with the content of
    ``USERNAME - rtprio 98``, you may be able to run basic pthread program
@@ -282,7 +292,7 @@ loop would be to sleep for 1 millisecond at the end of every loop iteration,
 shown in *Figure 2a*. However, unless the code within the loop executes
 instantaneously, this approach would not be able to reach 1000 Hz exactly.
 Further, if the duration of each loop iteration changes, the loop frequency
-would vary overtime. Obviously, this is not an ideal way to structure an RT
+would vary over time. Obviously, this is not an ideal way to structure an RT
 loop. A better way to structure the loop is to calculate the time the code
 should wake up next and sleep until then. This is effectively illustrated in
 *Figure 2b* with the following sequence of events:
@@ -358,8 +368,9 @@ The ``Run`` method is relatively simple with only 5 lines of code:
 #. On line 15, the loop starts.
 #. On line 16, the ``Loop()`` method is called, which should be filled with
    custom application logic (but is empty for demonstration purposes).
-#. On line 17, the code add ``period_ns_`` to ``next_wakeup_time_``. Although not
-   shown here, the `full code <https://github.com/shuhaowu/rt-demo/tree/master/examples/blog_examples/loop.cpp>`__
+#. On line 17, the code add ``period_ns_`` to ``next_wakeup_time_``. Although
+   not embedded directly in this post, the `full code
+   <https://github.com/shuhaowu/rt-demo/tree/master/examples/blog_examples/loop.cpp>`__
    sets ``period_ns_`` to 1,000,000, or 1 millisecond.
 
    * The addition is performed with a helper method ``AddTimespecByNs``, which
@@ -372,20 +383,19 @@ The ``Run`` method is relatively simple with only 5 lines of code:
    again, ``clock_nanosleep`` returns and the code continues execution at line
    15.
 
-It is important to note the usage of ``CLOCK_MONOTONIC`` for both
-``clock_gettime`` and ``clock_nanosleep``. This argument instructs the kernel
-to perform operations based on the "monotonic clock", which is not the same as
-the real clock (``CLOCK_REALTIME``). The ``REALTIME`` clock should read the same as
-the current date and time agreed upon by the world. Since all clocks drift,
-keeping the ``REALTIME`` clock in sync with the rest of the world requires
-adjustments. Much of these adjustments happen automatically on modern Linux
-systems, such as in the case of `leap second adjustments
+It is important to note the usage of ``CLOCK_MONOTONIC`` with ``clock_gettime``
+and ``clock_nanosleep``, which gets the current time and sleeps respectively.
+These function calls ultimately results in system calls, which are handled by
+the OS kernel. The ``CLOCK_MONOTONIC`` argument instructs the kernel to perform
+operations based on a "monotonic clock" which increases monotonically with the
+passage of time and usually has an epoch that coincides with the system boot
+time. This is not the same as the real clock (``CLOCK_REALTIME``), which can
+occasionally decrease its value due to clock adjustments such as the
+`adjustments made for leap seconds
 <https://en.wikipedia.org/wiki/Leap_second>`__. Sleeping until a particular
-time with the ``REALTIME`` clock can be very dangerous, as clock adjustments can
-cause the sleep interval to change, which may cause deadline misses. RT code
-should instead use the ``MONOTONIC`` clock, which only increases monotonically and
-is not subject to adjustments. This is usually implemented as the time since
-last system boot.
+time with the ``REALTIME`` clock can be very dangerous, as clock adjustments
+can cause the sleep interval to change, which may cause deadline misses. Thus,
+RT code should only use ``CLOCK_MONOTONIC`` for measurements of time durations.
 
 Trick to deal with wake-up jitter
 ---------------------------------
@@ -395,13 +405,14 @@ In `part 1 </blog/2022/01-linux-rt-appdev-part1.html>`__ and `part 2
 demonstrated how Linux cannot instantaneously wake up your process at the
 desired time due to hardware + scheduling latency (a.k.a. wake-up latency). On
 a Raspberry Pi 4, I measured the wake-up latency to be up to 130 microseconds
-(0.13 ms). This means when ``clock_nanosleep`` returns, it could be up to 130
-microseconds after ``next_wakeup_time_``. This was not accounted for in the
-previous example. The more realistic situation is shown in *Figure 3a*, where
-the gray boxes now denotes the wake-up latency. As shown in the figure, the
-actual start time of the loop iteration may be delayed by the maximum wake-up
-latency. This may not be tolerable for RT systems that cannot tolerate high
-jitter on the wake-up time.
+(0.13 ms). This means when ``clock_nanosleep`` returns, it could be late by up
+to 130 microseconds. Although the wakeup latency is close to 0 for the vast
+majority of the time, RT applications always need to account for the worst
+case. This was not considered in the previous example. The more realistic
+situation is shown in *Figure 3a*, where the gray boxes now denotes the wake-up
+latency. As shown in the figure, the actual start time of the loop iteration
+may be delayed by the maximum wake-up latency. This may not be tolerable for RT
+systems that cannot tolerate high jitter on the wake-up time.
 
 To reduce this jitter, we can employ the method shown in *Figure 3b*: instead
 of sleeping until the next millisecond, the code subtracts the wake-up latency
@@ -416,7 +427,7 @@ this approach uses significantly more CPU and requires accurate knowledge of
 the worst-case wake-up latency\ [#fwakeupadv]_. It is also somewhat more
 complex to implement correctly, which means I will not demonstrate the code
 directly in this post. Interested readers can look at the implementation of
-``rt::CyclicFifoThread`` in my `rt-demo repository
+``rt::CyclicFifoThread`` in the `rt-demo repository
 <https://github.com/shuhaowu/rt-demo/blob/master/libs/rt/include/rt/cyclic_fifo_thread.h>`__.
 
 .. figure:: /static/imgs/blog/2022/04-rt-loop-2.svg
@@ -431,9 +442,9 @@ base to build on. Instead, I recommend you to take a look at my ``rt`` library
 as a part of the `rt-demo repository <https://github.com/shuhaowu/rt-demo>`__.
 In this library, I define ``rt::App``, ``rt::Thread``, and
 ``rt::CyclicFifoThread`` similar to the code introduced here. The library has
-more features, such as being able to set CPU affinity, use busy wait to reduce
-jitter, track latency statistics, and more\ [#fadvanced]_. More features could
-be also added in the future with further development.
+more features, such as the ability to set CPU affinity, use busy wait to reduce
+jitter, and track latency statistics\ [#fadvanced]_. More features may also be
+added in the future with further development.
 
 .. [#fsleep] The usage of ``clock_nanosleep`` is preferred over functions like
    ``usleep`` and ``std::this_thread::sleep_for`` as the latter cannot sleep
@@ -450,35 +461,35 @@ Passing data with a priority-inheriting mutex
 ---------------------------------------------
 
 Most RT applications require data to be passed between RT and non-RT threads. A
-simple example of such a data passing is data logging and display: data
-generated by the RT thread are collected by the non-RT thread where they are
-logged into files and/or the terminal output. Data passing between concurrent
-threads are subject to `data races
-<https://en.wikipedia.org/wiki/Race_condition#Data_race>`__. These must be
-avoided to ensure the correctness of the program. As noted in the `previous
-post </blog/2022/03-linux-rt-appdev-part3.html#cpu-scheduler-avoid-priority-inversion>`__,
+simple example is the logging and display of data generated in RT threads.
+Since logging and displaying of data is generally not real-time safe, it must
+be done in a non-RT thread to not block the RT threads. Usually, the data
+generated by a RT thread is collected by the non-RT thread where it is logged
+into files and/or the terminal output. Data passing between concurrent threads
+are subject to `data races
+<https://en.wikipedia.org/wiki/Race_condition#Data_race>`__, which must be
+avoided to ensure the correctness of the program behavior. As noted in the
+`previous post
+</blog/2022/03-linux-rt-appdev-part3.html#cpu-scheduler-avoid-priority-inversion>`__,
 there are two ways to safely pass data: (1) with lock-less programming and (2)
-with a priority-inheriting (PI) mutex. Lock-less programming is relatively
-uncommon in non-RT applications. While it is likely preferable to mutexes for
-RT applications, it is a very large topic and is something I hope to address in
-the next post. Mutexes, on the other hand, is commonly used for non-RT
-applications to pass data between threads due to its simplicity. For RT, we
-simply need to `use priority-inheriting mutexes instead of normal mutexes
-</blog/2022/03-linux-rt-appdev-part3.html#cpu-scheduler-avoid-priority-inversion>`__.
-Thus, code written with mutexes can be relatively easily converted to be RT
-compatible.
+with a priority-inheriting (PI) mutex. Although lock-less programming is a very
+appealing option for RT, it is too large of a topic to cover now (I will
+discuss it in the next post). Instead, the remainder of this post will
+demonstrate the safe usage of a mutex in RT, as this is likely good enough for
+RT in most situations.
 
 Much like ``std::thread``, C++ defines the ``std::mutex``, which is a
 cross-platform implementation of mutexes. Also like ``std::thread``, the
 standard C++ API does not offer any ways to set the ``std::mutex`` to be
 priority-inheriting. While ``std::mutex`` also implements the
-``native_handle()`` method which returns the underlying ``pthread_mutex_t``
+``native_handle()`` that which returns the underlying ``pthread_mutex_t``
 struct, the attributes of a pthread mutex `cannot be changed after it is
 initialized <https://pubs.opengroup.org/onlinepubs/9699919799/functions/pthread_mutex_init.html>`__.
-Thus, ``std::mutex`` is unusable for real-time and must be replaced with a
-different implementation. As a part of my the ``rt`` library that is defined in
-the `rt-demo repository <https://github.com/shuhaowu/rt-demo>`__, I have
-created ``rt::mutex``, which is a PI mutex (`full code is shown here
+Thus, unlike ``std::thread``, ``std::mutex`` is completely unusable for
+real-time and must be replaced with a different implementation. As a part of my
+the ``rt`` library that is defined in the `rt-demo repository
+<https://github.com/shuhaowu/rt-demo>`__, I have created ``rt::mutex``, which
+is a PI mutex (`full code is shown here
 <https://github.com/shuhaowu/rt-demo/tree/master/libs/rt/include/rt/mutex.h>`__):
 
 .. code-block:: c++
@@ -518,6 +529,7 @@ created ``rt::mutex``, which is a PI mutex (`full code is shown here
        pthread_mutex_destroy(&m_);
      }
 
+     // Delete the copy constructor and assignment
      mutex(const mutex&) = delete;
      mutex& operator=(const mutex&) = delete;
 
@@ -573,15 +585,15 @@ shown here <https://github.com/shuhaowu/rt-demo/tree/master/examples/blog_exampl
 This just shows two functions that can read and write to the same array ``a``
 without data races. As you can see, it is just as easy as ``std::mutex``.
 
-Converting normal mutexes to PI mutexes does not guarantee that the code is
-safe for RT. This is because the usage of a PI mutex causes the critical
-sections protected by the mutex on the non-RT thread to be occasionally
-elevated to run with RT priority, and this code may cause unbounded latency. To
-ensure bounded latency, any code within the critical sections protected by a PI
-mutex (e.g. the function body of both ``Read`` and ``Write`` above) must be
-written to be compatible with RT (i.e. avoid everything mentioned in the
-`previous post </blog/2022/03-linux-rt-appdev-part3.html>`__). If this is not
-desirable, lock-less programming techniques should be employed instead.
+Although ``rt::mutex`` is safe for RT, simply converting normal mutexes into
+``rt::mutex`` in the code does not guarantee the code to be safe for RT. This
+is because the usage of a PI mutex causes the critical sections protected by
+the mutex on the non-RT thread to be occasionally elevated to run with RT
+priority, and this code may cause unbounded latency due to things such as
+dynamic memory allocation and blocking system calls (i.e. everything mentioned
+in the `previous post </blog/2022/03-linux-rt-appdev-part3.html>`__). Thus, all
+code protected by the PI mutex must be written in an RT-safe way. This is
+sometimes not feasible, which means lock-less programming must be employed.
 
 Summary
 =======
@@ -601,10 +613,12 @@ Specifically, we went over the following steps:
 Along the way, we discussed:
 
 * The importance of using ``CLOCK_MONOTONIC`` as ``CLOCK_REALTIME`` does not
-  increase monotonically and therefore could be dangerous.
+  increase monotonically and therefore could be dangerous for time duration
+  calculations.
 * The usage of busy wait to minimize wake-up jitter.
-* The fact that PI mutexes causes code on the non-RT thread to run with RT
-  priority, which means they need to be RT safe and avoid unbounded latency.
+* The fact that PI mutexes cause code that are protected by the mutex on the
+  non-RT thread to occasionally run with RT priority, which means they need to
+  be RT safe and avoid unbounded latency.
 
 All of the examples in this post can be found `here
 <https://github.com/shuhaowu/rt-demo/tree/master/examples/blog_examples/>`__.
@@ -617,7 +631,9 @@ Appendix: advanced configurations
 One way to further reduce wake-up latency is to use a Linux feature known as
 |isolcpus|. This flag instructs the Linux kernel to not schedule any processes
 (other than some critical kernel tasks) on certain CPUs. It is then possible to
-pin the RT thread onto those CPUs via the CPU affinity feature. This is
+pin the RT thread onto those CPUs via the CPU affinity feature. This can
+further reduce wakeup latency, as the kernel will rarely have to preempt
+another thread to schedule and switch to the pinned RT thread. This is
 implemented in my ``rt::Thread`` implementation in `rt-demo
 <https://github.com/shuhaowu/rt-demo>`__.
 
@@ -632,9 +648,10 @@ considered:
    Linux. By default, this is 2MB. Since variables are pushed onto the stack as
    the application code executes, stack overflow can occur during execution if
    the stack variables became too large. This usually results in the process
-   getting killed by the kernel, which is obviously undesirable. You may need
-   to increase the stack size during thread creation, as each thread has its
-   own stack. This is also implemented in ``rt::Thread``.
+   getting killed by the kernel, which is obviously undesirable. Since each
+   thread has its own private stack, you may need to increase the stack size
+   during thread creation via ``pthread_attr_setstacksize``. This is also
+   implemented in ``rt::Thread``.
 #. If an O(1) memory allocator implementation is used (i.e. ``malloc`` takes
    constant time excluding the time needed for page faults), it may be OK to
    dynamically allocate memory during the RT sections if the memory allocator
