@@ -225,7 +225,7 @@ The above code snippet defines the class ``Thread`` with three important methods
 
 Most of the magic is contained in the ``Start()`` method. The scheduling policy
 is set on line 30 and the scheduling priority is set on line 37 and 38. Note
-that ``policy_ = SCHED_FIFO`` and ``priority_ = -80`` is set with the
+that ``policy_ = SCHED_FIFO`` and ``priority_ = 80`` is set with the
 construction of the ``Thread`` object on line 71. The thread is finally started
 on line 51. This calls the method ``Thread::RunThread`` on the newly-created RT
 thread, which simply calls ``thread->Run()``. This indirection is needed
