@@ -1,0 +1,33 @@
+{% set active_page = "blog" %}
+
+{% extends "templates/_base.html" %}
+
+{% block title %}Blog post series - Shuhao{% endblock %}
+
+{% block content %}
+<div class="pure-g">
+  <div class="pure-u-1 page">
+    <a href="/blog/index/">Order post by time</a>
+  </div>
+
+  <div class="pure-u-1 page">
+    <h3 id="rt-linux-programming">
+      Real-time programming with Linux (2022)
+      <small><a href="#rt-linux-programming" style="text-decoration: none;">🔗</a></small>
+    </h3>
+    <p>
+      This series aims to inform robotics software engineers (and others) on
+      everything that is needed to create a real-time application on Linux that
+      can scale to 1000 Hz.
+    </p>
+    <ul>
+      <li><a href="/blog/2022/01-linux-rt-appdev-part1.html">Part 1: what is real-time?</a></li>
+      <li><a href="/blog/2022/02-linux-rt-appdev-part2.html">Part 2: configuring Linux for real-time</a></li>
+      <li><a href="/blog/2022/03-linux-rt-appdev-part3.html">Part 3: sources of latency in real-time applications</a></li>
+      <li><a href="/blog/2022/04-linux-rt-appdev-part4.html">Part 4: C++ application tutorial</a></li>
+      <li>Part 5: TBD</li>
+    </ul>
+  </div>
+</div>
+
+{% endblock %}

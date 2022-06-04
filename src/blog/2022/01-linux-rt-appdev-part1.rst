@@ -3,7 +3,7 @@
    :authors: Shuhao Wu
    :created_at: 2022-04-01
 
-Part 1 - `Part 2 </blog/2022/02-linux-rt-appdev-part2.html>`_ - `Part 3 </blog/2022/03-linux-rt-appdev-part3.html>`_ - `Part 4 </blog/2022/04-linux-rt-appdev-part4.html>`__
+`Real-time programming with Linux </blogseries.html#rt-linux-programming>`__: Part 1 - `Part 2 </blog/2022/02-linux-rt-appdev-part2.html>`_ - `Part 3 </blog/2022/03-linux-rt-appdev-part3.html>`_ - `Part 4 </blog/2022/04-linux-rt-appdev-part4.html>`__
 
 Recently I've been looking at real-time applications from two different angles:
 (1) audio applications and (2) advanced robotics. When developing live audio

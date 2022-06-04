@@ -4,7 +4,7 @@
    :created_at: 2022-05-23
    :has_code: true
 
-`Part 1 </blog/2022/01-linux-rt-appdev-part1.html>`__ - `Part 2 </blog/2022/02-linux-rt-appdev-part2.html>`__ - `Part 3 </blog/2022/03-linux-rt-appdev-part3.html>`__ - Part 4
+`Real-time programming with Linux </blogseries.html#rt-linux-programming>`__: `Part 1 </blog/2022/01-linux-rt-appdev-part1.html>`__ - `Part 2 </blog/2022/02-linux-rt-appdev-part2.html>`__ - `Part 3 </blog/2022/03-linux-rt-appdev-part3.html>`__ - Part 4
 
 As we have explored thoroughly in this series, building a real-time (RT) system
 involves ensuring the hardware, operating system (OS), and the application all

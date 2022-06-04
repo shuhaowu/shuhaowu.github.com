@@ -3,7 +3,7 @@
    :authors: Shuhao Wu
    :created_at: 2022-04-29
 
-`Part 1 </blog/2022/01-linux-rt-appdev-part1.html>`_ - `Part 2 </blog/2022/02-linux-rt-appdev-part2.html>`_ - Part 3 - `Part 4 </blog/2022/04-linux-rt-appdev-part4.html>`__
+`Real-time programming with Linux </blogseries.html#rt-linux-programming>`__: `Part 1 </blog/2022/01-linux-rt-appdev-part1.html>`_ - `Part 2 </blog/2022/02-linux-rt-appdev-part2.html>`_ - Part 3 - `Part 4 </blog/2022/04-linux-rt-appdev-part4.html>`__
 
 A real-time (RT) system consists of three parts: the hardware, the operating
 system, and the application. All three parts must meet the latency deadline for
