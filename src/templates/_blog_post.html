@@ -9,6 +9,10 @@
 <link rel="stylesheet" type="text/css" href="/static/code.css">
 {% endif %}
 
+{% if has_math %}
+<script src="/static/tex-svg-full.js" id="MathJax-script" async></script>
+{% endif %}
+
 {% endblock %}
 
 {% block content %}
