@@ -203,7 +203,7 @@ It roughly implements the following pseudocode:
      log(latency);
    }
 
-This code starts by takes the time stamp ``t1``. It will then ``sleep`` for some
+This code starts by taking the time stamp ``t1``. It will then ``sleep`` for some
 small ``interval``, which passes the control back to the kernel until the
 kernel wakes up the process after the ``interval`` has passed. At this point,
 the code takes another time stamp ``t2``. If the hardware + scheduling latency
