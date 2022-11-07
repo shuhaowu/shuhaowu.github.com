@@ -218,13 +218,13 @@ mutex. In C++, this is usually coded with ``std::mutex`` as defined by the C++
 standard library. When such a program runs, access to the shared variable may be
 serialized in the following sequence:
 
-#. Initially, the shared variable have the value of *v1*.
-#. Thread 1 acquires lock on the mutex and begins reading/write to the shared
+#. Initially, the shared variable has the value of *v1*.
+#. Thread 1 acquires lock on the mutex and begins reading/writing to the shared
    variable with value *v2*.
 #. Thread 2 attempts to acquire the lock on the same mutex and is blocked as it
    is held by Thread 1.
 #. Thread 1 finishes writing to the variable and releases the lock.
-#. Thread 2 is unblocked, reads the shared variable has a value of *v2*.
+#. Thread 2 is unblocked, reads the shared variable that has a value of *v2*.
 
 This is perfectly acceptable for an application without a bounded latency
 requirement (i.e. all non-RT apps) as the average latency is likely to be
