@@ -61,7 +61,7 @@ case and such occasions could occur infrequently (e.g.
 ``std::vector.push_back``). The worst-case execution times also tend to be
 under-documented (if at all). If the RT system cannot tolerate any deadline
 misses, specialized libraries and algorithms are usually needed.  However, most
-RT applications do not such hard guarantees. In these situations, "normal"
+RT applications do not need such hard guarantees. In these situations, "normal"
 libraries such as the C++ standard library can be safely used if the worst-case
 execution time can be acceptably determined. There is a `talk in 2021 by Timur
 Doumler <https://www.youtube.com/watch?v=Tof5pRedskI>`__ that presents ways to
@@ -77,7 +77,7 @@ here, readers interested in this kind of problems can refer to at least the CPU
 and memory chapters of `System Performance, 2nd Edition by Brendan Gregg
 <https://www.brendangregg.com/systems-performance-2nd-edition-book.html>`__.
 
-An additional source of latency exist in the interaction between the
+An additional source of latency exists in the interaction between the
 application and the OS. Such latency cannot be inferred from reading the
 application code by itself. As noted in part 1, programming on Linux and other
 general-purpose operating systems is almost like magic. Although the operating
