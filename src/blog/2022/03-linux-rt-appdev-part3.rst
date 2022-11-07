@@ -68,22 +68,14 @@ Doumler <https://www.youtube.com/watch?v=Tof5pRedskI>`__ that presents ways to
 avoid function calls with unbounded latency in the C++ standard library that I
 highly recommend for anyone working on RT C++ applications.
 
-However, the implementation of algorithms is not the only type of latency. The
-performance of the implementation must also be fast enough. Performance is a
-vast topic that is outside the scope of the present post. For real-time, one
-should be aware of problems such as cold/invalidated cache, excessive context
-switching, memory latency issues, and much more. Since this is not covered
-here, readers interested in this kind of problems can refer to at least the CPU
-and memory chapters of `System Performance, 2nd Edition by Brendan Gregg
-<https://www.brendangregg.com/systems-performance-2nd-edition-book.html>`__.
-
-An additional source of latency exists in the interaction between the
-application and the OS. Such latency cannot be inferred from reading the
-application code by itself. As noted in part 1, programming on Linux and other
-general-purpose operating systems is almost like magic. Although the operating
-system is juggling between thousands of concurrent tasks with a limited amount
-of CPU and memory, the application can be written as if it is the only process
-consuming CPU and memory. The way this is accomplished on Linux (and other
+However, the implementation of algorithms is not the only type of latency. An
+additional source of latency exists in the interaction between the application
+and the OS. Such latency cannot be inferred from reading the application code
+by itself. As noted in part 1, programming on Linux and other general-purpose
+operating systems is almost like magic. Although the operating system is
+juggling between thousands of concurrent tasks with a limited amount of CPU and
+memory, the application can be written as if it is the only process consuming
+CPU and memory. The way this is accomplished on Linux (and other
 general-purpose OSes) is optimized for throughput instead of the worst-case
 latency.  Since RT applications need to ensure that worst-case performance
 remain acceptable, we must understand the OS-level magic to ensure the
