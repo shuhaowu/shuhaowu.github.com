@@ -61,7 +61,7 @@ case and such occasions could occur infrequently (e.g.
 ``std::vector.push_back``). The worst-case execution times also tend to be
 under-documented (if at all). If the RT system cannot tolerate any deadline
 misses, specialized libraries and algorithms are usually needed.  However, most
-RT applications do not such hard guarantees. In these situations, "normal"
+RT applications do not need such hard guarantees. In these situations, "normal"
 libraries such as the C++ standard library can be safely used if the worst-case
 execution time can be acceptably determined. There is a `talk in 2021 by Timur
 Doumler <https://www.youtube.com/watch?v=Tof5pRedskI>`__ that presents ways to
@@ -77,7 +77,7 @@ here, readers interested in this kind of problems can refer to at least the CPU
 and memory chapters of `System Performance, 2nd Edition by Brendan Gregg
 <https://www.brendangregg.com/systems-performance-2nd-edition-book.html>`__.
 
-An additional source of latency exist in the interaction between the
+An additional source of latency exists in the interaction between the
 application and the OS. Such latency cannot be inferred from reading the
 application code by itself. As noted in part 1, programming on Linux and other
 general-purpose operating systems is almost like magic. Although the operating
@@ -218,13 +218,13 @@ mutex. In C++, this is usually coded with ``std::mutex`` as defined by the C++
 standard library. When such a program runs, access to the shared variable may be
 serialized in the following sequence:
 
-#. Initially, the shared variable have the value of *v1*.
-#. Thread 1 acquires lock on the mutex and begins reading/write to the shared
+#. Initially, the shared variable has the value of *v1*.
+#. Thread 1 acquires lock on the mutex and begins reading/writing to the shared
    variable with value *v2*.
 #. Thread 2 attempts to acquire the lock on the same mutex and is blocked as it
    is held by Thread 1.
 #. Thread 1 finishes writing to the variable and releases the lock.
-#. Thread 2 is unblocked, reads the shared variable has a value of *v2*.
+#. Thread 2 is unblocked, reads the shared variable that has a value of *v2*.
 
 This is perfectly acceptable for an application without a bounded latency
 requirement (i.e. all non-RT apps) as the average latency is likely to be
