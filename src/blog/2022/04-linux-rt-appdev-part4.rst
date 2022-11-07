@@ -21,8 +21,8 @@ sources of latency in C++ with these few steps:
    races.
 
 Since this code is required for basically all Linux RT applications, I
-refactored the code into a small RT application framework in my `rt-demo
-repository <https://github.com/shuhaowu/rt-demo>`__. All the examples in this
+refactored the code into a small RT application framework in my `cactus-rt
+repository <https://github.com/cactusdynamics/cactus-rt>`__. All the examples in this
 post are also shown in full in that repository, along with a number of
 additional examples based on the refactored app framework.
 
@@ -101,7 +101,7 @@ priority than the non-RT threads. The scale for the nice and RT priority values
 is illustrated in *Figure 1*.
 
 On a typical Linux distribution with the ``PREEMPT_RT`` patch, there should not
-be able RT tasks running on the system except for a few built-in kernel tasks.
+be RT tasks running on the system except for a few built-in kernel tasks.
 The kernel interrupt request (IRQ) handlers handle interrupt requests
 originating from hardware devices and run with an RT priority value of 50.
 These are necessary for communication with the hardware and should generally
@@ -130,7 +130,7 @@ find this to be a bit tedious and prefer interact with the ``pthread`` API
 directly so that the thread is created with the right attributes. This code can
 then be wrapped into a ``Thread`` class for convenience (`full code is shown
 here
-<https://github.com/shuhaowu/rt-demo/tree/master/examples/blog_examples/basic.cpp>`__):
+<https://github.com/cactusdynamics/cactus-rt/tree/master/examples/blog_examples/basic.cpp>`__):
 
 .. code-block:: c++
    :number-lines:
@@ -239,7 +239,7 @@ Since RT applications generally loop at some predictable frequency, we will
 look at how the loop itself is programmed for RT in the next section.
 
 If you compile and run `the full code
-<https://github.com/shuhaowu/rt-demo/tree/master/examples/blog_examples/basic.cpp>`__,
+<https://github.com/cactusdynamics/cactus-rt/tree/master/examples/blog_examples/basic.cpp>`__,
 you will likely encounter a permission error when the program starts. This is
 because Linux restricts the creation of RT threads to privileged users only.
 You'll either need to run this program as root, or edit your user's max
@@ -314,7 +314,7 @@ Since this workflow is generic, most of it can be refactored into
 ``Thread::Run()`` as introduced in the previous section. We can leave a
 ``Thread::Loop()`` method that actually contains the application logic as
 follows (`full code is shown here
-<https://github.com/shuhaowu/rt-demo/tree/master/examples/blog_examples/loop.cpp>`__):
+<https://github.com/cactusdynamics/cactus-rt/tree/master/examples/blog_examples/loop.cpp>`__):
 
 .. code-block:: c++
    :number-lines:
@@ -370,7 +370,7 @@ The ``Run`` method is relatively simple with only 5 lines of code:
    custom application logic (but is empty for demonstration purposes).
 #. On line 17, the code add ``period_ns_`` to ``next_wakeup_time_``. Although
    not embedded directly in this post, the `full code
-   <https://github.com/shuhaowu/rt-demo/tree/master/examples/blog_examples/loop.cpp>`__
+   <https://github.com/cactusdynamics/cactus-rt/tree/master/examples/blog_examples/loop.cpp>`__
    sets ``period_ns_`` to 1,000,000, or 1 millisecond.
 
    * The addition is performed with a helper method ``AddTimespecByNs``, which
@@ -427,8 +427,8 @@ this approach uses significantly more CPU and requires accurate knowledge of
 the worst-case wake-up latency\ [#fwakeupadv]_. It is also somewhat more
 complex to implement correctly, which means I will not demonstrate the code
 directly in this post. Interested readers can look at the implementation of
-``rt::CyclicFifoThread`` in the `rt-demo repository
-<https://github.com/shuhaowu/rt-demo/blob/master/libs/rt/include/rt/cyclic_fifo_thread.h>`__.
+``cactus_rt::CyclicFifoThread`` in the `cactus-rt repository
+<https://github.com/cactusdynamics/cactus-rt/blob/master/include/cactus_rt/cyclic_fifo_thread.h>`__.
 
 .. figure:: /static/imgs/blog/2022/04-rt-loop-2.svg
 
@@ -439,9 +439,9 @@ At this point, you basically have everything you need to setup a RT
 application. However, I do not recommend using the code snippets presented in
 this post directly, as they are very barebone and do not provide a very nice
 base to build on. Instead, I recommend you to take a look at my ``rt`` library
-as a part of the `rt-demo repository <https://github.com/shuhaowu/rt-demo>`__.
-In this library, I define ``rt::App``, ``rt::Thread``, and
-``rt::CyclicFifoThread`` similar to the code introduced here. The library has
+as a part of the `cactus-rt repository <https://github.com/cactusdynamics/cactus-rt>`__.
+In this library, I define ``cactus_rt::App``, ``cactus_rt::Thread``, and
+``cactus_rt::CyclicFifoThread`` similar to the code introduced here. The library has
 more features, such as the ability to set CPU affinity, use busy wait to reduce
 jitter, and track latency statistics\ [#fadvanced]_. More features may also be
 added in the future with further development.
@@ -487,10 +487,10 @@ struct, the attributes of a pthread mutex `cannot be changed after it is
 initialized <https://pubs.opengroup.org/onlinepubs/9699919799/functions/pthread_mutex_init.html>`__.
 Thus, unlike ``std::thread``, ``std::mutex`` is completely unusable for
 real-time and must be replaced with a different implementation. As a part of my
-the ``rt`` library that is defined in the `rt-demo repository
-<https://github.com/shuhaowu/rt-demo>`__, I have created ``rt::mutex``, which
+the ``rt`` library that is defined in the `cactus-rt repository
+<https://github.com/cactusdynamics/cactus-rt>`__, I have created ``cactus_rt::mutex``, which
 is a PI mutex (`full code is shown here
-<https://github.com/shuhaowu/rt-demo/tree/master/libs/rt/include/rt/mutex.h>`__):
+<https://github.com/cactusdynamics/cactus-rt/blob/master/include/cactus_rt/mutex.h>`__):
 
 .. code-block:: c++
    :number-lines:
@@ -559,10 +559,10 @@ implements the `BasicLockable
 <https://en.cppreference.com/w/cpp/named_req/BasicLockable>`__ and `Lockable
 <https://en.cppreference.com/w/cpp/named_req/Lockable>`__ requirements,
 allowing it to be used by wrappers such as ``std::scoped_lock``. This makes
-``rt::mutex`` a drop-in replacement for ``std::mutex``. The only line of
+``cactus_rt::mutex`` a drop-in replacement for ``std::mutex``. The only line of
 interest is line 20, where the priority-inheritance protocol is set for the
-mutex. A toy example using the ``rt::mutex`` is given below (`full code is
-shown here <https://github.com/shuhaowu/rt-demo/tree/master/examples/blog_examples/mutex.cpp>`__):
+mutex. A toy example using the ``cactus_rt::mutex`` is given below (`full code is
+shown here <https://github.com/cactusdynamics/cactus-rt/tree/master/examples/blog_examples/mutex.cpp>`__):
 
 .. code-block:: c++
    :number-lines:
@@ -585,8 +585,8 @@ shown here <https://github.com/shuhaowu/rt-demo/tree/master/examples/blog_exampl
 This just shows two functions that can read and write to the same array ``a``
 without data races. As you can see, it is just as easy as ``std::mutex``.
 
-Although ``rt::mutex`` is safe for RT, simply converting normal mutexes into
-``rt::mutex`` in the code does not guarantee the code to be safe for RT. This
+Although ``cactus_rt::mutex`` is safe for RT, simply converting normal mutexes into
+``cactus_rt::mutex`` in the code does not guarantee the code to be safe for RT. This
 is because the usage of a PI mutex causes the critical sections protected by
 the mutex on the non-RT thread to be occasionally elevated to run with RT
 priority, and this code may cause unbounded latency due to things such as
@@ -608,7 +608,7 @@ Specifically, we went over the following steps:
 #. Setting up an RT loop by calculating the next wake-up time and sleeping with
    ``clock_nanosleep``.
 #. Safely passing data via a priority-inheriting mutex defined as the class
-   ``rt::mutex``, which is a drop-in replacement for ``std::mutex``.
+   ``cactus_rt::mutex``, which is a drop-in replacement for ``std::mutex``.
 
 Along the way, we discussed:
 
@@ -621,7 +621,7 @@ Along the way, we discussed:
   be RT safe and avoid unbounded latency.
 
 All of the examples in this post can be found `here
-<https://github.com/shuhaowu/rt-demo/tree/master/examples/blog_examples/>`__.
+<https://github.com/cactusdynamics/cactus-rt/tree/master/examples/blog_examples/>`__.
 In the next post, I will briefly highlight a few lock-less programming
 techniques and hopefully conclude this series.
 
@@ -634,8 +634,8 @@ One way to further reduce wake-up latency is to use a Linux feature known as
 pin the RT thread onto those CPUs via the CPU affinity feature. This can
 further reduce wakeup latency, as the kernel will rarely have to preempt
 another thread to schedule and switch to the pinned RT thread. This is
-implemented in my ``rt::Thread`` implementation in `rt-demo
-<https://github.com/shuhaowu/rt-demo>`__.
+implemented in my ``cactus_rt::Thread`` implementation in `cactus-rt
+<https://github.com/cactusdynamics/cactus-rt>`__.
 
 .. |isolcpus| replace:: ``isolcpus``
 .. _isolcpus: https://www.kernel.org/doc/Documentation/admin-guide/kernel-parameters.txt
@@ -651,7 +651,7 @@ considered:
    getting killed by the kernel, which is obviously undesirable. Since each
    thread has its own private stack, you may need to increase the stack size
    during thread creation via ``pthread_attr_setstacksize``. This is also
-   implemented in ``rt::Thread``.
+   implemented in ``cactus_rt::Thread``.
 #. If an O(1) memory allocator implementation is used (i.e. ``malloc`` takes
    constant time excluding the time needed for page faults), it may be OK to
    dynamically allocate memory during the RT sections if the memory allocator
@@ -661,7 +661,7 @@ considered:
    If an O(1) memory allocator is used, you should consider reserving a large
    pool of memory at program startup, and disable the ability for the memory
    allocator to give back memory to the OS. This is currently partially
-   implemented by ``rt::App`` in rt-demo.
+   implemented by ``cactus_rt::App`` in cactus-rt.
 
 Appendix: References
 ====================
