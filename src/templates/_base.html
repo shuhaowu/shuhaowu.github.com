@@ -45,8 +45,11 @@
     {% endblock %}
     {% block footer %}
     <footer>
-      License: <a rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> <br>
-      &#9883; Last updated: 2022-05-07 &#9883;
+      License: <a rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+      {% if active_page != "blog" %}
+      <br>
+      &#9883; Last updated: 2023-01-14 &#9883;
+      {% endif %}
     </footer>
     {% endblock %}
     </div>
