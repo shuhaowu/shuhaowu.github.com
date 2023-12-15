@@ -13,10 +13,10 @@ server: out
 	cd out && python3 -m http.server
 
 deploy-staging: out
-	rsync -zvr --delete out/ $(PROD_HOST):/web-staging/shuhaowu.com
+	rsync --info=progress -vr --delete out/ $(PROD_HOST):/web-staging/shuhaowu.com
 
 deploy-prod: out
-	rsync -zvr --delete out/ $(PROD_HOST):/web/shuhaowu.com
+	rsync --info=progress -vr --delete out/ $(PROD_HOST):/web/shuhaowu.com
 
 clean:
 	rm -r out
