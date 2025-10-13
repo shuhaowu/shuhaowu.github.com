@@ -1,0 +1,9 @@
+---
+blog:
+  posts_per_page: 25
+  post_template: templates/_blog_post.html
+  feeds:
+    - template: templates/_blog_index.html
+      path: blog/index
+    - template: templates/_blog_feed.xml
+      path: blog/feed

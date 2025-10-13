@@ -255,6 +255,10 @@ p.blogpost-subtitle > .highlight {
   color: #999;
 }
 
+.blogpost-body table.docutils:not(.footnote) {
+  margin: 0 auto;
+}
+
 .blog-page-controls {
   text-align: right;
   margin: 0;
@@ -276,7 +280,7 @@ blockquote {
 }
 
 /* Figure formatting */
-div.figure object {
+div.figure object, div.figure img {
   display: block;
   margin: 0 auto;
   max-width: 100%;
