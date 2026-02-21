@@ -3,7 +3,6 @@
    :authors: Shuhao Wu
    :created_at: 2026-02-20
    :has_code: true
-   :draft: true
 
 *Author's note: As I spend a lot of my time working with JavaScript, I noticed a
 lot of gaps in that community with respect to high-performance programming.
